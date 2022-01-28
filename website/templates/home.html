@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+    <h1 align="center">Track the Trail</h1>
+    
+    <!-- <ul class="list-group list-group-flush" id="trail">
+      {% for trail in user.trail %}
+      <li class="list-group-item">
+        {{ trail.trail }}
+        <button type="button" class="close" onClick="deleteTrail({ trail,id })">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </li>
+      {% endfor %}
+    </ul> -->
+
+    <form method="POST">
+      
+      <div class="form-group row">
+        <input type="text" id="trail_name" class="form-control" name="trail_name" placeholder="Trail Name" required>
+      </div>
+  
+      <div class="form-group row">
+        <input type="date" id="date" class="form-control" name="Date" required>
+      </div>
+    
+      <div class="form-group row">
+        <input type="text" class="form-control" id="mileage" name="mileage" placeholder="Mileage">
+      </div>
+    
+      <div class="form-group row">
+        <input type="text" class="form-control" id="time" name="time" placeholder="Total Time">
+      </div>
+  
+      <div class="form-group row">
+        <textarea class="md-textarea form-control" id="notes" placeholder="Notes" rows="10"></textarea>
+      </div>
+    
+      <div align="center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  
+    <script src="static/index.js"></script>
+  
+    {% endblock %}
