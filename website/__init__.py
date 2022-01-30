@@ -24,7 +24,8 @@ def create_app():
     # this create opperation creates all tables in my target db
     # this is different from a migration
     # todo: read up on db migrations
-
+    create_database(app)
+    
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
@@ -39,4 +40,3 @@ def create_database(app):
     if not path.exists('website/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
-
