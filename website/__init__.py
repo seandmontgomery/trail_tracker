@@ -19,11 +19,8 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    # import your models - connect classes to database
     from .models import User, Trail
-    # this create opperation creates all tables in my target db
-    # this is different from a migration
-    # todo: read up on db migrations
+
     create_database(app)
     
     login_manager = LoginManager()

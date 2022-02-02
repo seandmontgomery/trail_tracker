@@ -1,7 +1,43 @@
-{% extends "base.html" %} {% block title %}Feed{% endblock %} 
+{% extends 'base.html' %} {% block title %}Feed{% endblock %}
 
 {% block content %}
 
-<h1> This is the feed. </h1>
+{% block body %}
+
+<form>
+  <div class="form-group">
+    <div id="card-top" class="row justify-content-center">
+      <input type="text" class="form-control search-bar" name="searchBar" id="searchBar" placeholder="Search" />
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  {% for trail in trails %}
+  <div class="column">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <h1>{{ trail.trail_name }}</h1>
+        </div>
+        <div class="flip-card-back">
+          <div id="card-contents">
+            <h1>Trail Name: {{ trail.trail_name }}</h1>
+            <h1>Date: {{ trail.date }}</h1>
+            <p>Total Mileage: {{ trail.mileage }}</p>
+            <p>Time: {{ trail.time }}</p>
+            <p>Notes: {{ trail.notes }}</p>
+            <a href="http://maps.google.com/?q={{ trail.location }}" class="btn btn-light">Location</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<script src="static/js/index.js"></script>
+
+{% endblock %}
 
 {% endblock %}

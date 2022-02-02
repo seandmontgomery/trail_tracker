@@ -1,5 +1,6 @@
 asttokens==2.0.5
 click==8.0.3
+cloudinary==1.25.0
 colorama==0.4.4
 executing==0.8.2
 Flask==2.0.2

@@ -12,33 +12,37 @@
       {% endfor %}
     </ul> -->
 
-    <form method="POST">
+    <form method="POST" class="upload-trail" id="upload-trail" enctype="multipart/form-data">
       
       <div class="form-group row">
         <input type="text" id="trail_name" class="form-control" name="trail_name" placeholder="Trail Name" required>
       </div>
   
       <div class="form-group row">
-        <input type="date" id="date" class="form-control" name="Date" required>
+        <input type="date" id="date" class="form-control" name="date" placeholder="Date" required>
       </div>
+
+      <div class="form-group row">
+        <input class="form-control" type="text" id="autocomplete"  name="location" placeholder="Location" onFocus="geolocate()">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCURCwYfhVL8c9nwK8MeKQQGOsiNvb5-3E&libraries=places&callback=initAutocomplete" async defer></script>
+      </div> 
     
       <div class="form-group row">
         <input type="text" class="form-control" id="mileage" name="mileage" placeholder="Mileage">
       </div>
     
       <div class="form-group row">
-        <input type="text" class="form-control" id="time" name="time" placeholder="Total Time">
+        <input type="text" class="form-control" id="time" name="time" placeholder="Time">
       </div>
   
       <div class="form-group row">
-        <textarea class="md-textarea form-control" id="notes" placeholder="Notes" rows="10"></textarea>
+        <textarea class="md-textarea form-control" id="notes" name="notes" placeholder="Notes" rows="10"></textarea>
       </div>
-    
+      
       <div align="center">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
-    </form>
   
-    <script src="static/index.js"></script>
+    <script src="static/js/index.js"></script>
   
     {% endblock %}
