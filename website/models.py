@@ -16,11 +16,5 @@ class Trail(db.Model):
     mileage = db.Column(db.Integer)
     time = db.Column(db.Integer)
     notes = db.Column(db.String)
-    # image_url = db.Column(db.String)
+    image_url = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
-class TestTable(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, server_default='This is a value')
-
-

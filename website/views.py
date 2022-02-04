@@ -17,6 +17,7 @@ def home():
         mileage = request.form.get('mileage')
         time = request.form.get('time')
         notes = request.form.get('notes')
+        # image_url - request.form.get('image_url')
         new_trail = Trail(trail_name=trail_name, date=date, location=location, mileage=mileage, time=time, notes=notes)
         db.session.add(new_trail)
         db.session.commit()
