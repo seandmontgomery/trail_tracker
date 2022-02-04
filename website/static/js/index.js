@@ -19,7 +19,7 @@
         let cloud_res_json = await cloud_res.json();
   
         //this is where we store the image in the database
-        let flask_resp = await fetch('/submit-trail', {
+        let flask_resp = await fetch('/upload-trail', {
             method: "POST",
             body: JSON.stringify({
                 'trail_name': $('#trail_name').val(),
@@ -46,12 +46,12 @@
 
     // #######################ON SUBMIT####################################
   
-  // const form = document.querySelector(".upload-art");
+  const form = document.querySelector("#upload-trail-form");
   
-  // form.addEventListener("submit", (evt) => {
-  //   evt.preventDefault();
-  //   addImage()
-  //       })
+  form.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+    addImage()
+        })
   
   // #################################SEARCH FEATURE####################################
   

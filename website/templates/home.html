@@ -12,7 +12,7 @@
       {% endfor %}
     </ul> -->
 
-    <form method="POST" class="upload-trail" id="upload-trail" enctype="multipart/form-data">
+    <form method="POST" class="upload-trail" id="upload-trail-form" enctype="multipart/form-data">
       
       <div class="form-group row">
         <input type="text" id="trail_name" class="form-control" name="trail_name" placeholder="Trail Name" required>
@@ -37,6 +37,10 @@
   
       <div class="form-group row">
         <textarea class="md-textarea form-control" id="notes" name="notes" placeholder="Notes" rows="10"></textarea>
+      </div>
+
+      <div class="row">
+        <input type="file" id="image_url" name="Upload Image">
       </div>
       
       <div align="center">
