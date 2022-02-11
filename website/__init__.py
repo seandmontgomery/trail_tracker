@@ -13,15 +13,15 @@ from cloudinary.utils import cloudinary_url
 db = SQLAlchemy()
 DB_NAME = "trail_tracker.db"
 
+cloud_name = os.environ.get('cloud_name')
+cloud_api_key = os.environ.get('cloud_api_key')
+cloud_api_secret = os.environ.get('cloud_api_secret')
+
 def create_app():
     app = Flask(__name__)
 
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'secret change for production')
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI', 'postgresql://postgres:0821@localhost:5433/trail_tracker')
-    
-    cloud_name = os.environ.get('cloud_name')
-    cloud_api_key = os.environ.get('cloud_api_key')
-    cloud_api_secret = os.environ.get('cloud_api_secret')
 
     db.init_app(app)
 

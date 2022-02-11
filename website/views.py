@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from .models import Trail
 from . import db
+from . import cloud_name, cloud_api_key, cloud_api_secret
 import json
 import os
 import cloudinary
@@ -47,7 +48,7 @@ def media():
         media_title = request.json.get('media_title')
 
         media = Media(media_url=media_url, media_title=media_title)
-        db.session.add(new_trail)
+        db.session.add(media)
         db.session.commit()
         return flash('Media added!', category='success')
 

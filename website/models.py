@@ -11,6 +11,16 @@ class User(db.Model, UserMixin):
     media = db.relationship('Media')
 
 class Trail(db.Model):
+    """
+    Create a relationship between media and trail such that a 
+    list of all the media is available within each trail object
+
+    Options:
+    1. It's pre-loaded (agre)
+    2. It's not loaded - when you access trail.media is when you get it
+
+    sqlalchemy relationships using backref
+    """
     id = db.Column(db.Integer, primary_key=True)
     trail_name = db.Column(db.String)
     location = db.Column(db.String)
@@ -26,4 +36,4 @@ class Media(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     media_title = db.Column(db.String)
     media_url = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    trail_id = db.Column(db.Integer, db.ForeignKey('trail.id'))
