@@ -1,4 +1,4 @@
-  // ###################################CLOUDINARY#######################################
+// ###################################CLOUDINARY#######################################
 
   async function addImage() {
     const url = "/upload-cloudinary";
@@ -25,7 +25,9 @@
                 'trail_name': $('#trail_name').val(),
                 'location': $('#autocomplete').val(),
                 'date': $('#date').val(),
-                'mileage': $('#mileage').val(),
+                'miles': $('#miles').val(),
+                'hours': $('#hours').val(),
+                'minutes': $('#minutes').val(),
                 'notes': $('#notes').val(),
                 "image_url": cloud_res_json.url,
             }),
@@ -116,5 +118,7 @@
   //       window.location.href = "/";
   //     });
   //   }
+
+
   
   

@@ -18,25 +18,42 @@
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <h1>{{ trail.trail_name }}</h1>
+          <img src="{{ trail.image_url }}" alt="Image goes here" style="width:450px;height:450px;">
         </div>
         <div class="flip-card-back">
           <div id="card-contents">
-            <h1>Trail Name: {{ trail.trail_name }}</h1>
-            <h1>Date: {{ trail.date }}</h1>
-            <p>Total Mileage: {{ trail.mileage }}</p>
-            <p>Time: {{ trail.time }}</p>
+            <h1>{{ trail.trail_name }}</h1>
+            <p>{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
+            <p>{{ trail.location }}</p>
+            <p>Miles: {{ trail.miles }}</p>  
+            <p>Hours: {{ trail.hours }} Minutes: {{ trail.minutes }}</p>
+            <p>Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</p>
             <p>Notes: {{ trail.notes }}</p>
             <a href="http://maps.google.com/?q={{ trail.location }}" class="btn btn-light">Location</a>
           </div>
         </div>
-      </div>
-    </div>
+      </div>   
+    </div>  
   </div>
   {% endfor %}
 </div>
 
-<script src="static/js/index.js"></script>
+<script>
+  const searchBar = document.getElementById('searchBar');
+  const text = document.getElementsByClassName("flip-card");
+
+  function searchCards(queryString) {
+    return Object.values(text).filter((t) => !t.innerText.toLowerCase().includes(queryString))
+  }
+
+  searchBar.addEventListener('keyup', (evt) => {
+    const searchString = evt.target.value;
+    let searchResults = searchCards(searchString.toLowerCase())
+    for (let i = 0; i < text.length; i++) {
+      searchResults.includes(text[i]) ? text[i].style.display = "none" : text[i].style.display = "block"
+    }
+  });
+</script>
 
 {% endblock %}
 

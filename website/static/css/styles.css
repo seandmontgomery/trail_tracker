@@ -1,6 +1,14 @@
+      /* overrides accessibility features */
+      input:focus, textarea:focus, select:focus{
+        outline: none;
+      }
 
-    
-    body {
+      /* sets font for whole website */
+      * {
+        font-family: 'Spartan';
+      }
+      
+      body {
         font-family: Arial, Helvetica, sans-serif;
       }
       
@@ -10,7 +18,7 @@
         height: 450px;
         perspective: 1000px;
       }
-      
+
       .flip-card-inner {
         position: relative;
         width: 100%;
@@ -36,20 +44,33 @@
       }
       
       .flip-card-front {
-        background-color: #bbb;
-        color: black;
+        background-color: rgb(196, 196, 196);
+        color: rgb(255, 255, 255);
       }
       
       .flip-card-back {
-        background-color: rgb(4, 134, 0);
-        color: white;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         transform: rotateY(180deg);
       }
       
       h1 {
-          font-size: 1.7;
+          font-size: 1;
+      }
+
+      p {
+        font-size: large;
       }
       
       #card-contents {
-          margin-top: 150px;
+          margin-top: 100px;
+          margin-bottom: 0px;
       }
+
+  /* html {
+      min-height: 100%;
+      background-image: url('https://res.cloudinary.com/seandmontgomery/image/upload/v1644114124/trail-home_ulwmtk.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      } */
