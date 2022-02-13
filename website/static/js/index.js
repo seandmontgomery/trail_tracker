@@ -1,6 +1,6 @@
-// ###################################CLOUDINARY#######################################
+// ###################################CLOUDINARY####################################
 
-  async function addImage() {
+async function addImage() {
     const url = "/upload-cloudinary";
     const fileList = document.querySelectorAll("[type=file]");
   
@@ -25,7 +25,7 @@
                 'trail_name': $('#trail_name').val(),
                 'location': $('#autocomplete').val(),
                 'date': $('#date').val(),
-                'miles': $('#mileage').val(),
+                'miles': $('#miles').val(),
                 'hours': $('#hours').val(),
                 'minutes': $('#minutes').val(),
                 'notes': $('#notes').val(),
@@ -45,6 +45,13 @@
     //once function has completed, we reroute to the gallery
     window.location = '/feed'
   }
+
+  const form = document.querySelector("#upload-trail-form");
+  
+  form.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+    addImage()
+        })
 
 // #################################SEARCH FEATURE####################################
   

@@ -37,8 +37,7 @@ def upload_trail():
         new_trail = Trail(trail_name=trail_name, location=location, date=date, miles=miles, hours=hours, minutes=minutes, notes=notes, image_url=image_url)
         db.session.add(new_trail)
         db.session.commit()
-        flash('Trail added!', category='success')
-        return render_template("home.html")
+        return flash('Trail added!', category='success')
 
 ##################################UPLOAD CLOUDINARY##################################
 
@@ -69,7 +68,7 @@ def cld_optimize():
 
 #########################VIEW FEED####################################################
       
-@views.route('/feed')
+@views.route('/feed', methods=['GET', 'POST'])
 @login_required
 def show_feed():
     trails = Trail.query.all()
