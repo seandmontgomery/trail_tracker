@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
 
-    <h1 align="center">Track the Trail</h1>
+<h1 align="center">Track the Trail</h1>
 
-    <form method="POST" class="upload-trail" id="upload-trail-form" enctype="multipart/form-data">
+  <form method="POST" class="upload-trail" id="upload-trail-form" enctype="multipart/form-data">
       
       <div class="form-group row">
         <input type="text" id="trail_name" class="form-control" name="trail_name" placeholder="Trail Name" required>
@@ -18,13 +18,13 @@
       </div>
 
       <label for="quantity">Miles:</label>
-      <input type="number" id="miles" name="miles" min="0" max="100"> 
+        <input type="number" id="miles" name="miles" min="0" max="100"> 
 
       <label for="quantity">Hours:</label>
-      <input type="number" id="hours" name="hours" min="0" max="24"> 
+        <input type="number" id="hours" name="hours" min="0" max="24"> 
 
       <label for="quantity">Minutes:</label>
-      <input type="number" id="minutes" name="minutes" min="0" max="59"> 
+        <input type="number" id="minutes" name="minutes" min="0" max="59"> 
 
       <div class="form-group row">
         <textarea class="md-textarea form-control" id="notes" name="notes" placeholder="Notes" rows="5"></textarea>
@@ -32,7 +32,6 @@
 
       <div class="row">
         <p>Upload Cover Photo<p>
-          <br>
       </div>
 
       <div class="row">
@@ -50,6 +49,7 @@
       <div align="center">
         <button type="submit" class="btn btn-primary">Submit Trail</button>
       </div>
+    </div>
 
 <script>
   const listAddButton = $('#add-media')
@@ -69,76 +69,4 @@
   
 <script src="static/js/index.js"></script>
 
-<script>    
-
-  var placeSearch, autocomplete;
-  var componentForm = {
-    street_number: 'short_name',
-    route: 'long_name',
-    locality: 'long_name',
-    administrative_area_level_1: 'short_name',
-    country: 'long_name',
-    postal_code: 'short_name'
-  };
-
-  function initAutocomplete() {
-    autocomplete = new google.maps.places.Autocomplete(
-        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-        {types: ['geocode', 'establishment']});
-    }
-
-  function geolocate() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var geolocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        var circle = new google.maps.Circle({
-          center: geolocation,
-          radius: position.coords.accuracy
-        });
-        autocomplete.setBounds(circle.getBounds());
-      });
-    }
-  }
-  </script>
-  
 {% endblock %}
-
-      <!-- <div class="form-group row">
-        <input type="text" class="form-control" id="mileage" name="mileage" placeholder="Miles">
-      </div> -->
-
-      <!-- <div class="form-group row">
-        <div>
-        <label for="start">Start Time</label>
-        </div>
-        <input id=starttime name=time type=time min="0:00" max="100:59">
-      </div>
-
-      <div class="form-group row">
-        <div>
-          <label for="end">End Time</label>
-        </div>
-        <input id=endtime name=time type=time min="0:00" max="100:59">
-      </div> -->
-
-      <!-- <div class="form-group row">
-        <input type="text" class="form-control" id="time" name="time" placeholder="Time">
-      </div> -->
-
-      <!-- <div class="form-group row">
-        <input type="text" class="form-control" id="minutes" name="minutes" placeholder="Minutes">
-      </div> -->
-          
-    <!-- <ul class="list-group list-group-flush" id="trail">
-      {% for trail in user.trail %}
-      <li class="list-group-item">
-        {{ trail.trail }}
-        <button type="button" class="close" onClick="deleteTrail({ trail,id })">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </li>
-      {% endfor %}
-    </ul> -->

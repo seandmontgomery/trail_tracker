@@ -19,11 +19,17 @@
         let cloud_res_json = await cloud_res.json();
   
         //this is where we store the image in the database
-        let flask_resp = await fetch('/submit-media', {
+        let flask_resp = await fetch('/upload-trail', {
             method: "POST",
             body: JSON.stringify({
-              "media_url": cloud_res_json.url,
-              "media_title": $(`#media-title-${i+1}`).val(),
+                'trail_name': $('#trail_name').val(),
+                'location': $('#autocomplete').val(),
+                'date': $('#date').val(),
+                'miles': $('#mileage').val(),
+                'hours': $('#hours').val(),
+                'minutes': $('#minutes').val(),
+                'notes': $('#notes').val(),
+                "image_url": cloud_res_json.url,
             }),
             headers: {
                 'Accept': 'application/json',
@@ -40,53 +46,55 @@
     window.location = '/feed'
   }
 
-    // #######################ON SUBMIT####################################
+// #################################SEARCH FEATURE####################################
   
-  const form = document.querySelector("#upload-trail-form");
-  
-  form.addEventListener("submit", (evt) => {
-    evt.preventDefault();
-    addImage()
-        })
+const searchBar = document.getElementById('searchBar');
+const text = document.getElementsByClassName("flip-card");
 
-        form.addEventListener("submit", (evt) => {
-          evt.preventDefault();
-          // here, we are getting the user input   
-          const trailInputs = {
-            'trail_name': $('#trail_name').val(),
-            'location': $('#autocomplete').val(),
-            'date': $('#date').val(),
-            'miles': $('#miles').val(),
-            'hours': $('#hours').val(),
-            'minutes': $('#minutes').val(),
-            'notes': $('#notes').val(),
-            "image_url": cloud_res_json.url,
-          };
+function searchCards(queryString) {
+  console.log(Object.values(text).filter((t) => !t.outerText.toLowerCase().includes(queryString)))
+  console.log(Object.values(text).map((t) => console.log(t.outerText.toLowerCase())))
+  return Object.values(text).filter((t) => !t.innerText.toLowerCase().includes(queryString))
+}
 
-          fetch('/upload-trail', {
-            method: "POST",
-            body: JSON.stringify(trailInputs),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        })
+searchBar.addEventListener('keyup', (evt) => {
+  const searchString = evt.target.value;
+  let searchResults = searchCards(searchString.toLowerCase())
+  for (let i = 0; i < text.length; i++) {
+    searchResults.includes(text[i]) ? text[i].style.display = "none" : text[i].style.display = "block"
+  }
+});
 
-        .then((response) => response.json())
-        .then((data) => {
-            //this is where we send data to the backend for the audition to be created
-           fetch('/upload-trail', {
-            method: "POST",
-            body: JSON.stringify(trailInputs),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }
-        }) 
+// ###################################GOOGLE MAPS#######################################
 
-        .then((response) => response.json())
-        .then((data) => {
-            trail_id = data.trail_id;
-            return data
-            //once all previous data is returned, then we call the addMedia function
-        }).then(addMedia())})})
+var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode', 'establishment']});
+        }
+
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }

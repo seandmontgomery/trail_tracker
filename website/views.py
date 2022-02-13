@@ -34,23 +34,11 @@ def upload_trail():
         minutes = request.json.get('minutes')
         notes = request.json.get('notes')
         image_url = request.json.get('image_url')
-        
         new_trail = Trail(trail_name=trail_name, location=location, date=date, miles=miles, hours=hours, minutes=minutes, notes=notes, image_url=image_url)
         db.session.add(new_trail)
         db.session.commit()
-        return flash('Trail added!', category='success')
-
-@views.route('/submit-media', methods=["POST"])
-@login_required
-def media():
-    if request.method == 'POST':
-        media_url = request.json.get('media_url')
-        media_title = request.json.get('media_title')
-
-        media = Media(media_url=media_url, media_title=media_title)
-        db.session.add(media)
-        db.session.commit()
-        return flash('Media added!', category='success')
+        flash('Trail added!', category='success')
+        return render_template("home.html")
 
 ##################################UPLOAD CLOUDINARY##################################
 
