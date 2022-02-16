@@ -27,7 +27,7 @@
             <p>{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
             <p>{{ trail.location }}</p>
             <p>Miles: {{ trail.miles }}</p>  
-            <p>Hours: {{ trail.hours }} Minutes: {{ trail.minutes }}</p>
+            <p> {{ trail.hours }} Hours  {{ trail.minutes }} Minutes</p>
             <p>Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</p>
             <p>Notes: {{ trail.notes }}</p>
             <a href="http://maps.google.com/?q={{ trail.location }}" class="btn btn-light">Location</a>

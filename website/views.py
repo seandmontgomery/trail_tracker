@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify, make_response
 from flask_login import login_required, current_user
 from .models import Trail
 from . import db
@@ -20,6 +20,10 @@ views = Blueprint('views', __name__)
 def home():
     return render_template("home.html", user=current_user)
 
+@views.route('/welcome')
+def welcome():
+    return render_template("welcome.html", user=current_user)
+
 ##################################UPLOAD TRAIL##################################
 
 @views.route('/upload-trail', methods=['GET','POST'])
@@ -39,7 +43,9 @@ def upload_trail():
                         miles=miles, hours=hours, minutes=minutes, notes=notes, image_url=image_url)
         db.session.add(new_trail)
         db.session.commit()
-        return flash('Trail added!', category='success')
+        flash('Trail added!', category='success')
+        data = {'message': 'Created'}
+        return make_response(jsonify(data), 200)
 
 ##################################UPLOAD CLOUDINARY##################################
 
@@ -52,6 +58,7 @@ def upload_file():
     #if there is a file to upload, then upload to cloudinary
     if file_to_upload:
       upload_result = cloudinary.uploader.upload(file_to_upload, resource_type="auto")
+      #could potentially save this image in an image table then associate that image as a relationship to a trail
       return jsonify(upload_result)
 
 #########################CLOUDINARY OPTIMIZATION####################################################

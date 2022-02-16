@@ -37,7 +37,7 @@ async function addImage() {
               'Content-Type': 'application/json'
           }
       });
-      
+
       if (!flask_resp.ok) {
           alert(`Unable to load files. ${flask_resp.statusText}`)
           break 
