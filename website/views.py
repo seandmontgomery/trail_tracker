@@ -22,19 +22,21 @@ def home():
 
 ##################################UPLOAD TRAIL##################################
 
-@views.route('/upload-trail', methods=['GET', 'POST'])
+@views.route('/upload-trail', methods=['GET','POST'])
 @login_required
 def upload_trail():
     if request.method == 'POST':
         trail_name = request.json.get('trail_name')
         location = request.json.get('location')
         date = request.json.get('date')
+        difficulty = request.json.get('difficulty')
         miles = request.json.get('miles')
         hours = request.json.get('hours')
         minutes = request.json.get('minutes')
         notes = request.json.get('notes')
         image_url = request.json.get('image_url')
-        new_trail = Trail(trail_name=trail_name, location=location, date=date, miles=miles, hours=hours, minutes=minutes, notes=notes, image_url=image_url)
+        new_trail = Trail(trail_name=trail_name, location=location, date=date, difficulty=difficulty, 
+                        miles=miles, hours=hours, minutes=minutes, notes=notes, image_url=image_url)
         db.session.add(new_trail)
         db.session.commit()
         return flash('Trail added!', category='success')

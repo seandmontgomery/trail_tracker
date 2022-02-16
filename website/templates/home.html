@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}Home{% endblock %} 
+
+{% block content %}
 
 <h1 align="center">Track the Trail</h1>
 
@@ -17,14 +19,25 @@
         <input type="date" id="date" class="form-control" name="date" placeholder="Date" required>
       </div>
 
-      <label for="quantity">Miles:</label>
-        <input type="number" id="miles" name="miles" min="0" max="100"> 
+      <div class="form-group row">
+        <select name="difficulty" id="difficulty">
+          <option value=None>Difficulty Level</option>
+          <option value="hard">Hard</option>
+          <option value="medium">Medium</option>
+          <option value="easy">Easy</option>
+        </select>
+      </div>
 
-      <label for="quantity">Hours:</label>
-        <input type="number" id="hours" name="hours" min="0" max="24"> 
+      <div class="form-group row">
+        <label for="quantity">Miles:</label>
+          <input type="number" id="miles" name="miles" min="0" max="100"> 
 
-      <label for="quantity">Minutes:</label>
-        <input type="number" id="minutes" name="minutes" min="0" max="59"> 
+        <label for="quantity">Hours:</label>
+          <input type="number" id="hours" name="hours" min="0" max="24"> 
+
+        <label for="quantity">Minutes:</label>
+          <input type="number" id="minutes" name="minutes" min="0" max="59"> 
+      </div>
 
       <div class="form-group row">
         <textarea class="md-textarea form-control" id="notes" name="notes" placeholder="Notes" rows="5"></textarea>
@@ -49,26 +62,23 @@
       <div align="center">
         <button type="submit" class="btn btn-primary">Submit Trail</button>
       </div>
-    </div>
 
 <script src="static/js/index.js"></script>
 
 <script>
-  const listAddButton = $('#add-media')
-  let click_counter = 0
-    const addItem = () => {
-        click_counter++
-        $('#list').append(`<li class="add-media">
-        <input type="text" class="form-control media-input" id="media-title-${click_counter}" name="media-title" placeholder="Media Title"/>
-        <div id="media-uploader">
-          <label class="custom-file-upload">
-          <input type="file" id="media-files-${click_counter}" name="filesToUpload[]" multiple>
-          </label>
-        </div></li>`)
-    }
-  listAddButton.on('click', addItem)
+    const listAddButton = $('#add-media')
+    let click_counter = 0
+      const addItem = () => {
+          click_counter++
+          $('#list').append(`<li class="add-media">
+          <input type="text" class="form-control media-input" id="media-title-${click_counter}" name="media-title" placeholder="Media Title"/>
+          <div id="media-uploader">
+            <label class="custom-file-upload">
+            <input type="file" id="media-files-${click_counter}" name="filesToUpload[]" multiple>
+            </label>
+          </div></li>`)
+      }
+    listAddButton.on('click', addItem)
 </script>
   
 {% endblock %}
-
-

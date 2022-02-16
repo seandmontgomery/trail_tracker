@@ -23,6 +23,7 @@
         <div class="flip-card-back">
           <div id="card-contents">
             <h1>{{ trail.trail_name }}</h1>
+            <p>Difficulty: {{ trail.difficulty.title() }}</p>
             <p>{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
             <p>{{ trail.location }}</p>
             <p>Miles: {{ trail.miles }}</p>  

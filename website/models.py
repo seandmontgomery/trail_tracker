@@ -14,6 +14,7 @@ class Trail(db.Model):
     trail_name = db.Column(db.String)
     location = db.Column(db.String)
     date = db.Column(db.Date)
+    difficulty = db.Column(db.String)
     miles = db.Column(db.Integer)
     hours = db.Column(db.Integer)
     minutes = db.Column(db.Integer)
