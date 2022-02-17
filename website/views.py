@@ -34,13 +34,14 @@ def upload_trail():
         location = request.json.get('location')
         date = request.json.get('date')
         difficulty = request.json.get('difficulty')
+        trail_type = request.json.get('trail_type')
         miles = request.json.get('miles')
         hours = request.json.get('hours')
         minutes = request.json.get('minutes')
         notes = request.json.get('notes')
         image_url = request.json.get('image_url')
         new_trail = Trail(trail_name=trail_name, location=location, date=date, difficulty=difficulty, 
-                        miles=miles, hours=hours, minutes=minutes, notes=notes, image_url=image_url)
+                        trail_type=trail_type, miles=miles, hours=hours, minutes=minutes, notes=notes, image_url=image_url)
         db.session.add(new_trail)
         db.session.commit()
         flash('Trail added!', category='success')
@@ -82,6 +83,33 @@ def cld_optimize():
 def show_feed():
     trails = Trail.query.all()
     return render_template("feed.html", user=current_user, trails=trails)
+
+
+#########################CHARTS####################################################
+
+# @views.route('/charts')
+# def view_charts():
+
+#         return render_template('chart.html', user=user)
+
+# @views.route('/terrain-chart.json')
+# def get_terrain_totals():
+
+#     if 'user_id' in session:
+    
+#         user = crud.get_user_by_id(session['user_id'])
+#         auditions = crud.get_auditions_by_user(user.user_id)
+#         agency_labels = []
+#         audition_counts = {}
+
+#         for audition in auditions:
+#             if audition.project.agency not in agency_labels:
+#                 agency_labels.append(audition.project.agency)
+#             audition_counts[audition.project.agency] = audition_counts.get(audition.project.agency, 0)+1
+
+#         data = {'labels': agency_labels, 'values' : list(audition_counts.values())}
+
+#         return jsonify(data) 
 
 ##############################DELETE##########################################
 

@@ -24,6 +24,7 @@ async function addImage() {
                 'location': $('#autocomplete').val(),
                 'date': $('#date').val(),
                 'difficulty': $('#difficulty').val(),
+                'trail_type': $('#trail_type').val(),
                 'miles': $('#miles').val(),
                 'hours': $('#hours').val(),
                 'minutes': $('#minutes').val(),
