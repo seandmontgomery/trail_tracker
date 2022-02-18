@@ -5,14 +5,41 @@
 
       /* sets font for whole website */
       * {
-        font-family: 'Spartan';
+        font-family: 'Roboto', sans-serif;
       }
+
+      form {
+        display: block;
+        margin-top: 2em;
+    }
 
       #black-overlay {
         top: 0;
         left: 0;
         z-index: -1;
         background-color: black;
+      }
+
+      .card-title{
+        color: orange;
+      }
+
+      #location-button{
+        background-color: rgb(255, 149, 50);
+        color: white;
+  
+      }
+
+      #track-trail{
+        color: orange;
+      }
+
+      #stats{
+        color: white;
+      }
+
+      #photo-upload{
+        color: white;
       }
       
       .flip-card {
@@ -53,7 +80,7 @@
       
       .flip-card-back {
         background-color: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
+        color: #000000;
         transform: rotateY(180deg);
       }
       

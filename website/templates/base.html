@@ -20,8 +20,9 @@
    
     <link rel="icon" href="data:,">
     
-    <link href='https://fonts.googleapis.com/css?family=Spartan' 
-          rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:Roboto:wght@500&display=swap" rel="stylesheet">
    
     <link href="static/css/styles.css" 
           link rel="stylesheet" 
@@ -34,12 +35,14 @@
    
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-          crossorigin="anonymous"/> 
+          crossorigin="anonymous"/>
+    
+    <body style="background-color:black;">
 
   </head>
 
 {% block nav %}
-<nav class="navbar navbar-expand-sm navbar-light">
+<nav class="navbar navbar-expand-sm navbar-dark">
     <button
       class="navbar-toggler"
       type="button"
@@ -48,10 +51,11 @@
       <span class="navbar-toggler-icon"></span>
     </button>  
     <div class="collapse navbar-collapse" id="navbar">
+      <a class="navbar-brand"><img id="logo" src="static/images/trail-tracker-nav.png" width="100" class="d-inline-block align-top"></a>
       <div class="navbar-nav">
         {% if user.is_authenticated %}
         <a class="nav-item nav-link" id="home" href="/">Track</a>
-        <a class="nav-item nav-link" id="feed" href="/feed">Feed</a>
+        <a class="nav-item nav-link" id="feed" href="/feed">Timeline</a>
         <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
         {% else %}
         <a class="nav-item nav-link" id="login" href="/login">Login</a>

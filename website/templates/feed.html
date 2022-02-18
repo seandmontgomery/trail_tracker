@@ -12,7 +12,32 @@
   </div>
 </form>
 
-<div class="row">
+<div class="container bcontent">
+  {% for trail in trails %}
+  <div class="card" style="width: 1100px;">
+      <div class="row no-gutters">
+          <div class="col-sm-5">
+              <img class="card-img" src="{{ trail.image_url }}" alt="Trail Cover Photo">
+          </div>
+          <div class="col-sm-7">
+              <div class="card-body">
+                  <h1 class="card-title">{{ trail.trail_name }}</h1>
+                  <p class="card-text">
+                      <p>{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
+                      <p>{{ trail.location }}</p>            
+                      <p>Difficulty: {{ trail.difficulty.title() }}  Trail Type: {{ trail.trail_type.title() }}</p>
+                      <p>{{ trail.miles }} Miles {{ trail.hours }} Hours  {{ trail.minutes }} Minutes Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</p>  
+                      <p>Notes: {{ trail.notes }}</p>
+                  </p>
+                  <a href="http://maps.google.com/?q={{ trail.location }}" class="btn" id="location-button">Location</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- <div class="row">
   {% for trail in trails %}
   <div class="column">
     <div class="flip-card">
@@ -22,7 +47,7 @@
         </div>
         <div class="flip-card-back">
           <div id="card-contents">
-            <h1>{{ trail.trail_name }}</h1>
+            <h1 id="trail_title">{{ trail.trail_name }}</h1>
             <p>Difficulty: {{ trail.difficulty.title() }}</p>
             <p>Trail Type: {{ trail.trail_type.title() }}</p>
             <p>{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
@@ -38,7 +63,7 @@
     </div>  
   </div>
   {% endfor %}
-</div>
+</div> -->
 
 <script src="static/js/search.js"></script>
 
