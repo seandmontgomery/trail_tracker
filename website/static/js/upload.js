@@ -1,3 +1,4 @@
+
 /*
   The following function manages interactions
   between Trail Tracker's UI and backend, namely,
@@ -15,7 +16,7 @@ async function addImage() {
     */
     // Get a url for each image (once uploaded to cloudinary)
     const image_urls = []
-
+    console.log(image_urls);
     // iterate over the image files
     for (let i = 0; i < fileList.length; i++) {
         const formData = new FormData();
@@ -34,6 +35,8 @@ async function addImage() {
         // Save this url
         image_urls.push(cloud_res_json.url)
       }
+
+    console.log(image_urls);
 
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
         STEP 2: Send trail data (with image URLs) to
@@ -63,23 +66,24 @@ async function addImage() {
         }
     });
 
-      /*  - - - - - - - - - - - - - - - - - - - - - - - - -
-          STEP 2: Send trail data (with image URLs) to
-          trail tracker backend
+    /*  - - - - - - - - - - - - - - - - - - - - - - - - -
+        STEP 2: Send trail data (with image URLs) to
+        trail tracker backend
 
-      */
-        if (!flask_resp.ok) {
-            alert(`Unable to load files. ${flask_resp.statusText}`)
-            break
-        }
-    }
+    */
+      if (!flask_resp.ok) {
+          alert(`Unable to load files. ${flask_resp.statusText}`)
+      }
     //once function has completed, we reroute to the gallery
-    window.location = '/feed'
+    window.location = '/feed';
   }
 
-  const form = document.querySelector("#upload-trail-form");
 
-  form.addEventListener("submit", (evt) => {
-    evt.preventDefault();
-    addImage()
-        })
+
+
+const form = document.querySelector("#upload-trail-form");
+
+form.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  addImage()
+})
