@@ -9,6 +9,7 @@ import datetime
 
 from flask_login import UserMixin
 from sqlalchemy.ext.associationproxy import association_proxy
+from sqlalchemy.ext.hybrid import hybrid_property
 
 from . import db
 
@@ -43,8 +44,15 @@ class Trail(db.Model):
 
     # Association proxies explained in [2]
     image_urls = association_proxy('images', 'url',
-        creator=lambda url: TrailMedia(url=url)
+        creator=lambda kwargs: TrailMedia(**kwargs)
     )
+
+    @hybrid_property
+    def cover_image(self):
+        """
+        Returns cover image as a calculated attribute
+        """
+        return next(iter(self.image_urls), None)
 
 
 class TrailMedia(db.Model):
@@ -60,3 +68,4 @@ class TrailMedia(db.Model):
         comment='All media in this table is associated with a given trail'
     )
     url = db.Column(db.String, comment='cloudinary url (publically accessible link)')
+    title = db.Column(db.String, comment='media title')

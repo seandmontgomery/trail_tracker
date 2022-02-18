@@ -13,12 +13,18 @@ async function addImage() {
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
         STEP 1: Upload images to Cloudinary
 
+        ToDo:
+          * image_urls should be a list of objects ex: [{'title': 'Hike_1', 'url': ...}]
+            instead of a list of strings. This list of objects should be passed
+            into the json in post method (good, we already want this.)
     */
     // Get a url for each image (once uploaded to cloudinary)
     const image_urls = []
     console.log(image_urls);
     // iterate over the image files
     for (let i = 0; i < fileList.length; i++) {
+
+        let media_title = 'placeholder'; // Until the actual title is parsed from the page
         const formData = new FormData();
 
         let file = fileList[i];
@@ -33,10 +39,11 @@ async function addImage() {
         let cloud_res_json = await cloud_res.json();
 
         // Save this url
-        image_urls.push(cloud_res_json.url)
+        image_urls.push({
+          'title': media_title,
+          'url': cloud_res_json.url
+        })
       }
-
-    console.log(image_urls);
 
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
         STEP 2: Send trail data (with image URLs) to
@@ -44,6 +51,7 @@ async function addImage() {
 
         Notes:
           * this is where we store the image in the database
+
     */
 
     let flask_resp = await fetch('/upload-trail', {

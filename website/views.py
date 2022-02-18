@@ -38,14 +38,8 @@ def upload_trail():
 
         # Parse your request
         payload = request.json
-        print('here!')
 
-        all_image_urls: List[str] = payload.pop('image_urls')
-
-        # Alternatively: new_trail = Trail(**payload)
         new_trail = Trail(**payload)
-        for image_url in all_image_urls:
-            new_trail.image_urls.append(image_url)
 
         db.session.add(new_trail)
 
