@@ -1,15 +1,20 @@
+import os
+import json
+from datetime import datetime
+from typing import List
+
 from flask import Blueprint, render_template, request, flash, jsonify, make_response
 from flask_login import login_required, current_user
-from .models import Trail
-from . import db
-from . import cloud_name, cloud_api_key, cloud_api_secret
-import json
-import os
+
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from cloudinary.utils import cloudinary_url
-from datetime import datetime
+
+from . import db
+from . import cloud_name, cloud_api_key, cloud_api_secret
+from .models import Trail
+
 
 views = Blueprint('views', __name__)
 
@@ -34,6 +39,8 @@ def upload_trail():
         # Parse your request
         payload = request.json
 
+        all_image_urls: List[str] = payload.get('image_urls')
+
         # Alternatively: new_trail = Trail(**payload)
         new_trail = Trail(
             trail_name=payload.get('trail_name'),
@@ -45,7 +52,7 @@ def upload_trail():
             hours=hours,
             minutes=minutes,
             notes=notes,
-            image_url=image_url
+            image_url=all_image_urls[0] if all_image_urls else None  # only 1 image, if any, hack for now (for testing)
         )
 
         db.session.add(new_trail)
