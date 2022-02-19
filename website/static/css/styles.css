@@ -8,6 +8,10 @@
         font-family: 'Roboto', sans-serif;
       }
 
+      p{
+        color: white;
+      }
+
       form {
         display: block;
         margin-top: 2em;
@@ -21,7 +25,7 @@
       }
 
       .card-title{
-        color: orange;
+        color: white;
       }
 
       #location-button{
@@ -31,7 +35,7 @@
       }
 
       #track-trail{
-        color: orange;
+        color: rgb(255, 149, 50);
       }
 
       #stats{
@@ -41,8 +45,32 @@
       #photo-upload{
         color: white;
       }
+
+      #card{
+        background-color: rgb(0, 0, 0);
+      }
+
+      .card-text{
+       color: white;
+      }
+
+      #trail-upload{
+        background-color: rgb(255, 149, 50);
+      }
+
+      #upload-trail-form {
+        width: 100%;
+        padding-right: 75px;
+        padding-left: 75px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+
+
       
-      .flip-card {
+      /* .flip-card {
         background-color: transparent;
         width: 450px;
         height: 450px;
@@ -84,16 +112,8 @@
         transform: rotateY(180deg);
       }
       
-      h1 {
-          font-size: 1;
-      }
-
-      p {
-        font-size: large;
-      }
-      
       #card-contents {
           margin-top: 100px;
           margin-bottom: 0px;
       }
-
+ */
