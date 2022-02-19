@@ -23,7 +23,7 @@
               <div class="card-body">
                   <h1 class="card-title">{{ trail.trail_name }}</h1>
                   <p class="card-text">
-                      <p>{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
+                      <h4>{{ trail.date.strftime("%A, %B %d, %Y") }}</h4>
                       <p>{{ trail.location }}</p>            
                       <p>Difficulty: {{ trail.difficulty.title() }}  Trail Type: {{ trail.trail_type.title() }}</p>
                       <p>{{ trail.miles }} Miles {{ trail.hours }} Hours  {{ trail.minutes }} Minutes Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</p>  

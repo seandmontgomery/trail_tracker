@@ -17,6 +17,10 @@
         margin-top: 2em;
     }
 
+    .form-group{
+      color: white;
+    }
+
       #black-overlay {
         top: 0;
         left: 0;
@@ -31,7 +35,16 @@
       #location-button{
         background-color: rgb(255, 149, 50);
         color: white;
-  
+      }
+
+      #login-button{
+        background-color: rgb(255, 149, 50);
+        color: white;
+      }
+
+      #sign-in-button{
+        background-color: rgb(255, 149, 50);
+        color: white;
       }
 
       #track-trail{
@@ -47,11 +60,9 @@
       }
 
       #card{
-        background-color: rgb(0, 0, 0);
-      }
-
-      .card-text{
-       color: white;
+        background-color: rgb(29, 29, 29);
+        margin-top: 25px;
+        color: white;
       }
 
       #trail-upload{
