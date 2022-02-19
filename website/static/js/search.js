@@ -1,5 +1,5 @@
 const searchBar = document.getElementById('searchBar');
-const text = document.getElementsByClassName("flip-card");
+const text = document.getElementsByClassName("card");
 
 function searchCards(queryString) {
   console.log(Object.values(text).filter((t) => !t.outerText.toLowerCase().includes(queryString)))

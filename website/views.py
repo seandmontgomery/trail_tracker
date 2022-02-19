@@ -45,9 +45,10 @@ def upload_trail():
 
         # Commit the session
         db.session.commit()
-
+        
         # Success!
         flash('Trail added!', category='success')
+
         data = {'message': 'Created'}
         return make_response(jsonify(data), 200)
 

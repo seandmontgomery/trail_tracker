@@ -5,8 +5,21 @@
 
       /* sets font for whole website */
       * {
-        font-family: 'Spartan';
+        font-family: 'Roboto', sans-serif;
       }
+
+      p{
+        color: white;
+      }
+
+      form {
+        display: block;
+        margin-top: 2em;
+    }
+
+    .form-group{
+      color: white;
+    }
 
       #black-overlay {
         top: 0;
@@ -14,8 +27,61 @@
         z-index: -1;
         background-color: black;
       }
+
+      .card-title{
+        color: white;
+      }
+
+      #location-button{
+        background-color: rgb(255, 149, 50);
+        color: white;
+      }
+
+      #login-button{
+        background-color: rgb(255, 149, 50);
+        color: white;
+      }
+
+      #sign-in-button{
+        background-color: rgb(255, 149, 50);
+        color: white;
+      }
+
+      #track-trail{
+        color: rgb(255, 149, 50);
+      }
+
+      #stats{
+        color: white;
+      }
+
+      #photo-upload{
+        color: white;
+      }
+
+      #card{
+        background-color: rgb(29, 29, 29);
+        margin-top: 25px;
+        color: white;
+      }
+
+      #trail-upload{
+        background-color: rgb(255, 149, 50);
+      }
+
+      #upload-trail-form {
+        width: 100%;
+        padding-right: 75px;
+        padding-left: 75px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+
+
+
       
-      .flip-card {
+      /* .flip-card {
         background-color: transparent;
         width: 450px;
         height: 450px;
@@ -53,20 +119,12 @@
       
       .flip-card-back {
         background-color: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
+        color: #000000;
         transform: rotateY(180deg);
-      }
-      
-      h1 {
-          font-size: 1;
-      }
-
-      p {
-        font-size: large;
       }
       
       #card-contents {
           margin-top: 100px;
           margin-bottom: 0px;
       }
-
+ */
