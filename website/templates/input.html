@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} 
+{% extends "base.html" %} {% block title %}Home{% endblock %}
 
 {% block content %}
 
@@ -7,15 +7,15 @@
 </div>
 
   <form method="POST" class="upload-trail" id="upload-trail-form" enctype="multipart/form-data">
-      
+
       <div class="form-group row">
         <input type="text" id="trail_name" class="form-control" name="trail_name" placeholder="Trail Name" required>
       </div>
-  
+
       <div class="form-group row">
         <input class="form-control" type="text" id="autocomplete"  name="location" placeholder="Location" onFocus="geolocate()">
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCURCwYfhVL8c9nwK8MeKQQGOsiNvb5-3E&libraries=places&callback=initAutocomplete" async defer></script>
-      </div> 
+      </div>
 
       <div class="form-group row">
         <input type="date" id="date" class="form-control" name="date" placeholder="Date" required>
@@ -101,7 +101,6 @@
           <input type="number" id="minutes" name="minutes" min="0" max="59"> 
       </div> -->
 
-
       <div class="form-group row">
         <textarea class="md-textarea form-control" id="notes" name="notes" placeholder="Notes" rows="5"></textarea>
       </div>
@@ -115,17 +114,14 @@
       <div id="media-uploader">
         <ul id="list"></ul>
       </div>
-    
+
       <div>
         <button class="btn btn-light media-btn" input id="add-media" type="button" name="add-media" value="Add Media">+ Additional Photos/Videos</button>
       </div>
-      
+
       <div align="center">
         <button type="submit" class="btn" id="trail-upload">Submit Trail</button>
       </div>
-
-<script src="static/js/maps.js"></script>
-<script src="static/js/upload.js"></script>
 
 <script>
     const listAddButton = $('#add-media')
@@ -142,5 +138,8 @@
       }
     listAddButton.on('click', addItem)
 </script>
-  
+
+<script type=text/javascript src="{{url_for('static', filename='js/maps.js') }}"></script>
+<script type=text/javascript src="{{url_for('static', filename='js/upload.js') }}"></script>
+
 {% endblock %}

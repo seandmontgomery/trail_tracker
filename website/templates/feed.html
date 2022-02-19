@@ -43,7 +43,7 @@
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <img src="{{ trail.image_url }}" alt="Image goes here" style="width:450px;height:450px;">
+          <img src="{{ trail.cover_image }}" alt="Image goes here" style="width:450px;height:450px;">
         </div>
         <div class="flip-card-back">
           <div id="card-contents">
@@ -52,20 +52,21 @@
             <p>Trail Type: {{ trail.trail_type.title() }}</p>
             <p>{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
             <p>{{ trail.location }}</p>
-            <p>{{ trail.miles }} Miles</p>  
+            <p>{{ trail.miles }} Miles</p>
             <p>{{ trail.hours }} Hours  {{ trail.minutes }} Minutes</p>
             <p>Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</p>
             <p>Notes: {{ trail.notes }}</p>
             <a href="http://maps.google.com/?q={{ trail.location }}" class="btn btn-light">Location</a>
           </div>
         </div>
-      </div>   
-    </div>  
+      </div>
+    </div>
   </div>
   {% endfor %}
 </div> -->
 
-<script src="static/js/search.js"></script>
+
+<script type=text/javascript src="{{url_for('static', filename='js/search.js') }}"></script>
 
 {% endblock %}
 

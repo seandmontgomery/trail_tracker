@@ -1,15 +1,20 @@
+import os
+import json
+from datetime import datetime
+from typing import List
+
 from flask import Blueprint, render_template, request, flash, jsonify, make_response
 from flask_login import login_required, current_user
-from .models import Trail
-from . import db
-from . import cloud_name, cloud_api_key, cloud_api_secret
-import json
-import os
+
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 from cloudinary.utils import cloudinary_url
-from datetime import datetime
+
+from . import db
+from . import cloud_name, cloud_api_key, cloud_api_secret
+from .models import Trail
+
 
 views = Blueprint('views', __name__)
 
@@ -30,21 +35,20 @@ def welcome():
 @login_required
 def upload_trail():
     if request.method == 'POST':
-        trail_name = request.json.get('trail_name')
-        location = request.json.get('location')
-        date = request.json.get('date')
-        difficulty = request.json.get('difficulty')
-        trail_type = request.json.get('trail_type')
-        miles = request.json.get('miles')
-        hours = request.json.get('hours')
-        minutes = request.json.get('minutes')
-        notes = request.json.get('notes')
-        image_url = request.json.get('image_url')
-        new_trail = Trail(trail_name=trail_name, location=location, date=date, difficulty=difficulty, 
-                        trail_type=trail_type, miles=miles, hours=hours, minutes=minutes, notes=notes, image_url=image_url)
+
+        # Parse your request
+        payload = request.json
+
+        new_trail = Trail(**payload)
+
         db.session.add(new_trail)
+
+        # Commit the session
         db.session.commit()
-        # flash('Trail added!', category='success')
+        
+        # Success!
+        flash('Trail added!', category='success')
+
         data = {'message': 'Created'}
         return make_response(jsonify(data), 200)
 
@@ -77,7 +81,7 @@ def cld_optimize():
       return jsonify(cld_url)
 
 #########################VIEW FEED####################################################
-      
+
 @views.route('/feed', methods=['GET', 'POST'])
 @login_required
 def show_feed():
@@ -96,7 +100,7 @@ def show_feed():
 # def get_terrain_totals():
 
 #     if 'user_id' in session:
-    
+
 #         user = crud.get_user_by_id(session['user_id'])
 #         auditions = crud.get_auditions_by_user(user.user_id)
 #         agency_labels = []
@@ -109,7 +113,7 @@ def show_feed():
 
 #         data = {'labels': agency_labels, 'values' : list(audition_counts.values())}
 
-#         return jsonify(data) 
+#         return jsonify(data)
 
 ##############################DELETE##########################################
 
