@@ -37,7 +37,7 @@ async function addImage() {
         //we are waiting for cloudinary to return the image object
         let cloud_res_json = await cloud_res.json();
 
-        // Save this url
+        // Save this URL
         image_urls.push({
           'title': media_title,
           'url': cloud_res_json.url
