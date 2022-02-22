@@ -1,130 +1,128 @@
-      /* overrides accessibility features */
-      /* input:focus, textarea:focus, select:focus{
-        outline: none;
-      } */
+/* -------overrides accessibility features----- */
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
 
-      /* sets font for whole website */
-      * {
-        font-family: 'Roboto', sans-serif;
-      }
+/* --------website-------- */
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
-      p{
-        color: white;
-      }
+body{
+  background-color: black;
+}
 
-      form {
-        display: block;
-        margin-top: 2em;
-    }
+.navbar .navbar-nav .nav-link {
+  color: white;
+  font-size: 1.1em;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: rgb(255, 149, 50);
+}
 
-    .form-group{
-      color: white;
-    }
+/* ---------------welcome page-------------- */
 
-      #black-overlay {
-        top: 0;
-        left: 0;
-        z-index: -1;
-        background-color: black;
-      }
+#black-overlay {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: black;
+}
 
-      .card-title{
-        color: white;
-      }
+/* ---------------sign up--------------------- */
 
-      #location-button{
-        background-color: rgb(255, 149, 50);
-        color: white;
-      }
+#sign-in-button{
+  background-color: rgb(110, 110, 110);
+  color: white;
+}
 
-      #login-button{
-        background-color: rgb(255, 149, 50);
-        color: white;
-      }
+#sign-in-button:hover{
+  background-color: rgb(255, 149, 50);
+  color: white;
+}
 
-      #sign-in-button{
-        background-color: rgb(255, 149, 50);
-        color: white;
-      }
+#sign-up-form {
+  width: 100%;
+  padding-right: 300px;
+  padding-left: 300px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-      #track-trail{
-        color: rgb(255, 149, 50);
-      }
+/* -----------------log in--------------------- */
 
-      #stats{
-        color: white;
-      }
+#login-button{
+  background-color: rgb(110, 110, 110);
+  color: white;
+}
 
-      #photo-upload{
-        color: white;
-      }
+#login-button:hover{
+  background-color: rgb(255, 149, 50);
+  color: white;
+}
 
-      #card{
-        background-color: rgb(29, 29, 29);
-        margin-top: 25px;
-        color: white;
-      }
+#log-in-form {
+  width: 100%;
+  padding-right: 300px;
+  padding-left: 300px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-      #trail-upload{
-        background-color: rgb(255, 149, 50);
-      }
+/* ----------------trail upload---------------- */
 
-      #upload-trail-form {
-        width: 100%;
-        padding-right: 75px;
-        padding-left: 75px;
-        margin-right: auto;
-        margin-left: auto;
-    }
+#upload-trail-form {
+  width: 100%;
+  padding-right: 75px;
+  padding-left: 75px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
+form {
+  display: block;
+  margin-top: 2em;
+}
 
+.form-group{
+  color: white;
+}
 
+#notes{
+  margin-top: 1em;
+}
 
-      
-      /* .flip-card {
-        background-color: transparent;
-        width: 450px;
-        height: 450px;
-        perspective: 1000px;
-      }
+#track-trail{
+  color: rgb(255, 149, 50);
+}
 
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-      
-      .flip-card-front, .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-      
-      .flip-card-front {
-        background-color: rgb(196, 196, 196);
-        color: rgb(255, 255, 255);
-      }
-      
-      .flip-card-back {
-        background-color: rgb(255, 255, 255);
-        color: #000000;
-        transform: rotateY(180deg);
-      }
-      
-      #card-contents {
-          margin-top: 100px;
-          margin-bottom: 0px;
-      }
- */
+#stats{
+  color: white;
+}
+
+#photo-upload{
+  color: white;
+}
+
+#trail-upload{
+  background-color: rgb(255, 149, 50);
+}
+
+/* ---------------display feed---------------- */
+
+#card{
+  background-color: rgb(29, 29, 29);
+  margin-top: 25px;
+  color: white;
+}
+
+.card-title{
+  color: white;
+}
+
+#location-button{
+  background-color: rgb(255, 149, 50);
+  color: white;
+}

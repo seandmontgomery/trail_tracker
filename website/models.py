@@ -13,7 +13,6 @@ from sqlalchemy.ext.hybrid import hybrid_property
 
 from . import db
 
-
 class User(db.Model, UserMixin):
     __tablename__ = 'user'
 

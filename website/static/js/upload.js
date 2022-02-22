@@ -1,4 +1,3 @@
-
 /*
   The following function manages interactions
   between Trail Tracker's UI and backend, namely,
@@ -85,9 +84,6 @@ async function addImage() {
     //once function has completed, we reroute to the gallery
     window.location = '/feed';
   }
-
-
-
 
 const form = document.querySelector("#upload-trail-form");
 
