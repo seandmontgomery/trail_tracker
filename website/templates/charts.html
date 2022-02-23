@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% block body %}
+
+<h1>A Chart Should Be Here</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+    </div>
+
+        <div class="col-4">
+            <div class="row" id="doughnut-chart-row">
+                <div class="col-12">
+                    <canvas id="typeChart" class="mb-5"></canvas>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<script>
+    
+$.get('/terrain-chart.json', (res) => {
+
+    const terrain = res.labels;
+    const terrainCounts = res.values;
+        
+    let terrainChart = document.getElementById("terrainChart").getContext("2d");
+    let colors = ['#602E51', '#875053', '#B8BEDD', '#4E4C67', '#B28B84',];
+    
+    let chart = new Chart(terrainChart, {
+        type: "doughnut",
+        data: {
+            labels: terrains,
+            datasets: [
+                {
+                    label: "Terrain",
+                    data: terrainCount,
+                    backgroundColor: colors,
+                }
+            ]
+        },
+        options: {
+        }
+            
+    })
+    });
+    
+</script>
+
+{%endblock%}
+{%endblock%}

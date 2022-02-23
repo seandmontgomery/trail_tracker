@@ -17,7 +17,7 @@
   <div class="card" id="card" style="width: 1100px;">
     <div class="row no-gutters">
       <div class="col-sm-5">
-        <img class="card-img" src="{{ trail.cover_image }}" alt="Trail Cover Photo">
+        <img class="card-img" id="cover-image" src="{{ trail.cover_image }}" alt="Trail Cover Photo">
       </div>
         <div class="col-sm-7">
           <div class="card-body">
@@ -25,10 +25,11 @@
               <p class="card-text">
                 <h4>{{ trail.date.strftime("%A, %B %d, %Y") }}</h4>
                 <p>{{ trail.location }}</p>            
-                <p>Difficulty: {{ trail.difficulty.title() }}  Trail Type: {{ trail.trail_type.title() }}</p>
+                <p>Difficulty: {{ trail.difficulty.title() }}  Trail Type: {{ trail.terrain.title() }}</p>
                 <p>{{ trail.miles }} Miles {{ trail.hours }} Hours  {{ trail.minutes }} Minutes Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</p>  
                 <p>Notes: {{ trail.notes }}</p>
               </p>
+              <button id="modal-open">Look at your photos</button>
                 <a href="http://maps.google.com/?q={{ trail.location }}" class="btn" id="location-button">Location</a>
               </div>
           </div>
@@ -38,6 +39,15 @@
 </div>
 
 <script type=text/javascript src="{{url_for('static', filename='js/search.js') }}"></script>
+<script>
+
+const modalButton = document.querySelector('#modal-open')
+  const onClick = () => {
+  // businss logic here
+  }
+  modalButton.addEventListener('click', onClick);
+  
+  </script>
 
 {% endblock %}
 

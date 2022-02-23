@@ -13,7 +13,7 @@ from cloudinary.utils import cloudinary_url
 
 from . import db
 from . import cloud_name, cloud_api_key, cloud_api_secret
-from .models import Trail
+from .models import Trail, User
 
 
 views = Blueprint('views', __name__)
@@ -62,7 +62,9 @@ def upload_file():
     file_to_upload = request.files['file']
     #if there is a file to upload, then upload to cloudinary
     if file_to_upload:
-      upload_result = cloudinary.uploader.upload(file_to_upload, resource_type="auto")
+      upload_result = cloudinary.uploader.upload(file_to_upload, 
+      aspect_ratio="1:1", background="#262c35", border="2px_solid_rgb:ffA500", 
+      gravity="auto", radius="max", width=1000, crop="fill")
       #could potentially save this image in an image table then associate that image as a relationship to a trail
       return jsonify(upload_result)
 
@@ -91,29 +93,30 @@ def show_feed():
 
 #########################CHARTS####################################################
 
-# @views.route('/charts')
-# def view_charts():
+@views.route('/charts', methods=['GET', 'POST'])
+@login_required
+def view_charts():
+    return render_template('charts.html', user=current_user)
 
-#         return render_template('chart.html', user=user)
+@views.route('/terrain-chart.json')
+@login_required
+def get_trail_type_totals():
 
-# @views.route('/terrain-chart.json')
-# def get_terrain_totals():
+    user = User.query.filter_by(id=current_user.id)
+    trails = list(user.trail)
+    terrain_labels = []
+    terrain_counts = {}
 
-#     if 'user_id' in session:
+    for trail in trails:
+        if trail.terrain not in terrain_labels:
+            terrain_labels.append(trail.terrain)
+        terrain_counts[trail.terrain] = terrain_counts.get(trail.terrain, 0)+1
 
-#         user = crud.get_user_by_id(session['user_id'])
-#         auditions = crud.get_auditions_by_user(user.user_id)
-#         agency_labels = []
-#         audition_counts = {}
+        data = {'labels': terrain_labels, 'values' : list(terrain_counts.values())}
 
-#         for audition in auditions:
-#             if audition.project.agency not in agency_labels:
-#                 agency_labels.append(audition.project.agency)
-#             audition_counts[audition.project.agency] = audition_counts.get(audition.project.agency, 0)+1
+        print(data)
 
-#         data = {'labels': agency_labels, 'values' : list(audition_counts.values())}
-
-#         return jsonify(data)
+        return jsonify(data)
 
 ##############################DELETE##########################################
 

@@ -60,7 +60,7 @@ async function addImage() {
             'location': $('#autocomplete').val(),
             'date': $('#date').val(),
             'difficulty': $('#difficulty').val(),
-            'trail_type': $('#trail_type').val(),
+            'terrain': $('#terrain').val(),
             'miles': $('#miles').val(),
             'hours': $('#hours').val(),
             'minutes': $('#minutes').val(),

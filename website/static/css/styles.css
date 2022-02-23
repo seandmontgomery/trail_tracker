@@ -126,3 +126,7 @@ form {
   background-color: rgb(255, 149, 50);
   color: white;
 }
+
+#cover-image{
+  width: 250px;
+}
