@@ -39,13 +39,15 @@ def upload_trail():
         # Parse your request
         payload = request.json
 
+        # Create a new trail and associate with the current user
         new_trail = Trail(**payload)
+        current_user.trail.append(new_trail)
 
         db.session.add(new_trail)
 
         # Commit the session
         db.session.commit()
-        
+
         # Success!
         flash('Trail added!', category='success')
 
@@ -62,8 +64,8 @@ def upload_file():
     file_to_upload = request.files['file']
     #if there is a file to upload, then upload to cloudinary
     if file_to_upload:
-      upload_result = cloudinary.uploader.upload(file_to_upload, 
-      aspect_ratio="1:1", background="#262c35", border="2px_solid_rgb:ffA500", 
+      upload_result = cloudinary.uploader.upload(file_to_upload,
+      aspect_ratio="1:1", background="#262c35", border="2px_solid_rgb:ffA500",
       gravity="auto", radius="max", width=1000, crop="fill")
       #could potentially save this image in an image table then associate that image as a relationship to a trail
       return jsonify(upload_result)
@@ -98,25 +100,19 @@ def show_feed():
 def view_charts():
     return render_template('charts.html', user=current_user)
 
-@views.route('/terrain-chart.json')
+@views.route('/trail-chart/<string:attribute>.json', methods=['GET'])
 @login_required
-def get_trail_type_totals():
+def get_trail_chart(attribute: str):
 
-    user = User.query.filter_by(id=current_user.id)
-    trails = list(user.trail)
-    terrain_labels = []
-    terrain_counts = {}
+    my_dict = current_user.get_trail_attribute_counts(attribute)
+    data = {
+        'labels': list(my_dict.keys()),
+        'values': list(my_dict.values())
+    }
 
-    for trail in trails:
-        if trail.terrain not in terrain_labels:
-            terrain_labels.append(trail.terrain)
-        terrain_counts[trail.terrain] = terrain_counts.get(trail.terrain, 0)+1
+    return jsonify(data)
 
-        data = {'labels': terrain_labels, 'values' : list(terrain_counts.values())}
 
-        print(data)
-
-        return jsonify(data)
 
 ##############################DELETE##########################################
 

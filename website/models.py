@@ -22,6 +22,34 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String)
     trail = db.relationship('Trail')
 
+    def get_trail_attribute_counts(self, attribute: str) -> dict:
+        """
+        Returns the frequency (count) of trail attributes as a dictionary,
+        suitable for plotting with chart.js
+
+        Args:
+            attribute: an attribute of the trail you want to enumerate
+
+        Ex:
+            >> user.get_trail_attribute_counts('terrain')
+            {'mountain': 1, 'forest': 2}
+        """
+
+        # Make sure the trail has the attribute
+        if not hasattr(Trail, attribute):
+            raise ValueError('must submit a valid Trail attribute')
+
+        my_dict = {}
+
+        for trail in self.trail:
+            key = getattr(trail, attribute)
+            if key not in my_dict:
+                my_dict[key] = 1
+            else:
+                my_dict[key] += 1
+
+        return my_dict
+
 class Trail(db.Model):
 
     __tablename__ = 'trail'

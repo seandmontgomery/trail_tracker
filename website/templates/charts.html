@@ -4,6 +4,9 @@
 
 {% block body %}
 
+
+
+
 <h1>A Chart Should Be Here</h1>
 
 <div class="container-fluid">
@@ -14,7 +17,7 @@
         <div class="col-4">
             <div class="row" id="doughnut-chart-row">
                 <div class="col-12">
-                    <canvas id="typeChart" class="mb-5"></canvas>
+                    <canvas id="terrainChart" class="mb-5"></canvas>
                 </div>
             </div>
         </div>
@@ -22,33 +25,30 @@
 
 
 <script>
-    
-$.get('/terrain-chart.json', (res) => {
 
-    const terrain = res.labels;
-    const terrainCounts = res.values;
-        
+$.get('/trail-chart/terrain.json', {}, (res) => {
+
     let terrainChart = document.getElementById("terrainChart").getContext("2d");
-    let colors = ['#602E51', '#875053', '#B8BEDD', '#4E4C67', '#B28B84',];
-    
+    let colors = ['#602E51', '#875053', '#B8BEDD', '#4E4C67', '#B28B84'];
+
     let chart = new Chart(terrainChart, {
         type: "doughnut",
         data: {
-            labels: terrains,
+            labels: res.labels,
             datasets: [
                 {
                     label: "Terrain",
-                    data: terrainCount,
+                    data: res.values,
                     backgroundColor: colors,
                 }
             ]
         },
         options: {
         }
-            
+
     })
     });
-    
+
 </script>
 
 {%endblock%}
