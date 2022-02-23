@@ -81,7 +81,6 @@ class Trail(db.Model):
         """
         return next(iter(self.image_urls), None)
 
-
 class TrailMedia(db.Model):
 
     __tablename__ = 'trail_media'
@@ -96,3 +95,9 @@ class TrailMedia(db.Model):
     )
     url = db.Column(db.String, comment='cloudinary url (publically accessible link)')
     title = db.Column(db.String, comment='media title')
+
+    def get_photos_by_trail(trail_id):
+    
+        photos = TrailMedia.query.filter(TrailMedia.trail_id == trail_id).all()
+
+        return photos

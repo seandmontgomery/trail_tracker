@@ -9,18 +9,18 @@
         <div class="col d-flex justify-content-center">
     </div>
 
-        <div class="col-4">
-            <div class="row" id="doughnut-chart-row">
-                <div class="col-12">
-                    <canvas id="terrainChart" class="mb-5"></canvas>
-                </div>
-            </div>
-                <div class="row" id="doughnut-chart-row">
-                    <div class="col-12">
-                        <canvas id="difficultyChart" class="mb-5"></canvas>
-                    </div>
-                </div>
+    <div class="row" id="doughnut-chart-row">
+        <div class="col-12">
+            <canvas id="terrainChart" class="mb-5"></canvas>
         </div>
+    </div>
+        <div class="row" id="doughnut-chart-row">
+            <div class="col-12">
+                <canvas id="difficultyChart" class="mb-5"></canvas>
+            </div>
+        </div>
+    </div>
+        
 </div>
 
 
@@ -29,7 +29,7 @@
 $.get('/trail-chart/terrain.json', {}, (res) => {
 
     let terrainChart = document.getElementById("terrainChart").getContext("2d");
-    let colors = ['#602E51', '#875053', '#B8BEDD', '#4E4C67', '#B28B84'];
+    let colors = ['#DD571C', '#FF8400', '#B8BEDD', '#4E4C67', '#B28B84'];
 
     let chart = new Chart(terrainChart, {
         type: "doughnut",
@@ -52,7 +52,7 @@ $.get('/trail-chart/terrain.json', {}, (res) => {
 $.get('/trail-chart/difficulty.json', {}, (res) => {
 
 let terrainChart = document.getElementById("difficultyChart").getContext("2d");
-let colors = ['#602E51', '#875053', '#B8BEDD', '#4E4C67', '#B28B84'];
+let colors = ['#DD571C', '#FF8400', '#FFA500',];
 
 let chart = new Chart(difficultyChart, {
     type: "doughnut",

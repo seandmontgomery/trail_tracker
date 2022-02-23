@@ -29,7 +29,7 @@
                 <p>{{ trail.miles }} Miles {{ trail.hours }} Hours  {{ trail.minutes }} Minutes Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</p>  
                 <p>Notes: {{ trail.notes }}</p>
               </p>
-              <button id="modal-open">Look at your photos</button>
+                <button class="btn" id="photo-album-open" data-trail-id-for-album="{{ trail.id }}">Photo Album</button>
                 <a href="http://maps.google.com/?q={{ trail.location }}" class="btn" id="location-button">Location</a>
               </div>
           </div>
@@ -37,17 +37,6 @@
   </div>
   {% endfor %}
 </div>
-
-<script type=text/javascript src="{{url_for('static', filename='js/search.js') }}"></script>
-<script>
-
-const modalButton = document.querySelector('#modal-open')
-  const onClick = () => {
-  // businss logic here
-  }
-  modalButton.addEventListener('click', onClick);
-  
-  </script>
 
 {% endblock %}
 

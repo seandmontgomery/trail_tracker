@@ -29,6 +29,10 @@ body{
   background-color: black;
 }
 
+.btn {
+	min-width: 100px;
+}
+
 /* ---------------sign up--------------------- */
 
 #sign-in-button{
@@ -107,7 +111,13 @@ form {
 }
 
 #trail-upload{
+  background-color: rgb(110, 110, 110);
+  color: white;
+}
+
+#trail-upload:hover{
   background-color: rgb(255, 149, 50);
+  color: white;
 }
 
 /* ---------------display feed---------------- */
@@ -123,6 +133,21 @@ form {
 }
 
 #location-button{
+  background-color: rgb(110, 110, 110);
+  color: white;
+}
+
+#location-button:hover{
+  background-color: rgb(255, 149, 50);
+  color: white;
+}
+
+#modal-open{
+  background-color: rgb(110, 110, 110);
+  color: white;
+}
+
+#modal-open:hover{
   background-color: rgb(255, 149, 50);
   color: white;
 }
