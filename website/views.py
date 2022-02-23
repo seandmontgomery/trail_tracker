@@ -89,7 +89,7 @@ def cld_optimize():
 @views.route('/feed', methods=['GET', 'POST'])
 @login_required
 def show_feed():
-    trails = Trail.query.all()
+    trails = current_user.trail
     return render_template("feed.html", user=current_user, trails=trails)
 
 
