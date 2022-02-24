@@ -91,6 +91,9 @@ def show_feed():
     trails = current_user.trail
     return render_template("feed.html", user=current_user, trails=trails)
 
+# @views.route('/api/node/<trail_id>')
+#     get_photos_by_trail(trail_id)
+
 #########################CHARTS####################################################
 
 @views.route('/charts', methods=['GET', 'POST'])

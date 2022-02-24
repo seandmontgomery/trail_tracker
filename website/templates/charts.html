@@ -23,35 +23,52 @@
         
 </div>
 
-
 <script>
 
-$.get('/trail-chart/terrain.json', {}, (res) => {
+// $.get('/trail-chart/terrain.json', (res) => {
+//     let terrainChart = document.getElementById("terrainChart").getContext("2d");
+//     let colors = ['#DD571C', '#FF8400', '#B8BEDD', '#4E4C67', '#B28B84', '#4E4C67', '#B28B84'];
 
-    let terrainChart = document.getElementById("terrainChart").getContext("2d");
-    let colors = ['#DD571C', '#FF8400', '#B8BEDD', '#4E4C67', '#B28B84'];
+//     let chart = new Chart(terrainChart, {
+//         type: "bar",
+//         data: {
+//             labels: res.labels,
+//             datasets: [
+//                 {
+//                     label: res.labels,
+//                     data: res.values,
+//                     backgroundColor: colors,
+//                 }
+//             ]
+//         },
+//         options: {
+//             legend: {
+//                 display: true,
+//             },
+//             scales: {
+//                 yAxes: [{
+//                     scaleLabel:{
+//                         display: true,
+//                         labelString: "Number of Trails"},
+//                     ticks: {
+//                         max: 10,
+//                         min: 0,
+//                         stepSize: 1
+//                     }
+//                 }],
+//                 xAxes: [{
+                        
+//                     }
+//                 ]
+//             }
+//         }
+//     })
+// });
 
-    let chart = new Chart(terrainChart, {
-        type: "doughnut",
-        data: {
-            labels: res.labels,
-            datasets: [
-                {
-                    label: "Terrain",
-                    data: res.values,
-                    backgroundColor: colors,
-                }
-            ]
-        },
-        options: {
-        }
-
-    })
-    });
 
 $.get('/trail-chart/difficulty.json', {}, (res) => {
 
-let terrainChart = document.getElementById("difficultyChart").getContext("2d");
+let difficultyChart = document.getElementById("difficultyChart").getContext("2d");
 let colors = ['#DD571C', '#FF8400', '#FFA500',];
 
 let chart = new Chart(difficultyChart, {
@@ -72,7 +89,31 @@ let chart = new Chart(difficultyChart, {
 })
 });
 
+$.get('/trail-chart/terrain.json', {}, (res) => {
+
+        let terrainChart = document.getElementById("terrainChart").getContext("2d");
+        let colors = ['#DD571C', '#FF8400', '#B8BEDD', '#4E4C67', '#B28B84'];
+    
+        let chart = new Chart(terrainChart, {
+            type: "doughnut",
+            data: {
+                labels: res.labels,
+                datasets: [
+                    {
+                        label: "Terrain",
+                        data: res.values,
+                        backgroundColor: colors,
+                    }
+                ]
+            },
+            options: {
+            }
+    
+        })
+        });
+
 </script>
 
 {%endblock%}
+
 {%endblock%}

@@ -33,6 +33,26 @@ body{
 	min-width: 100px;
 }
 
+#welcome-log-in-button{
+  background-color: rgb(110, 110, 110);
+  color: white;
+}
+
+#welcome-log-in-button:hover{
+  background-color: rgb(255, 149, 50);
+  color: white;
+}
+
+#welcome-sign-up-button{
+  background-color: rgb(110, 110, 110);
+  color: white;
+}
+
+#welcome-sign-up-button:hover{
+  background-color: rgb(255, 149, 50);
+  color: white;
+}
+
 /* ---------------sign up--------------------- */
 
 #sign-in-button{
@@ -142,12 +162,12 @@ form {
   color: white;
 }
 
-#modal-open{
+#photo-album-open{
   background-color: rgb(110, 110, 110);
   color: white;
 }
 
-#modal-open:hover{
+#photo-album-open:hover{
   background-color: rgb(255, 149, 50);
   color: white;
 }

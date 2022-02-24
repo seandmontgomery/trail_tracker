@@ -2,16 +2,18 @@
 
 {% block content %}
 
+{% block nav %} {% endblock %}
+
 {% block body %}
 <div class="container d-flex flex-column justify-content-center align-items-center vh-100">
     <div id="black-overlay" class="position-absolute h-100 w-100"></div>
     <img src="static/images/trail-tracker-logo.png" style="height:500px">
       <div class="row">
           <div class="col-12 col-lg-6">
-              <button type="button" class="btn btn-primary">Log In</button>
+              <button href="/login" type="button" id="welcome-log-in-button" class="btn">Log In</button>
           </div>
           <div class="col-12 col-lg-6">
-              <button type="button" class="btn btn-secondary">Sign Up</button>
+              <button type="button" id="welcome-sign-up-button" class="btn">Sign Up</button>
           </div>
       </div>
   

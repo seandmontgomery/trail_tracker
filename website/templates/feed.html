@@ -30,6 +30,7 @@
                 <p>Notes: {{ trail.notes }}</p>
               </p>
                 <button class="btn" id="photo-album-open" data-trail-id-for-album="{{ trail.id }}">Photo Album</button>
+                <a data-fslightbox="gallery" href="{{ trail.cover_image }}">Image</a>
                 <a href="http://maps.google.com/?q={{ trail.location }}" class="btn" id="location-button">Location</a>
               </div>
           </div>
@@ -37,6 +38,8 @@
   </div>
   {% endfor %}
 </div>
+
+
 
 {% endblock %}
 
