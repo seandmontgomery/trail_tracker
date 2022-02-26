@@ -13,7 +13,7 @@ from cloudinary.utils import cloudinary_url
 
 from . import db
 from . import cloud_name, cloud_api_key, cloud_api_secret
-from .models import Trail, User
+from .models import Trail, User, TrailMedia
 
 views = Blueprint('views', __name__)
 
@@ -22,7 +22,7 @@ views = Blueprint('views', __name__)
 @views.route('/')
 @login_required
 def home():
-    return render_template("input.html", user=current_user)
+    return render_template("upload.html", user=current_user)
 
 @views.route('/welcome')
 def welcome():
@@ -63,9 +63,7 @@ def upload_file():
     file_to_upload = request.files['file']
     #if there is a file to upload, then upload to cloudinary
     if file_to_upload:
-      upload_result = cloudinary.uploader.upload(file_to_upload,
-      aspect_ratio="1:1", background="#1d1d1d", border="3px_solid_rgb:ffA500",
-      gravity="auto", radius="max", width=1000, crop="fill")
+      upload_result = cloudinary.uploader.upload(file_to_upload)
       #could potentially save this image in an image table then associate that image as a relationship to a trail
       return jsonify(upload_result)
 
@@ -91,8 +89,12 @@ def show_feed():
     trails = current_user.trail
     return render_template("feed.html", user=current_user, trails=trails)
 
-# @views.route('/api/node/<trail_id>')
-#     get_photos_by_trail(trail_id)
+@views.route('/api/node/<string:trail_id>')
+def show_photo_album(trail_id):
+    # payload = request.json
+    trail = Trail.query.get(trail_id)
+    photo_array = [{'title': x.title, 'url': x.url} for x in trail.images]
+    return make_response(jsonify({'photo_array':photo_array}))
 
 #########################CHARTS####################################################
 
@@ -110,18 +112,13 @@ def get_trail_chart(attribute: str):
         'labels': list(my_dict.keys()),
         'values': list(my_dict.values())
     }
-
     return jsonify(data)
 
 ##############################DELETE##########################################
 
 @views.route('/delete-trail', methods=['POST'])
 def delete_trail():
-    trail = json.loads(request.data)
-    trailId = trail['trailId']
     trail =Trail.query.get(trailId)
-    if trail:
-        if trail.user_id == current_user.id:
-            db.session.delete(trail)
-            db.session.commit()
+    current_user.trails.remove(trail)
+    db.session.commit()
     return jsonify({})

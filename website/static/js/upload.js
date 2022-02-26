@@ -1,3 +1,17 @@
+const listAddButton = $('#add-media')
+let click_counter = 0
+  const addItem = () => {
+      click_counter++
+      $('#list').append(`<li class="add-media">
+      <input type="text" class="form-control media-input" id="media-title-${click_counter}" name="media-title" placeholder="Media Title"/>
+      <div id="media-uploader">
+        <label class="custom-file-upload">
+        <input type="file" id="media-files-${click_counter}" name="filesToUpload[]" multiple>
+        </label>
+      </div></li>`)
+  }
+listAddButton.on('click', addItem)
+
 /*
   The following function manages interactions
   between Trail Tracker's UI and backend, namely,

@@ -51,7 +51,25 @@ class User(db.Model, UserMixin):
         return my_dict
 
 class Trail(db.Model):
+    """
+    To access images for a specific trail - you can 
+    do it in the following ways:
 
+        1. Just get the URL attribute for each image, 
+            as an array of URLS.
+
+            >> trail.image_urls
+            ['url_1', 'url_2']
+        
+        2. Create an array of dictionaries of 
+            spcified attributes for each image
+
+            >> [{'title': x.title, 'url': x.url} for x in trail.images]
+            [
+                {'title': 'title_1', 'url': 'url_1'}, 
+                {'title': 'title_2', 'url': 'url_2'}
+            ]
+    """
     __tablename__ = 'trail'
 
     id = db.Column(db.Integer, primary_key=True)

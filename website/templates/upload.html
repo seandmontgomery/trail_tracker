@@ -25,9 +25,9 @@
 
   <select name="difficulty" id="difficulty" class="form-select">
     <option selected>Difficulty Level</option>
-    <option value="hard">Hard</option>
-    <option value="medium">Medium</option>
-    <option value="easy">Easy</option>
+    <option value="advanced">Advanced</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="beginner">Beginner</option>
   </select>
 
   <span class="input-group-btn" style="width:10px;"></span>
@@ -60,8 +60,6 @@
       <div class="form-group row">
         <textarea class="md-textarea form-control" id="notes" name="notes" placeholder="Notes" rows="5"></textarea>
       </div>
-      
-      <p>Upload Cover Photo<p>
 
       <div class="form-group-row" id="photo-upload">
         <input type="file" id="image_url" name="Upload Photo">
@@ -78,24 +76,5 @@
       <div align="center">
         <button type="submit" class="btn" id="trail-upload">Submit Trail</button>
       </div>
-
-<script>
-    const listAddButton = $('#add-media')
-    let click_counter = 0
-      const addItem = () => {
-          click_counter++
-          $('#list').append(`<li class="add-media">
-          <input type="text" class="form-control media-input" id="media-title-${click_counter}" name="media-title" placeholder="Media Title"/>
-          <div id="media-uploader">
-            <label class="custom-file-upload">
-            <input type="file" id="media-files-${click_counter}" name="filesToUpload[]" multiple>
-            </label>
-          </div></li>`)
-      }
-    listAddButton.on('click', addItem)
-</script>
-
-<script type=text/javascript src="{{url_for('static', filename='js/maps.js') }}"></script>
-<script type=text/javascript src="{{url_for('static', filename='js/upload.js') }}"></script>
 
 {% endblock %}
