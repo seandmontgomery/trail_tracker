@@ -98,7 +98,7 @@ body{
 /* ----------------trail upload---------------- */
 
 #upload-trail-form {
-  width: 100%;
+  width: 90%;
   padding-right: 75px;
   padding-left: 75px;
   margin-right: auto;
@@ -241,4 +241,27 @@ p {
 #card-contents {
     margin-top: 100px;
     margin-bottom: 0px;
+}
+
+.card-wrapper {
+  width: 30%;
+  display:inline-block;
+  height: 300px;
+  background: url('https://www.ukvetsonline.co.uk/sites/default/files/230/kitten_on_fence_0.jpg');
+  background-size:cover;
+  position: relative;
+}
+.card-text-wrapper{ 
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(225,225,225,.7);
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.hide {
+  display: none;
+}
+.show {
+  display:block;
 }
