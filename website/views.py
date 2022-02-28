@@ -87,7 +87,7 @@ def upload_file():
 @login_required
 def show_feed():
     trails = current_user.trail
-    return render_template("feed.html", user=current_user, trails=trails)
+    return render_template("feed2.html", user=current_user, trails=trails)
 
 @views.route('/api/node/<string:trail_id>')
 def show_photo_album(trail_id):

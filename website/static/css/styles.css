@@ -6,6 +6,10 @@ input:focus, textarea:focus, select:focus{
 /* --------website-------- */
 * {
   font-family: 'Roboto', sans-serif;
+  /* font-family: 'Bebas Neue', cursive; */
+  /* font-family: 'Shadows Into Light', cursive; */
+  /* font-family: 'Amatic SC', cursive; */
+  /* font-family: 'Teko', sans-serif; */
 }
 
 body{
@@ -34,8 +38,8 @@ body{
 }
 
 #welcome-log-in-button{
-  background-color: rgb(110, 110, 110);
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 #welcome-log-in-button:hover{
@@ -44,8 +48,8 @@ body{
 }
 
 #welcome-sign-up-button{
-  background-color: rgb(110, 110, 110);
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 #welcome-sign-up-button:hover{
@@ -55,12 +59,12 @@ body{
 
 /* ---------------sign up--------------------- */
 
-#sign-in-button{
-  background-color: rgb(110, 110, 110);
-  color: white;
+#sign-up-button{
+  background-color: white;
+  color: black;
 }
 
-#sign-in-button:hover{
+#sign-up-button:hover{
   background-color: rgb(255, 149, 50);
   color: white;
 }
@@ -77,8 +81,8 @@ body{
 /* -----------------log in--------------------- */
 
 #login-button{
-  background-color: rgb(110, 110, 110);
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 #login-button:hover{
@@ -96,6 +100,31 @@ body{
 }
 
 /* ----------------trail upload---------------- */
+
+.form-control{
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+
+.form-select{
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+
+#miles{
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+
+#hours{
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+
+#minutes{
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
 
 #upload-trail-form {
   width: 90%;
@@ -131,7 +160,7 @@ form {
 }
 
 #trail-upload{
-  background-color: rgb(110, 110, 110);
+  background-color: rgb(65, 65, 65);
   color: white;
 }
 
@@ -140,41 +169,34 @@ form {
   color: white;
 }
 
-/* ---------------display feed---------------- */
-
-#card{
-  background-color: rgb(29, 29, 29);
-  margin-top: 25px;
+#add-media{
+  background-color: rgb(65, 65, 65);
   color: white;
 }
 
-.card-title{
-  color: white;
-}
-
-#location-button{
-  background-color: rgb(110, 110, 110);
-  color: white;
-}
-
-#location-button:hover{
+#add-media:hover{
   background-color: rgb(255, 149, 50);
   color: white;
 }
 
-#photo-album-open{
-  background-color: rgb(110, 110, 110);
+/* ---------------display feed buttons---------------- */
+
+
+#notes-button{
+  background-color: rgb(65, 65, 65);
   color: white;
+  font-size: small;
 }
 
-#photo-album-open:hover{
+#notes-button:hover{
   background-color: rgb(255, 149, 50);
   color: white;
 }
 
 #photo-album-button{
-  background-color: rgb(110, 110, 110);
+  background-color: rgb(65, 65, 65);
   color: white;
+  font-size: small;
 }
 
 #photo-album-button:hover{
@@ -182,17 +204,50 @@ form {
   color: white;
 }
 
-#cover-image{
-  width: 250px;
+/* ------------display feed trail cards--------------------- */
+#searchBar{
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+#trail-card{
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+
+#card-list{
+  background-color: black;
+  color: white;
+}
+
+.list-group-item{
+  background-color: rgb(65, 65, 65);
+  color: white;
+}
+
+#location-link{
+  background-color: rgb(65, 65, 65);
+  color: white;
+  font-size: small;
+}
+
+#location-link:hover{
+  background-color: rgb(255, 149, 50);
+  color: white;
+}
+
+#modal-body{
+  color: black;
+}
+
+#modal-header{
+  color: black;
 }
 
 /* ------------card flip feature--------------------- */
 
 .flip-card {
   background-color: transparent;
-  width: 450px;
   height: 450px;
-  perspective: 1000px;
 }
 
 .flip-card-inner {
@@ -224,6 +279,12 @@ form {
   color: rgb(255, 255, 255);
 }
 
+.flip-card-front img {
+	object-fit: cover;
+	height:100%;
+	width: 100%;
+}
+
 .flip-card-back {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
@@ -238,11 +299,6 @@ p {
   font-size: large;
 }
 
-#card-contents {
-    margin-top: 100px;
-    margin-bottom: 0px;
-}
-
 .card-wrapper {
   width: 30%;
   display:inline-block;
@@ -254,14 +310,25 @@ p {
 .card-text-wrapper{ 
   position: absolute;
   bottom: 0;
+  left: 0;
   background-color: rgba(225,225,225,.7);
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
 }
+
+.card-text-wrapper.expanded {
+	max-height: 100%;
+}
+
+.card-contents{
+  height: 653px;
+}
+
 .hide {
   display: none;
 }
+
 .show {
   display:block;
 }

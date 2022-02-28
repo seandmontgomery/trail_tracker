@@ -14,24 +14,21 @@
 
 <div class="row">
   {% for trail in trails %}
-  <div class="column">
+  <div class="col-12 col-md-6 col-lg-4">
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <img src="{{ trail.cover_image }}" alt="Image goes here" style="width:450px;height:450px;">
         </div>
         <div class="flip-card-back">
-          <div id="card-contents">
+          <div class="p-3 overflow-auto" id="card-contents">
             <h1>{{ trail.trail_name }}</h1>
             <p>{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
             <p>{{ trail.location }}</p>
             <p>Difficulty: {{ trail.difficulty.title() }}  Trail Type: {{ trail.terrain.title() }}</p>
             <p>{{ trail.miles }} Miles {{ trail.hours }} Hours  {{ trail.minutes }} Minutes Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</p>  
             <a href="http://maps.google.com/?q={{ trail.location }}" class="btn" id="location-button">Location</a>
-            <div class='card-text-wrapper'>
-              <p>Notes</p>
-              <p class='card-text hide overflow-auto'>{{ trail.notes }}</p>
-            </div>
+            <p>{{ trail.notes }}</p>
           </div>
         </div>
       </div>   
@@ -43,3 +40,28 @@
 {% endblock %}
 
 {% endblock %}
+
+
+         
+            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+              Notes
+            </button>
+
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">{{ trail.trail_name }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>{{ trail.notes }}</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->

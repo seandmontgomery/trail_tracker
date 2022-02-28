@@ -1,0 +1,85 @@
+{% extends 'base.html' %} {% block title %}Feed{% endblock %}
+
+{% block content %}
+
+{% block body %}
+
+<form>
+  <div class="form-group">
+    <div id="card-top" class="row justify-content-center">
+      <input type="text" class="form-control search-bar" name="searchBar" id="searchBar" placeholder="Search" />
+    </div>
+  </div>
+</form>
+
+<div class="row" class="d-flex justify-content-between">
+{% for trail in trails %}
+<div class="card" id="trail-card" style="width: 23.3rem;">
+    <img class="card-img-top" src="{{ trail.cover_image }}" alt="Card image cap">
+    <div class="card-body">
+      <h3 class="card-title">{{ trail.trail_name }}</h3>
+      <p class="card-text">{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
+      <a href="http://maps.google.com/?q={{ trail.location }}" id="location-link" class="btn">{{ trail.location}}</a>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Difficulty: {{ trail.difficulty.title() }}</li>
+      <li class="list-group-item">Trail Type: {{ trail.terrain.title() }}</li>
+      <li class="list-group-item">{{ trail.miles }} Miles | {{ trail.hours }} Hr | {{ trail.minutes }} Min  </li>
+      <li class="list-group-item">Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</li>
+    </ul>
+    <div class="card-body">
+        
+        <!--Bootstrap Notes Modal Button -->
+        <button type="button" 
+                class="btn"
+                id="notes-button"
+                data-toggle="modal" 
+                data-target="#notesModal">
+            Notes
+        </button>
+
+        <button type="button" class="btn" id="photo-album-button">Photo Album</button>
+  
+        <!--Bootstrap Notes Modal -->
+        <div class="modal fade" 
+             id="notesModal"
+             tabindex="-1" 
+             role="dialog"
+             aria-labelledby="notesModalLabel" 
+             aria-hidden="true">
+            <div class="modal-dialog" 
+                 role="document">
+                <div class="modal-content">
+                    <!-- Modal heading -->
+                    <div class="modal-header" id="modal-header">
+                        <h5 class="modal-title" 
+                            id="notesModalLabel">
+                            {{ trail.trail_name }} Notes
+                      </h5>
+                        <button type="button" 
+                                class="close"
+                                data-dismiss="modal" 
+                                aria-label="Close">
+                            <span aria-hidden="true">
+                              ×
+                          </span>
+                        </button>
+                    </div>
+  
+                    <!-- Bootstrap Notes Modal Body-->
+                    <div class="modal-body" id="modal-body">
+                        <!-- <img src="{{ trail.cover_image }}" width="300" height="200"/> -->
+                        <p>{{ trail.notes }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+
+{% endblock %}
+
+{% endblock %}

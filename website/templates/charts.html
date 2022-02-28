@@ -4,27 +4,17 @@
 
 {% block body %}
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-    </div>
-    
-    <div class="chart-container h-100 w-100 border" style="background-color: white">
-        <div class="row" id="doughnut-chart-row">
-            <div class="col-12 col-md-6">
-                <canvas id="terrainChart" class="mb-5"></canvas>
-            </div>
-        </div>
-            <div class="row" id="doughnut-chart-row">
-                <div class="col-12 col-md-6">
-                    <canvas id="difficultyChart" class="mb-5"></canvas>
-                </div>
-            </div>
-        </div>
+<div class="chart-container" style="background-color: white">
+    <div class="row" id="doughnut-chart-row">
+        <canvas id="terrainChart"></canvas>
+        <canvas id="difficultyChart"></canvas>
     </div>
 </div>
 
+<!-- Javascript for the charts -->
+
 <script>
+
 $.get('/trail-chart/terrain.json', {}, (res) => {
 
 let terrainChart = document.getElementById("terrainChart").getContext("2d");

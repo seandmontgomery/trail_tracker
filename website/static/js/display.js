@@ -14,6 +14,10 @@ function clickToExapndCards($obj){
   
 };
 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
 const photoAlbumDropdown = document.getElementById('album-dropdown');
 
 photoAlbumDropdown.addEventListener('click', function() {
