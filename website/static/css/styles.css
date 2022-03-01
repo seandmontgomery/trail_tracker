@@ -1,9 +1,10 @@
-/* -------overrides accessibility features----- */
+/* -----------overrides accessibility features -------------- */
 input:focus, textarea:focus, select:focus{
   outline: none;
 }
 
-/* --------website-------- */
+/* ------------------website -------------------- */
+
 * {
   font-family: 'Roboto', sans-serif;
   /* font-family: 'Bebas Neue', cursive; */
@@ -24,17 +25,13 @@ body{
   color: rgb(255, 149, 50);
 }
 
-/* ---------------welcome page-------------- */
+/*  -----------------welcome page----------------- */
 
 #black-overlay {
   top: 0;
   left: 0;
   z-index: -1;
   background-color: black;
-}
-
-.btn {
-	min-width: 100px;
 }
 
 #welcome-log-in-button{
@@ -57,7 +54,16 @@ body{
   color: white;
 }
 
-/* ---------------sign up--------------------- */
+/*  --------------------sign up------------------------ */
+
+#sign-up-form {
+  width: 100%;
+  padding-right: 300px;
+  padding-left: 300px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 #sign-up-button{
   background-color: white;
@@ -69,7 +75,9 @@ body{
   color: white;
 }
 
-#sign-up-form {
+/* --------------------log in --------------------------- */
+
+#log-in-form {
   width: 100%;
   padding-right: 300px;
   padding-left: 300px;
@@ -77,8 +85,6 @@ body{
   margin-right: auto;
   margin-left: auto;
 }
-
-/* -----------------log in--------------------- */
 
 #login-button{
   background-color: white;
@@ -90,41 +96,7 @@ body{
   color: white;
 }
 
-#log-in-form {
-  width: 100%;
-  padding-right: 300px;
-  padding-left: 300px;
-  margin-top: 0;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* ----------------trail upload---------------- */
-
-.form-control{
-  background-color: rgb(53, 53, 53);
-  color: white;
-}
-
-.form-select{
-    background-color: rgb(53, 53, 53);
-    color: white;
-}
-
-#miles{
-  background-color: rgb(53, 53, 53);
-  color: white;
-}
-
-#hours{
-  background-color: rgb(53, 53, 53);
-  color: white;
-}
-
-#minutes{
-  background-color: rgb(53, 53, 53);
-  color: white;
-}
+/* ---------------------trail upload-------------------- */
 
 #upload-trail-form {
   width: 90%;
@@ -143,12 +115,39 @@ form {
   color: white;
 }
 
-#notes{
-  margin-top: 1em;
+.form-control{
+  background-color: rgb(43, 43, 43);
+  color: white;
 }
 
-#track-trail{
-  color: rgb(255, 149, 50);
+.form-select{
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
+
+#terrain {
+  width: 25%;
+  margin: 20px auto;
+  font-size: 1.2rem;
+  }
+
+#miles{
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#hours{
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#minutes{
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#notes{
+  margin-top: 1em;
 }
 
 #stats{
@@ -182,7 +181,6 @@ form {
 #cover-photo-button{
   background-color: rgb(65, 65, 65);
   color: white;
-  width: 100%;
   font-size: 1rem;
 }
 
@@ -194,24 +192,23 @@ form {
 #media-uploader input[type="file"] {
   padding:0;
   margin-left: 0px;
-  /* display: none; */
   color:white;
-  font-size: 1.2rem;
-  }
+  font-size: 1rem;
+}
 
 .media-btn {
   margin-left: -14px;
   margin-top:-5px;
   color: #455357;
   font-size: 1.2rem;
-  }
+}
   
 .add-media {
   margin: 12px;
   width: 100%;
   color: white;
   font-size: 1.2rem;
-  }
+}
   
 .media-input{
   font-size: 1.2rem;
@@ -220,7 +217,7 @@ form {
 .mediatitle-btn{
   border-radius: 25px;
   font-size: 1.2rem;
-  }
+}
           
 #list {
   list-style: none;
@@ -228,10 +225,42 @@ form {
   margin-left: -26px;
   color: white;
   font-size: 1.2rem;
-  }
+}
 
-/* ---------------display feed buttons---------------- */
+/* ----------------------display feed------------------------ */
 
+#searchBar{
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+#trail-card{
+  background-color: rgb(53, 53, 53);
+  color: white;
+}
+
+.list-group-item{
+  background-color: rgb(48, 48, 48);
+  color: white;
+}
+
+#location-link{
+  background-color: rgb(48, 48, 48);
+  color: white;
+  font-size: small;
+}
+
+#location-link:hover{
+  background-color: rgb(255, 149, 50);
+  color: white;
+}
+
+#modal-body{
+  color: black;
+}
+
+#modal-header{
+  color: black;
+}
 
 #notes-button{
   background-color: rgb(65, 65, 65);
@@ -255,42 +284,10 @@ form {
   color: white;
 }
 
+/* ---------------charts-------------- */
 
-/* ------------display feed trail cards--------------------- */
-#searchBar{
-  background-color: rgb(53, 53, 53);
-  color: white;
-}
-#trail-card{
-  background-color: rgb(53, 53, 53);
-  color: white;
-}
-
-#card-list{
-  background-color: black;
-  color: white;
-}
-
-.list-group-item{
-  background-color: rgb(65, 65, 65);
-  color: white;
-}
-
-#location-link{
-  background-color: rgb(65, 65, 65);
-  color: white;
-  font-size: small;
-}
-
-#location-link:hover{
-  background-color: rgb(255, 149, 50);
-  color: white;
-}
-
-#modal-body{
-  color: black;
-}
-
-#modal-header{
-  color: black;
+.chart-container{
+  border-radius: 30px;
+  margin-right: 21px;
+  margin-left: 0px;
 }

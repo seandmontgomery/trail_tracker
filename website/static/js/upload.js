@@ -1,3 +1,5 @@
+// FEATURE FOR ADDING ADDITIONAL MEDIA
+
 const listAddButton = $('#add-media')
 let click_counter = 0
   const addItem = () => {
@@ -12,17 +14,14 @@ let click_counter = 0
   }
 listAddButton.on('click', addItem)
 
-document.getElementById('cover-photo-button').addEventListener('click', openDialog);
+// BUTTON FEATURE FOR COVER PHOTO UPLOAD
 
+document.getElementById('cover-photo-button').addEventListener('click', openDialog);
 function openDialog() {
   document.getElementById('image_url').click();
 }
 
-// const coverPhoto = $('#upload-cover-photo')
-//   const addCoverPhoto = () => {
-//   (`<input type="file" id="image_url" name="Upload Photo"></input>`).show
-//   }
-// coverPhoto.on('click', addCoverPhoto)
+// UPLOAD ----------------------------------------------------------------
 
 /*
   The following function manages interactions
