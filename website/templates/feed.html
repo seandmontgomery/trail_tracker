@@ -28,56 +28,82 @@
       <li class="list-group-item">Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</li>
     </ul>
 
-    <!-- Open Photo Album Button -->
-
-    <a class="btn" id="photo-album-open" data-trail-id-for-album="{{ trail.id }}">Photo Album</a>
-
-    <div class="modal fade" 
-             id="photoModal"
-             tabindex="-1" 
-             role="dialog"
-             aria-labelledby="photoModalLabel" 
-             aria-hidden="true">
-            <div class="modal-dialog" 
-                 role="document">
-                <div class="modal-content">
-                  <div class="modal-body" id="modal-body">
-
-    <!-- Photo Carousel -->
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-          </div>
-
-      <!-- Scroll Buttons -->
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+      <div class="row mb-4">
+        <div class="col text-center">
+          <a href="#" class="btn" data-toggle="modal" data-target="#largeModal" id="photo-album-open" data-trail-id-for-album="{{ trail.id }}">Photo Album</a>
         </div>
       </div>
-    </div>
-  </div>
-</div>
     
+      <!-- modal -->
+      <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-body">
+               
+              <!-- carousel -->
+              <div
+                   id='carouselExampleIndicators'
+                   class='carousel slide'
+                   data-ride='carousel'
+                   >
+                <ol class='carousel-indicators'>
+                  <li
+                      data-target='#carouselExampleIndicators'
+                      data-slide-to='0'
+                      class='active'
+                      ></li>
+                  <li
+                      data-target='#carouselExampleIndicators'
+                      data-slide-to='1'
+                      ></li>
+                  <li
+                      data-target='#carouselExampleIndicators'
+                      data-slide-to='2'
+                      ></li>
+                </ol>
+                <div class='carousel-inner'>
+                </div>
+                <a
+                   class='carousel-control-prev'
+                   href='#carouselExampleIndicators'
+                   role='button'
+                   data-slide='prev'
+                   >
+                  <span class='carousel-control-prev-icon'
+                        aria-hidden='true'
+                        ></span>
+                  <span class='sr-only'>Previous</span>
+                </a>
+                <a
+                   class='carousel-control-next'
+                   href='#carouselExampleIndicators'
+                   role='button'
+                   data-slide='next'
+                   >
+                  <span
+                        class='carousel-control-next-icon'
+                        aria-hidden='true'
+                        ></span>
+                  <span class='sr-only'>Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <!-- Button for Bootstrap Notes Modal -->
-    <div class="card-body">
+    <!-- <div class="card-body">
         <button type="button" 
                 class="btn"
                 data-modal="{{ trail.id }}"
                 data-toggle="modal" 
                 data-target="#notesModal">
             Notes
-        </button>
+        </button> -->
     </div>
   </div>
 {% endfor %}
 </div>
-
-
 {% endblock %}
-
 {% endblock %}
