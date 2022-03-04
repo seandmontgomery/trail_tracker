@@ -100,6 +100,40 @@
 
 <div class="container">{% block content %} {% endblock %}</div>
 
+<div class="modal fade" 
+             id="notesModal"
+             tabindex="-1" 
+             role="dialog"
+             aria-labelledby="notesModalLabel" 
+             aria-hidden="true">
+            <div class="modal-dialog" 
+                 role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header" id="modal-header">
+                        <h5 class="modal-title" 
+                            id="notesModalLabel">
+
+                      </h5>
+                        <button type="button" 
+                                class="close"
+                                data-dismiss="modal" 
+                                aria-label="Close">
+                            <span aria-hidden="true">
+                              ×
+                          </span>
+                        </button>
+                    </div>
+  
+
+                    <div class="modal-body" id="modal-body">
+                        <p>These are the notes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -111,6 +145,7 @@
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
   crossorigin="anonymous"
 ></script>
+
 
 <!-- JS Files -->
 <script type=text/javascript src="{{url_for('static', filename='js/upload.js') }}"></script>

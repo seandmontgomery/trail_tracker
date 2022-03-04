@@ -233,6 +233,7 @@ form {
   background-color: rgb(53, 53, 53);
   color: white;
 }
+
 #trail-card{
   background-color: rgb(53, 53, 53);
   color: white;
@@ -262,6 +263,16 @@ form {
   color: black;
 }
 
+.btn {
+  background-color: rgb(65, 65, 65);
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(255, 149, 50);
+  color: white;
+}
+
 #notes-button{
   background-color: rgb(65, 65, 65);
   color: white;
@@ -269,17 +280,6 @@ form {
 }
 
 #notes-button:hover{
-  background-color: rgb(255, 149, 50);
-  color: white;
-}
-
-#photo-album-button{
-  background-color: rgb(65, 65, 65);
-  color: white;
-  font-size: small;
-}
-
-#photo-album-button:hover{
   background-color: rgb(255, 149, 50);
   color: white;
 }

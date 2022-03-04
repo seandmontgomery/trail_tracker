@@ -13,6 +13,8 @@ from sqlalchemy.ext.hybrid import hybrid_property
 
 from . import db
 
+######################USER###################################
+
 class User(db.Model, UserMixin):
     __tablename__ = 'user'
 
@@ -35,7 +37,8 @@ class User(db.Model, UserMixin):
             {'mountain': 1, 'forest': 2}
         """
 
-        # Make sure the trail has the attribute
+        #Make sure the trail has the attribute
+
         if not hasattr(Trail, attribute):
             raise ValueError('must submit a valid Trail attribute')
 
@@ -49,6 +52,8 @@ class User(db.Model, UserMixin):
                 my_dict[key] += 1
 
         return my_dict
+
+######################TRAIL################################### 
 
 class Trail(db.Model):
     """
@@ -98,6 +103,8 @@ class Trail(db.Model):
         Returns cover image as a calculated attribute
         """
         return next(iter(self.image_urls), None)
+
+######################TRAIL MEDIA################################### 
 
 class TrailMedia(db.Model):
 

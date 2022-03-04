@@ -82,6 +82,17 @@ def show_photo_album(trail_id):
     photo_array = [{'title': x.title, 'url': x.url} for x in trail.images]
     return make_response(jsonify({'photo_array':photo_array}))
 
+@views.route('/api/notes-modal/<string:trail_id>')
+def get_modal_info(trail_id):
+    # payload = request.json
+    print('!!!!!!')
+    print(trail_id)
+    trail = Trail.query.get(trail_id)
+    notes_data = {'title': trail.trail_name, 'notes': trail.notes}
+    print('!!!!!!')
+    print('notes_data')
+    return make_response(jsonify({'notes_data':notes_data}))
+
 #########################CHARTS####################################################
 
 @views.route('/charts', methods=['GET', 'POST'])
