@@ -14,13 +14,13 @@
 
 <div class="row d-flex justify-content-between">
   {% for trail in trails %}
-  <div class="card" id="trail-card" style="width: 23.3rem;">
+  <div class="card column d-flex justify-content-between" id="trail-card" style="width: 23.3rem;">
       <img class="card-img-top" src="{{ trail.cover_image }}" alt="Card image cap">
         <div class="card-body">
           <h3 class="card-title">{{ trail.trail_name }}</h3>
           <p class="card-text">{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
-            <div>
-              <button type="button" class="btn" href="http://maps.google.com/?q={{ trail.location }}" id="location-link">{{ trail.location}}</button>
+            <div> 
+              <a class="btn" href="http://maps.google.com/?q={{ trail.location }}" id="location-link">{{ trail.location }}</a>
             </div>
               <div>
                 <button type="button" id="photo-modal-btn" class="photo-album-open btn" data-toggle="modal" data-target="#photoModal" data-trail-id-for-album="{{ trail.id }}">Photo Album</button>

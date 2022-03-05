@@ -128,7 +128,7 @@ form {
 #terrain {
   width: 25%;
   margin: 20px auto;
-  font-size: 1.2rem;
+  font-size: medium;
   }
 
 #miles{
@@ -193,30 +193,30 @@ form {
   padding:0;
   margin-left: 0px;
   color:white;
-  font-size: 1rem;
+  font-size: medium;
 }
 
 .media-btn {
   margin-left: -14px;
   margin-top:-5px;
   color: #455357;
-  font-size: 1.2rem;
+  font-size: medium;
 }
   
 .add-media {
   margin: 12px;
   width: 100%;
   color: white;
-  font-size: 1.2rem;
+  font-size: medium;
 }
   
 .media-input{
-  font-size: 1.2rem;
+  font-size: medium;
 }
         
 .mediatitle-btn{
   border-radius: 25px;
-  font-size: 1.2rem;
+  font-size: medium;
 }
           
 #list {
@@ -224,7 +224,7 @@ form {
   padding-left: 0;
   margin-left: -26px;
   color: white;
-  font-size: 1.2rem;
+  font-size: medium;
 }
 
 /* ----------------------display feed------------------------ */

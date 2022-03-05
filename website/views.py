@@ -75,14 +75,14 @@ def show_feed():
     trails = current_user.trail
     return render_template("feed.html", user=current_user, trails=trails)
 
-@views.route('/api/node/<string:trail_id>')
+#PHOTO MODAL
+@views.route('/api/photo-modal/<string:trail_id>')
 def show_photo_album(trail_id):
-    # payload = request.json
     trail = Trail.query.get(trail_id)
     photo_array = [{'title': x.title, 'url': x.url} for x in trail.images]
-    print(photo_array)
     return make_response(jsonify({'photo_array':photo_array}))
 
+#NOTES MODAL
 @views.route('/api/notes-modal/<string:trail_id>')
 def get_modal_info(trail_id):
     trail = Trail.query.get(trail_id)

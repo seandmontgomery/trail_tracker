@@ -28,7 +28,7 @@
 $.get('/trail-chart/terrain.json', {}, (res) => {
 
 let terrainChart = document.getElementById("terrainChart").getContext("2d");
-let colors = ['#DD571C', '#FF8400', '#B8BEDD', '#4E4C67', '#B28B84'];
+let colors = ['#0047AB', '#4169E1', '#007FFF', '#6495ED', '#89CFF0'];
 
 let chart = new Chart(terrainChart, {
     type: "doughnut",
@@ -52,7 +52,7 @@ let chart = new Chart(terrainChart, {
 $.get('/trail-chart/difficulty.json', {}, (res) => {
 
 let difficultyChart = document.getElementById("difficultyChart").getContext("2d");
-let colors = ['#DD571C', '#FF8400', '#FFA500',];
+let colors = ['#32CD32', '#138808', '#98FF98',];
 
 let chart = new Chart(difficultyChart, {
     type: "doughnut",
