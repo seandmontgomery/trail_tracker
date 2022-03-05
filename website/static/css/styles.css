@@ -247,10 +247,32 @@ form {
 #location-link{
   background-color: rgb(48, 48, 48);
   color: white;
-  font-size: small;
+  font-size: medium;
 }
 
 #location-link:hover{
+  background-color: rgb(15, 184, 0);
+  color: white;
+}
+
+#notes-modal-btn{
+  background-color: rgb(48, 48, 48);
+  color: white;
+  font-size: medium;
+}
+
+#notes-modal-btn:hover{
+  background-color: rgb(15, 184, 0);
+  color: white;
+}
+
+#photo-modal-btn{
+  background-color: rgb(48, 48, 48);
+  color: white;
+  font-size: medium;
+}
+
+#photo-modal-btn:hover{
   background-color: rgb(15, 184, 0);
   color: white;
 }
@@ -322,4 +344,13 @@ form {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
     width: 30px;
     height: 48px;
+  }
+
+  .modal-content {
+    width: 700px;
+    border:none;
+  }
+
+  .modal-body {
+     padding: 0;
   }
