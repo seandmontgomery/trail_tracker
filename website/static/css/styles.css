@@ -22,7 +22,7 @@ body{
   font-size: 1.1em;
 }
 .navbar .navbar-nav .nav-link:hover {
-  color: rgb(255, 149, 50);
+  color: rgb(15, 184, 0);
 }
 
 /*  -----------------welcome page----------------- */
@@ -40,7 +40,7 @@ body{
 }
 
 #welcome-log-in-button:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -50,7 +50,7 @@ body{
 }
 
 #welcome-sign-up-button:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -71,7 +71,7 @@ body{
 }
 
 #sign-up-button:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -92,7 +92,7 @@ body{
 }
 
 #login-button:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -164,7 +164,7 @@ form {
 }
 
 #trail-upload:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -174,7 +174,7 @@ form {
 }
 
 #add-media:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -185,7 +185,7 @@ form {
 }
 
 #cover-photo-button:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -251,7 +251,7 @@ form {
 }
 
 #location-link:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -269,7 +269,7 @@ form {
 }
 
 .btn:hover {
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 
@@ -280,7 +280,7 @@ form {
 }
 
 #notes-button:hover{
-  background-color: rgb(255, 149, 50);
+  background-color: rgb(15, 184, 0);
   color: white;
 }
 

@@ -12,7 +12,7 @@
   </div>
 </form>
 
-<div class="row" class="d-flex justify-content-between">
+<div class="row d-flex justify-content-between">
 {% for trail in trails %}
 <div class="card" id="trail-card" style="width: 23.3rem;">
     <img class="card-img-top" src="{{ trail.cover_image }}" alt="Card image cap">
@@ -30,77 +30,18 @@
 
       <div class="row mb-4">
         <div class="col text-center">
-          <a href="#" class="btn" data-toggle="modal" data-target="#largeModal" id="photo-album-open" data-trail-id-for-album="{{ trail.id }}">Photo Album</a>
-        </div>
-      </div>
-    
-      <!-- modal -->
-      <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-body">
-               
-              <!-- carousel -->
-              <div
-                   id='carouselExampleIndicators'
-                   class='carousel slide'
-                   data-ride='carousel'
-                   >
-                <ol class='carousel-indicators'>
-                  <li
-                      data-target='#carouselExampleIndicators'
-                      data-slide-to='0'
-                      class='active'
-                      ></li>
-                  <li
-                      data-target='#carouselExampleIndicators'
-                      data-slide-to='1'
-                      ></li>
-                  <li
-                      data-target='#carouselExampleIndicators'
-                      data-slide-to='2'
-                      ></li>
-                </ol>
-                <div class='carousel-inner'>
-                </div>
-                <a
-                   class='carousel-control-prev'
-                   href='#carouselExampleIndicators'
-                   role='button'
-                   data-slide='prev'
-                   >
-                  <span class='carousel-control-prev-icon'
-                        aria-hidden='true'
-                        ></span>
-                  <span class='sr-only'>Previous</span>
-                </a>
-                <a
-                   class='carousel-control-next'
-                   href='#carouselExampleIndicators'
-                   role='button'
-                   data-slide='next'
-                   >
-                  <span
-                        class='carousel-control-next-icon'
-                        aria-hidden='true'
-                        ></span>
-                  <span class='sr-only'>Next</span>
-                </a>
-              </div>
-            </div>
-          </div>
+          <a href="#" class="photo-album-open btn" data-toggle="modal" data-target="#photoModal" data-trail-id-for-album="{{ trail.id }}">Photo Album</a>
         </div>
       </div>
 
     <!-- Button for Bootstrap Notes Modal -->
-    <!-- <div class="card-body">
+     <div class="card-body">
         <button type="button" 
-                class="btn"
+                class="btn notes"
                 data-modal="{{ trail.id }}"
                 data-toggle="modal" 
                 data-target="#notesModal">
             Notes
-        </button> -->
     </div>
   </div>
 {% endfor %}

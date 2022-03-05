@@ -100,6 +100,7 @@
 
 <div class="container">{% block content %} {% endblock %}</div>
 
+<!-- NOTES MODAL -->
 <div class="modal fade" 
              id="notesModal"
              tabindex="-1" 
@@ -125,11 +126,68 @@
                         </button>
                     </div>
                     <div class="modal-body" id="modal-body">
-                        <p>These are the notes</p>
                     </div>
                 </div>
             </div>
         </div>
+
+<!-- PHOTO MODAL -->
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+          
+        <!-- PHOTO CAROUSEL -->
+        <div
+              id='carouselExampleIndicators'
+              class='carousel slide'
+              data-ride='carousel'
+              >
+          <ol class='carousel-indicators'>
+            <li
+                data-target='#carouselExampleIndicators'
+                data-slide-to='0'
+                class='active'
+                ></li>
+            <li
+                data-target='#carouselExampleIndicators'
+                data-slide-to='1'
+                ></li>
+            <li
+                data-target='#carouselExampleIndicators'
+                data-slide-to='2'
+                ></li>
+          </ol>
+          <div class='carousel-inner'>
+          </div>
+          <a
+              class='carousel-control-prev'
+              href='#carouselExampleIndicators'
+              role='button'
+              data-slide='prev'
+              >
+            <span class='carousel-control-prev-icon'
+                  aria-hidden='true'
+                  ></span>
+            <span class='sr-only'>Previous</span>
+          </a>
+          <a
+              class='carousel-control-next'
+              href='#carouselExampleIndicators'
+              role='button'
+              data-slide='next'
+              >
+            <span
+                  class='carousel-control-next-icon'
+                  aria-hidden='true'
+                  ></span>
+            <span class='sr-only'>Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -142,7 +200,6 @@
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
   crossorigin="anonymous"
 ></script>
-
 
 <!-- JS Files -->
 <script type=text/javascript src="{{url_for('static', filename='js/upload.js') }}"></script>
