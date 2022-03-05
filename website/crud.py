@@ -42,4 +42,4 @@ def create_trail_media(trail_id, url, title):
     db.session.add(trail_media)
     db.session.commit()
 
-    return trail_media
+    return(trail_media)
