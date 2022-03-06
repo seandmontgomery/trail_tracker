@@ -1,6 +1,6 @@
 ![Trail Tracker](static/images/trail-tracker-thin.png "Trail Tracker")
 
-by [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) | [seandmontgomery@gmail.com](mailto:seandmontgomery@gmail.com?subject=[GitHub]%20Trail Tracker)
+by [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) | [seandmontgomery@gmail.com](mailto:seandmontgomery@gmail.com?subject=[GitHub]%20Trail_Tracker)
 
 ## <a name="#About"></a>What is Trail Tracker?
 Trail Tracker - is a comprehensive full stack web application for hiking enthusiasts. This application allows users to store information and media for all of their favorite hikes while also compiling data and displaying their statistics.
