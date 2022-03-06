@@ -31,7 +31,7 @@ Users can register and create an account which will give them access to their pe
 ![Login]()
 
 ## <a name="#Timeline"></a>Timeline
-After logging in, the user will be brought to the public street art gallery. This gallery represents the full database of photos uploaded by the POW community of users. Each photo is displayed on a responsive card that I have styled using Bootstrap and CSS. Hover over an image and the card flips to display information about the specific street art piece on the back. This information is being dynamically displayed using Jinja templating and includes the title and artist, as well as links to a full-size image of the piece, and its location.
+Styled using Bootstrap and CSS. This information is being dynamically displayed using Jinja templating.
 
 ![Timeline]()
 
@@ -41,7 +41,7 @@ Clicking on the "location" button opens Google Maps to show exactly where the tr
 ![Location]()
 
 ## <a name="#Notes"></a>View Image
-Clicking on the "view image" button opens a full size view of the particular piece of art.
+Notes
 
 ![Notes]()
 
