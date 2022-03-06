@@ -1,9 +1,10 @@
+
+   
 // --------- NOTES MODAL-----------------------------
 
 document.querySelectorAll('.notes').forEach(noteBtn => {
   noteBtn.addEventListener('click', function (event) {
-  
-    // var notesButton = event.relatedTarget
+
     var trailID = noteBtn.getAttribute('data-modal')
 
         $.get(`/api/notes-modal/${trailID}`, (resp) => {
@@ -28,7 +29,7 @@ document.querySelectorAll('.photo-album-open').forEach(btn => {
     
     $.get(`/api/node/${trailId}`, (resp) => {
       const photoArray = resp.photo_array
-      
+
         for(let i = 0; i < photoArray.length; i+=1){
           let currDiv;
           if(i === 0) {
@@ -57,13 +58,10 @@ document.querySelectorAll('.photo-album-open').forEach(btn => {
 )});
 })
 
-// --------- CLEAR PHOTOS -----------------------------
-
 $('#photoModal').on('hidden.bs.modal', function (e) {
-  const innerDiv = document.querySelectorAll(".carousel-inner")[0]
-  while (innerDiv.firstChild) {
+ const innerDiv = document.querySelectorAll(".carousel-inner")[0]
+ while (innerDiv.firstChild) {
   innerDiv.removeChild(innerDiv.firstChild);
 }
 
 })
-

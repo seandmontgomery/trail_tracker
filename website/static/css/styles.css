@@ -308,10 +308,19 @@ form {
 
 /* ---------------charts-------------- */
 
-.chart-container{
-  border-radius: 30px;
-  margin-right: 21px;
-  margin-left: 0px;
+
+#terrainChart {
+  display: block;
+  box-sizing: border-box;
+  height: 400px;
+  width: 400px;
+}
+
+#difficultyChart {
+  display: block;
+  box-sizing: border-box;
+  height: 400px;
+  width: 400px;
 }
 
 
@@ -354,3 +363,11 @@ form {
   .modal-body {
      padding: 0;
   }
+
+  #notes-modal-body {
+    padding: 35px;
+ }
+
+ #notesModalLabel{
+  padding: 12px;
+ }

@@ -6,16 +6,12 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col d-flex justify-content-center">
+        <div class="row" id="doughnut-chart-row">
+            <div>
+                <canvas id="terrainChart" class="mb-5"></canvas>
             </div>
-                <div class="row" id="doughnut-chart-row">
-                    <div>
-                        <canvas id="terrainChart" class="mb-5"></canvas>
-                    </div>
-                    <div>
-                        <canvas id="difficultyChart" class="mb-5"></canvas>
-                    </div>
-                </div>
+            <div>
+                <canvas id="difficultyChart" class="mb-5"></canvas>
             </div>
         </div>
     </div>
@@ -48,6 +44,7 @@ let chart = new Chart(terrainChart, {
 
 })
 });
+
 
 $.get('/trail-chart/difficulty.json', {}, (res) => {
 

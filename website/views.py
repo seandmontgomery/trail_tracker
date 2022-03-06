@@ -76,7 +76,7 @@ def show_feed():
     return render_template("feed.html", user=current_user, trails=trails)
 
 #PHOTO MODAL
-@views.route('/api/photo-modal/<string:trail_id>')
+@views.route('/api/node/<string:trail_id>')
 def show_photo_album(trail_id):
     trail = Trail.query.get(trail_id)
     photo_array = [{'title': x.title, 'url': x.url} for x in trail.images]
