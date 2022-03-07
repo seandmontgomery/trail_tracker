@@ -72,7 +72,12 @@ def upload_file():
 @views.route('/feed', methods=['GET', 'POST'])
 @login_required
 def show_feed():
+
     trails = current_user.trail
+
+    # user_trails = [trail.to_dict() for trail in trails]
+    # trails.sort(key = lambda x:x["date"], reverse=True)
+
     return render_template("feed.html", user=current_user, trails=trails)
 
 #PHOTO MODAL

@@ -6,11 +6,15 @@ input:focus, textarea:focus, select:focus{
 /* ------------------website -------------------- */
 
 * {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   /* font-family: 'Bebas Neue', cursive; */
   /* font-family: 'Shadows Into Light', cursive; */
   /* font-family: 'Amatic SC', cursive; */
   /* font-family: 'Teko', sans-serif; */
+  /* font-family: 'Urbanist', sans-serif; */
+  /* /* font-family: 'Encode Sans Condensed', sans-serif; */
+  font-family: 'Questrial', sans-serif;
+
 }
 
 body{
@@ -123,27 +127,49 @@ form {
 .form-select{
     background-color: rgb(43, 43, 43);
     color: white;
+    padding: 7px;
+    margin-left: -13px;
+    margin-right: -6px;
+    border-radius: 5px;
 }
 
 #terrain {
   width: 25%;
   margin: 20px auto;
   font-size: medium;
+  margin-right: 10px;
   }
 
 #miles{
   background-color: rgb(43, 43, 43);
   color: white;
+  margin-left: 5px;
+  margin-right: -2px;
+  border-radius: 5px;
 }
 
 #hours{
   background-color: rgb(43, 43, 43);
   color: white;
+  margin-left: 5px;
+  margin-right: -6px;
+  border-radius: 5px;
 }
 
 #minutes{
   background-color: rgb(43, 43, 43);
   color: white;
+  margin-left: 5px;
+  margin-right: -6px;
+  border-radius: 5px;
+}
+
+#elevation{
+  background-color: rgb(43, 43, 43);
+  color: white;
+  margin-left: 3px;
+  margin-right: -6px;
+  border-radius: 5px;
 }
 
 #notes{
@@ -161,6 +187,8 @@ form {
 #trail-upload{
   background-color: rgb(65, 65, 65);
   color: white;
+  margin-top: 11px;
+  width: 20%;
 }
 
 #trail-upload:hover{
@@ -169,8 +197,9 @@ form {
 }
 
 #add-media{
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(43, 43, 43);
   color: white;
+  width: 103%;
 }
 
 #add-media:hover{
@@ -178,13 +207,29 @@ form {
   color: white;
 }
 
+
 #cover-photo-button{
-  background-color: rgb(65, 65, 65);
+  background-color: rgb(43, 43, 43);
   color: white;
   font-size: 1rem;
+  margin-left: -14px;
+  width: 103%;
 }
 
 #cover-photo-button:hover{
+  background-color: rgb(15, 184, 0);
+  color: white;
+}
+
+#map-pdf-button{
+  background-color: rgb(43, 43, 43);
+  color: white;
+  font-size: 1rem;
+  margin-left: -14px;
+  width: 103%;
+}
+
+#map-pdf-button:hover{
   background-color: rgb(15, 184, 0);
   color: white;
 }

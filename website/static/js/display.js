@@ -1,5 +1,3 @@
-
-   
 // --------- NOTES MODAL-----------------------------
 
 document.querySelectorAll('.notes').forEach(noteBtn => {
@@ -20,7 +18,7 @@ document.querySelectorAll('.notes').forEach(noteBtn => {
   });
 })
 
-// --------- PHOTO ALBUM -----------------------------
+// ------------- PHOTO ALBUM -----------------------------
 
 document.querySelectorAll('.photo-album-open').forEach(btn => {
   
