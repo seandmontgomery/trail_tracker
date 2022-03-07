@@ -22,7 +22,7 @@ Table of Contents
 - **Database**: PostgreSQL
 
 ## <a name="#Features"></a>Features
-[Login](#Login) | [Upload](#Upload) | [Timeline](#Timeline) | [Location](#Location) | [Photo Gallery](#Photo) | [Map](#Map) | [Search](#Search) | [Statistics](#Statistics) | [Logout](#Logout) | [Database](#SQLDBM)
+[Login](#Login) | [Upload](#Upload) | [Timeline](#Timeline) | [Location](#Location) | [Photos](#Photos) | [Map](#Map) | [Search](#Search) | [Statistics](#Statistics) | [Logout](#Logout) | [Database](#Database) |
 
 ## <a name="#Login"></a>Login and Registration
 Users can register and create an account which will give them access to their personal trail logs. I have hashed the user's credentials with sha256 to add security for the user. I built Trail Tracker with Flask - creating a service that uses a Postgres database interfaced with the SQLAlchemy ORM.
@@ -45,10 +45,10 @@ To upload...  and the location using Google’s Map & Places API with their Plac
 
 <!-- ![Location]() -->
 
-## <a name="#Photo"></a>Photo Gallery
+## <a name="#Photos"></a>Photos
 Photo gallery shows photos associated specifically with that trail ID. For the image files itself I implemented Cloudinary’s media management API, which returns the url for the image uploaded to my database.
 
-<!-- ![Photo Gallery]() -->
+<!-- ![Photos]() -->
 
 ## <a name="#Map"></a>Map
 PDF of Trail Map.
@@ -65,13 +65,13 @@ Charts using Charts.js
 
 <!-- ![Statistics]() -->
 
-## <a name="#Logout"></a>Log Out
+## <a name="#Logout"></a>Logout
 
 <!-- ![Logout]() -->
 
-## <a name="#Data"></a>Data Model
+## <a name="#Database"></a>Database
 
-<!-- ![SQLDBM]() -->
+<!-- ![Database]() -->
 
 ## <a name="#Future"></a>Looking Ahead
 Thank you for taking the time to learn a bit about Trail Tracker, I really look forward to connecting with you!
@@ -115,6 +115,6 @@ python3 main.py
 ```
 
 ## <a name="#Meet"></a>Meet the Developer
-My background in entertainment and education has lead me down a new creative path into tech. I am a skilled full stack web developer with a passion for multimedia presentation. I am proficient in the following technologies: Python, Javascript, AJAX, JSON, HTML, CSS, SQL, Flask, jQuery, Bootstrap, Jinja, SQLAlchemy, PostgreSQL, Command Line, Git, GitHub, and Agile. As a multimedia creator I am skilled in the following applications: Camtasia, Adobe Premiere Pro, iMovie, Garage Band, Descript, Snagit, and Canva. I have also had a successful 15 year career as a professional broadway actor in NYC. In my free time I enjoy mountain biking, hiking, snowboarding, running, cooking and international travel.
+Hello! I'm Sean. My background in entertainment and education has lead me down a new creative path into tech. I am a skilled full stack web developer with a passion for multimedia presentation. I am proficient in the following technologies: Python, Javascript, AJAX, JSON, HTML, CSS, SQL, Flask, jQuery, Bootstrap, Jinja, SQLAlchemy, PostgreSQL, Command Line, Git, GitHub, and Agile. As a multimedia creator I am skilled in the following applications: Camtasia, Adobe Premiere Pro, iMovie, Garage Band, Descript, Snagit, and Canva. I have also had a successful 15 year career as a professional broadway actor in NYC. In my free time I enjoy mountain biking, hiking, snowboarding, running, cooking and international travel.
 
 Connect with [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) on LinkedIn!
