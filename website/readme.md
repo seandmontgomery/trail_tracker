@@ -1,4 +1,4 @@
-![Trail Tracker](static/images/trail-tracker-thin.png "Trail Tracker")
+![Trail Tracker](static/images/read-me-logo.png "Trail Tracker")
 
 by [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) | [seandmontgomery@gmail.com](mailto:seandmontgomery@gmail.com?subject=[GitHub]%20Trail_Tracker)
 
