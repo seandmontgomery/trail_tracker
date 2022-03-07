@@ -16,51 +16,62 @@ Table of Contents
 - [Looking Ahead](#Future)
 
 ## <a name="#Tech"></a>Tech Stack
-
 - **Frontend**: JavaScript | HTML5 | CSS | Bootstrap
 - **Backend**: Python3 | Flask | SQLAlchemy | Jinja2
 - **APIs**: Cloudinary | GoogleMaps
 - **Database**: PostgreSQL
 
 ## <a name="#Features"></a>Features
-[Login](#Login) | [Timeline](#Timeline) | [Location](#Location) | [View](#View) | [Search](#Search) | [Upload](#Upload) | [Logout](#Logout) | [Database](#SQLDBM)
+[Login](#Login) | [Upload](#Upload) | [Timeline](#Timeline) | [Location](#Location) | [Photo Gallery](#Photo) | [Map](#Map) | [Search](#Search) | [Statistics](#Statistics) | [Logout](#Logout) | [Database](#SQLDBM)
 
 ## <a name="#Login"></a>Login and Registration
 Users can register and create an account which will give them access to their personal trail logs. I have hashed the user's credentials with sha256 to add security for the user. I built Trail Tracker with Flask - creating a service that uses a Postgres database interfaced with the SQLAlchemy ORM.
 
-![Login]()
+<!-- ![Login]() -->
+
+## <a name="#Upload"></a>Upload
+Upload form
+
+<!-- ![Upload]() -->
 
 ## <a name="#Timeline"></a>Timeline
 Styled using Bootstrap and CSS. This information is being dynamically displayed using Jinja templating.
 
-![Timeline]()
+<!-- ![Timeline]() -->
 
 ## <a name="#Location"></a>Location
 Clicking on the "location" button opens Google Maps to show exactly where the trail is located.
+To upload...  and the location using Google’s Map & Places API with their Place Autocomplete service.
 
-![Location]()
+<!-- ![Location]() -->
 
-## <a name="#Notes"></a>View Image
-Notes
+## <a name="#Photo"></a>Photo Gallery
+Photo gallery shows photos associated specifically with that trail ID. For the image files itself I implemented Cloudinary’s media management API, which returns the url for the image uploaded to my database.
 
-![Notes]()
+<!-- ![Photo Gallery]() -->
+
+## <a name="#Map"></a>Map
+PDF of Trail Map.
+
+<!-- ![Map]() -->
 
 ## <a name="#Search"></a>Search
 To filter through the cards, I developed a search feature by adding a JavaScript event listener that evaluates keystrokes to hide the cards that do not contain text matching the query string.
 
-![View]()
+<!-- ![Search]() -->
 
-## <a name="#Upload"></a>Upload Image
-To upload...  and the location using Google’s Map & Places API with their Place Autocomplete service. For the image files itself I implemented Cloudinary’s media management API, which returns the url for the image uploaded to my database.
+## <a name="#Statistics"></a>Statistics
+Charts using Charts.js
 
-![Upload]()
+<!-- ![Statistics]() -->
 
 ## <a name="#Logout"></a>Log Out
-![Logout]()
+
+<!-- ![Logout]() -->
 
 ## <a name="#Data"></a>Data Model
 
-![SQLDBM]()
+<!-- ![SQLDBM]() -->
 
 ## <a name="#Future"></a>Looking Ahead
 Thank you for taking the time to learn a bit about Trail Tracker, I really look forward to connecting with you!
