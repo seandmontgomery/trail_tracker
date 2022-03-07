@@ -5,6 +5,7 @@ from typing import List
 
 from flask import Blueprint, render_template, request, flash, jsonify, make_response
 from flask_login import login_required, current_user
+from flask_cors import CORS, cross_origin
 
 import cloudinary
 import cloudinary.uploader
@@ -56,6 +57,7 @@ def upload_trail():
 ##################################UPLOAD CLOUDINARY##################################
 
 @views.route("/upload-cloudinary", methods=['POST'])
+@cross_origin()
 def upload_file():
     #initializing cloudinary with the config
     cloudinary.config(cloud_name=cloud_name, api_key=cloud_api_key, api_secret=cloud_api_secret)

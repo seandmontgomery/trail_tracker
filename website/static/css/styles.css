@@ -6,15 +6,7 @@ input:focus, textarea:focus, select:focus{
 /* ------------------website -------------------- */
 
 * {
-  /* font-family: 'Roboto', sans-serif; */
-  /* font-family: 'Bebas Neue', cursive; */
-  /* font-family: 'Shadows Into Light', cursive; */
-  /* font-family: 'Amatic SC', cursive; */
-  /* font-family: 'Teko', sans-serif; */
-  /* font-family: 'Urbanist', sans-serif; */
-  /* /* font-family: 'Encode Sans Condensed', sans-serif; */
   font-family: 'Questrial', sans-serif;
-
 }
 
 body{
