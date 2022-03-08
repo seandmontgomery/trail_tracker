@@ -13,13 +13,15 @@
       </div>
 
       <div class="form-group row">
+        <input type="date" id="date" class="form-control" name="date" placeholder="Date" required>
+      </div>
+
+      <div class="form-group row">
         <input class="form-control" type="text" id="autocomplete"  name="location" placeholder="Location" onFocus="geolocate()">
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCURCwYfhVL8c9nwK8MeKQQGOsiNvb5-3E&libraries=places&callback=initAutocomplete" async defer></script>
       </div>
 
-      <div class="form-group row">
-        <input type="date" id="date" class="form-control" name="date" placeholder="Date" required>
-      </div>
+
 
 <div class="input-group cd-flex align-items-center align-items-top" id="stats">
 
@@ -72,10 +74,10 @@
   </div>
 
 
-      <!-- <div class="form-group-row media-input" id="map-upload">
-        <input id='map_pdf' type='file' hidden/>
-        <input id='map-pdf-button' class="btn btn-light" type='button' value='Upload Map' />
-      </div> -->
+  <!-- <div class="form-group-row media-input" id="map-upload">
+    <input id='map_pdf' type='file' hidden/>
+    <input id='map-pdf-button' class="btn btn-light" type='button' value='Upload Map' />
+  </div> -->
       
       <div id="media-uploader">
         <ul id="list"></ul>

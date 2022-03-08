@@ -181,6 +181,7 @@ form {
   color: white;
   margin-top: 11px;
   width: 20%;
+  margin-bottom: 100px;
 }
 
 #trail-upload:hover{
@@ -219,6 +220,7 @@ form {
   font-size: 1rem;
   margin-left: -14px;
   width: 103%;
+  margin-top: 11px;
 }
 
 #map-pdf-button:hover{
@@ -264,6 +266,10 @@ form {
   font-size: medium;
 }
 
+#location-text{
+  font-size: 11px;
+}
+
 /* ----------------------display feed------------------------ */
 
 #searchBar{
@@ -285,6 +291,7 @@ form {
   background-color: rgb(48, 48, 48);
   color: white;
   font-size: medium;
+  margin-left: -10px;
 }
 
 #location-link:hover{
@@ -342,6 +349,31 @@ form {
   background-color: rgb(15, 184, 0);
   color: white;
 }
+
+.card-img-top {
+  width: 100%;
+  height: 16vw;
+  object-fit: cover;
+}
+
+/* Card hover feature */
+/* .card-group .card-primary:hover {
+  box-shadow: 0 40px 60px -20px rgba(4, 1, 26, 0.15);
+  z-index: 100;
+}
+.card-group .card-primary:hover .card-title{
+  color: #7e7e7e;
+  background: transparent;
+}
+
+.card {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3); 
+  transition: .5s;
+}
+
+.card:hover {
+  transform:scale(1.1);
+} */
 
 /* ---------------charts-------------- */
 

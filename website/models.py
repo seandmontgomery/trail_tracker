@@ -88,7 +88,6 @@ class Trail(db.Model):
     minutes = db.Column(db.Integer)
     elevation = db.Column(db.Integer)
     notes = db.Column(db.String)
-    # map_pdf = db.Column(db.String)
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
