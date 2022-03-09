@@ -75,10 +75,7 @@ def upload_file():
 @login_required
 def show_feed():
 
-    trails = current_user.trail
-
-    # user_trails = [trail.to_dict() for trail in trails]
-    # trails.sort(key = lambda x:x["date"], reverse=True)
+    trails = Trail.query.order_by(Trail.date.desc()).all()
 
     return render_template("feed.html", user=current_user, trails=trails)
 
