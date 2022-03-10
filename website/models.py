@@ -25,6 +25,7 @@ class User(db.Model, UserMixin):
     trail = db.relationship('Trail')
 
     def get_trail_attribute_counts(self, attribute: str) -> dict:
+        
         """
         Returns the frequency (count) of trail attributes as a dictionary,
         suitable for plotting with chart.js
@@ -53,7 +54,7 @@ class User(db.Model, UserMixin):
 
         return my_dict
 
-######################TRAIL################################### 
+#######################TRAIL################################### 
 
 class Trail(db.Model):
     """

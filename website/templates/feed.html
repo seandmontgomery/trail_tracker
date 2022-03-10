@@ -13,7 +13,7 @@
 </form>
 
 <div class="card-group" id="allCards">
-    <div class="row justify-content-center justify-content-between ">
+    <div class="row justify-content-center justify-content-between">
       {% for trail in trails %}
         <div class="card mb-3" id="trail-card" style="width: 23.3rem;">
           <img class="card-img-top" src="{{ trail.cover_image }}" alt="Card image cap">
@@ -21,7 +21,6 @@
               <h3 class="card-title">{{ trail.trail_name }}</h3>
               <p id="location-text">{{ trail.location }}</p>
               <p class="card-text">{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
-              <!-- <a class="btn" href="http://maps.google.com/?q={{ trail.location }}" id="location-link">Location</a> -->
                 <div>
                   <a class="btn" href="http://maps.google.com/?q={{ trail.location }}" id="location-link">Location</a>
                   <!-- <a class="btn" href="{{ trail.map_pdf }}" id="map-pdf">Map</a> -->
@@ -36,6 +35,12 @@
                     <li class="list-group-item">{{ trail.miles }} Miles | {{ trail.hours }} Hr | {{ trail.minutes }} Min  </li>
                     <li class="list-group-item">Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</li>
                   </ul>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn delete-trail-button" id="delete-trail-button">Delete</button>
+                    <button type="button" class="btn delete-trail-button" id="share-trail-button">Share</button>
+
+                  </div>
+
         </div>
 {% endfor %}
     </div>

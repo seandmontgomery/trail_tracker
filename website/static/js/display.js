@@ -25,7 +25,7 @@ document.querySelectorAll('.photo-album-open').forEach(btn => {
   btn.addEventListener('click', function() {
     let trailId = btn.getAttribute('data-trail-id-for-album');
     
-    $.get(`/api/node/${trailId}`, (resp) => {
+    $.get(`/api/photo-modal/${trailId}`, (resp) => {
       const photoArray = resp.photo_array
 
         for(let i = 0; i < photoArray.length; i+=1){

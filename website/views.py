@@ -74,19 +74,17 @@ def upload_file():
 @views.route('/feed', methods=['GET', 'POST'])
 @login_required
 def show_feed():
-
     trails = Trail.query.order_by(Trail.date.desc()).all()
-
     return render_template("feed.html", user=current_user, trails=trails)
 
-#PHOTO MODAL
-@views.route('/api/node/<string:trail_id>')
+########PHOTO MODAL#########
+@views.route('/api/photo-modal/<string:trail_id>')
 def show_photo_album(trail_id):
     trail = Trail.query.get(trail_id)
     photo_array = [{'title': x.title, 'url': x.url} for x in trail.images]
     return make_response(jsonify({'photo_array':photo_array}))
 
-#NOTES MODAL
+##########NOTES MODAL##########
 @views.route('/api/notes-modal/<string:trail_id>')
 def get_modal_info(trail_id):
     trail = Trail.query.get(trail_id)

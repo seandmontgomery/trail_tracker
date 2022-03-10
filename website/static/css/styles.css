@@ -321,6 +321,28 @@ form {
   color: white;
 }
 
+#delete-trail-button{
+  background-color: rgb(48, 48, 48);
+  color: white;
+  font-size: medium;
+}
+
+#delete-trail-button:hover{
+  background-color: rgb(128, 21, 2);
+  color: white;
+}
+
+#share-trail-button{
+  background-color: rgb(48, 48, 48);
+  color: white;
+  font-size: medium;
+}
+
+#share-trail-button:hover{
+  background-color: rgb(15, 184, 0);
+  color: white;
+}
+
 #modal-body{
   color: black;
 }
