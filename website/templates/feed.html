@@ -23,7 +23,6 @@
               <p class="card-text">{{ trail.date.strftime("%A, %B %d, %Y") }}</p>
                 <div>
                   <a class="btn" href="http://maps.google.com/?q={{ trail.location }}" id="location-link">Location</a>
-                  <!-- <a class="btn" href="{{ trail.map_pdf }}" id="map-pdf">Map</a> -->
                   <button type="button" id="photo-modal-btn" class="photo-album-open btn" data-toggle="modal" data-target="#photoModal" data-trail-id-for-album="{{ trail.id }}">Photo Album</button>
                   <button type="button" id="notes-modal-btn" class="btn notes" data-modal="{{ trail.id }}" data-toggle="modal" data-target="#notesModal">Notes</button>
                 </div>
@@ -35,12 +34,6 @@
                     <li class="list-group-item">{{ trail.miles }} Miles | {{ trail.hours }} Hr | {{ trail.minutes }} Min  </li>
                     <li class="list-group-item">Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</li>
                   </ul>
-                  <div class="btn-group" role="group">
-                    <button type="button" class="btn delete-trail-button" id="delete-trail-button">Delete</button>
-                    <button type="button" class="btn delete-trail-button" id="share-trail-button">Share</button>
-
-                  </div>
-
         </div>
 {% endfor %}
     </div>

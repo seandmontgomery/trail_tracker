@@ -23,7 +23,7 @@ body{
 
 /*  -----------------welcome page----------------- */
 
-#black-overlay {
+/* #black-overlay {
   top: 0;
   left: 0;
   z-index: -1;
@@ -48,7 +48,7 @@ body{
 #welcome-sign-up-button:hover{
   background-color: rgb(15, 184, 0);
   color: white;
-}
+} */
 
 /*  --------------------sign up------------------------ */
 
@@ -62,12 +62,32 @@ body{
 }
 
 #sign-up-button{
-  background-color: white;
-  color: black;
+  background-color: rgb(43, 43, 43);
+  color: white;
 }
 
 #sign-up-button:hover{
   background-color: rgb(15, 184, 0);
+  color: white;
+}
+
+#email{
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#firstName{
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#password1{
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#password2{
+  background-color: rgb(43, 43, 43);
   color: white;
 }
 
@@ -83,8 +103,8 @@ body{
 }
 
 #login-button{
-  background-color: white;
-  color: black;
+  background-color: rgb(43, 43, 43);
+  color: white;
 }
 
 #login-button:hover{
@@ -92,9 +112,34 @@ body{
   color: white;
 }
 
+#email{
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#password{
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
 /* ---------------------trail upload-------------------- */
 
 #trail_name {
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#date {
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#autocomplete {
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+
+#notes {
   background-color: rgb(43, 43, 43);
   color: white;
 }
