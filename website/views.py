@@ -57,7 +57,6 @@ def upload_trail():
 ##################################UPLOAD CLOUDINARY##################################
 
 @views.route("/upload-cloudinary", methods=['POST'])
-@cross_origin()
 def upload_file():
     #initializing cloudinary with the config
     cloudinary.config(cloud_name=cloud_name, api_key=cloud_api_key, api_secret=cloud_api_secret)

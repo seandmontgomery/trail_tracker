@@ -20,10 +20,10 @@ function openDialog() {
   document.getElementById('image_url').click();
 }
 
-document.getElementById('map-pdf-button').addEventListener('click', openDialog);
-function openDialog() {
-  document.getElementById('map_pdf').click();
-}
+// document.getElementById('map-pdf-button').addEventListener('click', openDialog);
+// function openDialog() {
+//   document.getElementById('map_pdf').click();
+// }
 
 // UPLOAD ----------------------------------------------------------------
 
@@ -37,10 +37,9 @@ function openDialog() {
 async function addImage() {
     const cloudinary_url = "/upload-cloudinary";
     const fileList = document.querySelectorAll("[type=file]");
-    console.log(fileList.length);
+
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
         STEP 1: Upload images to Cloudinary
-
         ToDo:
           * image_urls should be a list of objects ex: [{'title': 'Hike_1', 'url': ...}]
             instead of a list of strings. This list of objects should be passed
@@ -48,7 +47,6 @@ async function addImage() {
     */
     // Get a url for each image (once uploaded to cloudinary)
     const image_urls = []
-    const map_urls = []
     console.log(image_urls);
     // iterate over the image files
     for (let i = 0; i < fileList.length; i++) {
@@ -66,26 +64,19 @@ async function addImage() {
         })
         //we are waiting for cloudinary to return the image object
         let cloud_res_json = await cloud_res.json();
-        let file_extension = cloud_res_json.url.slice(-3);
-        if (file_extension == 'pdf'){
-          map_urls.push({
+
+        // Save this url
+        image_urls.push({
+          'title': media_title,
           'url': cloud_res_json.url
-          })
-        } else {
-          image_urls.push({
-            'title': media_title,
-            'url': cloud_res_json.url
-          })
-        }
+        })
       }
 
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
         STEP 2: Send trail data (with image URLs) to
         trail tracker backend
-
         Notes:
           * this is where we store the image in the database
-
     */
 
     let flask_resp = await fetch('/upload-trail', {
@@ -102,7 +93,6 @@ async function addImage() {
             'elevation': $('#elevation').val(),
             'notes': $('#notes').val(),
             "image_urls": image_urls,
-            "map_urls": map_urls,
         }),
         headers: {
             'Accept': 'application/json',
@@ -113,7 +103,6 @@ async function addImage() {
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
         STEP 2: Send trail data (with image URLs) to
         trail tracker backend
-
     */
       if (!flask_resp.ok) {
           alert(`Unable to load files. ${flask_resp.statusText}`)
