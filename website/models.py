@@ -11,7 +11,7 @@ from flask_login import UserMixin
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.ext.hybrid import hybrid_property
 
-from . import db
+from website import db
 
 ######################USER###################################
 

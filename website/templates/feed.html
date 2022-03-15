@@ -27,13 +27,13 @@
                   <button type="button" id="notes-modal-btn" class="btn notes" data-modal="{{ trail.id }}" data-toggle="modal" data-target="#notesModal">Notes</button>
                 </div>
             </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Difficulty: {{ trail.difficulty.title() }}</li>
-                    <li class="list-group-item">Trail Type: {{ trail.terrain.title() }}</li>
-                    <li class="list-group-item">Elevation Gain: {{ trail.elevation }} feet</li>
-                    <li class="list-group-item">{{ trail.miles }} Miles | {{ trail.hours }} Hr | {{ trail.minutes }} Min  </li>
-                    <li class="list-group-item">Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</li>
-                  </ul>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Difficulty: {{ trail.difficulty.title() }}</li>
+              <li class="list-group-item">Trail Type: {{ trail.terrain.title() }}</li>
+              <li class="list-group-item">Elevation Gain: {{ trail.elevation }} feet</li>
+              <li class="list-group-item">{{ trail.miles }} Miles | {{ trail.hours }} Hr | {{ trail.minutes }} Min  </li>
+              <li class="list-group-item">Pace: {{ ((trail.hours*60+trail.minutes)/trail.miles)|round }} min/mile</li>
+            </ul>
         </div>
 {% endfor %}
     </div>

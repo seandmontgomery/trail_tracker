@@ -20,11 +20,6 @@ function openDialog() {
   document.getElementById('image_url').click();
 }
 
-// document.getElementById('map-pdf-button').addEventListener('click', openDialog);
-// function openDialog() {
-//   document.getElementById('map_pdf').click();
-// }
-
 // UPLOAD ----------------------------------------------------------------
 
 /*

@@ -166,14 +166,14 @@ form {
   color: white;
 }
 
-.form-select{
+/* .form-select{
   background-color: rgb(43, 43, 43);
   color: white;
   padding: 7px;
   margin-left: -16px;
   margin-right: -6px;
   border-radius: 5px;
-}
+} */
 
 #terrain {
   font-size: medium;
@@ -261,19 +261,6 @@ width: 200px;
   color: white;
 }
 
-#map-pdf-button{
-  background-color: rgb(43, 43, 43);
-  color: white;
-  font-size: 1rem;
-  margin-left: -14px;
-  width: 103%;
-  margin-top: 11px;
-}
-
-#map-pdf-button:hover{
-  background-color: rgb(15, 184, 0);
-  color: white;
-}
 
 #media-uploader input[type="file"] {
   padding:0;
@@ -372,6 +359,12 @@ width: 200px;
   color: white;
 }
 
+.card-img-top {
+  width: 100%;
+  height: 16vw;
+  object-fit: cover;
+}
+
 .list-group-item{
   background-color: rgb(48, 48, 48);
   color: white;
@@ -411,27 +404,6 @@ width: 200px;
   color: white;
 }
 
-#delete-trail-button{
-  background-color: rgb(48, 48, 48);
-  color: white;
-  font-size: medium;
-}
-
-#delete-trail-button:hover{
-  background-color: rgb(128, 21, 2);
-  color: white;
-}
-
-#share-trail-button{
-  background-color: rgb(48, 48, 48);
-  color: white;
-  font-size: medium;
-}
-
-#share-trail-button:hover{
-  background-color: rgb(15, 184, 0);
-  color: white;
-}
 
 #modal-body{
   color: black;
@@ -462,31 +434,6 @@ width: 200px;
   color: white;
 }
 
-.card-img-top {
-  width: 100%;
-  height: 16vw;
-  object-fit: cover;
-}
-
-/* Card hover feature */
-/* .card-group .card-primary:hover {
-  box-shadow: 0 40px 60px -20px rgba(4, 1, 26, 0.15);
-  z-index: 100;
-}
-.card-group .card-primary:hover .card-title{
-  color: #7e7e7e;
-  background: transparent;
-}
-
-.card {
-  box-shadow: 0 10px 15px rgba(0,0,0,0.3); 
-  transition: .5s;
-}
-
-.card:hover {
-  transform:scale(1.1);
-} */
-
 /* ---------------charts-------------- */
 
 
@@ -508,47 +455,47 @@ width: 200px;
 /* ---------------photo and notes modals-------------- */
 
 .img-size{
-  /* 	padding: 0;
-    margin: 0; */
-    height: 450px;
-    width: 700px;
-    background-size: cover;
-    overflow: hidden;
-  }
+/* 	padding: 0;
+  margin: 0; */
+  height: 450px;
+  width: 700px;
+  background-size: cover;
+  overflow: hidden;
+}
 
-  .modal-content {
-    width: 700px;
-    border:none;
-  }
+.modal-content {
+  width: 700px;
+  border:none;
+}
 
-  .modal-body {
-     padding: 0;
-  }
-  
-  .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-    width: 30px;
-    height: 48px;
-  }
-  .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-    width: 30px;
-    height: 48px;
-  }
+.modal-body {
+    padding: 0;
+}
 
-  .modal-content {
-    width: 700px;
-    border:none;
-  }
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 48px;
+}
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 48px;
+}
 
-  .modal-body {
-     padding: 0;
-  }
+.modal-content {
+  width: 700px;
+  border:none;
+}
 
-  #notes-modal-body {
-    padding: 35px;
- }
+.modal-body {
+    padding: 0;
+}
 
- #notesModalLabel{
-  padding: 12px;
- }
+#notes-modal-body {
+  padding: 35px;
+}
+
+#notesModalLabel{
+padding: 12px;
+}

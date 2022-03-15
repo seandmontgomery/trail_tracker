@@ -1,45 +1,32 @@
+from typing import Optional
+from models import db, User
 
-from model import connect_to_db, db, User, Trail, TrailMedia
-from datetime import datetime
+#This function isn't really used - keeping it bc it's pretty
 
-###################### USER ###########################################
+def create_user(first_name: str, email: str, password: str) -> Optional[User]:
+    """
+    Creates a user, or raises an error if already exists.
 
-def create_user(first_name, email, password):
-    """Creates and returns a new user"""
+    Note: Only 1 user can exist per email address
 
+    Args:
+        first_name: first name of this user
+        email: email address of this user
+        password: non-encrypted password for this user
+
+    Returns: A user object for a new user. If a user with this
+       email address already exists, will raise an error
+    """
+    my_user = User.query.filter_by(email=email).one()
+    if my_user:
+        raise ValueError('user already exists')
+
+    # otherwise, create a new user
     user = User(first_name=first_name, email=email, password=password)
-
     db.session.add(user)
     try:
         db.session.commit()
+        return user
     except:
         db.session.rollback()
-        user = get_user_by_email(email) 
-    return user
-
-###################### TRAIL ###########################################
-
-def create_trail(user_id, trail_name, location, date, difficulty, 
-                 terrain, miles, hours, minutes, notes, images, image_urls):
-    """Creates and returns trail"""
-
-    trail = Trail(user_id=user_id, location=location, date=date, 
-                  difficulty=difficulty, terrain=terrain, miles=miles, hours=hours,
-                  minutes=minutes, notes=notes, images=images, image_urls=image_urls)
-
-    db.session.add(trail)
-    db.session.commit()
-
-    return trail
-
-###################### TRAIL MEDIA ###########################################
-
-def create_trail_media(trail_id, url, title):
-    """Creates and returns trail"""
-
-    trail_media = TrailMedia(trail_id=trail_id, url=url, title=title)
-    
-    db.session.add(trail_media)
-    db.session.commit()
-
-    return trail_media
+        raise ValueError('could not create a user')

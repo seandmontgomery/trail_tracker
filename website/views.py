@@ -25,10 +25,6 @@ views = Blueprint('views', __name__)
 def home():
     return render_template("upload.html", user=current_user)
 
-@views.route('/welcome')
-def welcome():
-    return render_template("welcome.html", user=current_user)
-
 ##################################UPLOAD TRAIL##################################
 
 @views.route('/upload-trail', methods=['GET','POST'])
@@ -107,12 +103,3 @@ def get_trail_chart(attribute: str):
         'values': list(my_dict.values())
     }
     return jsonify(data)
-
-##############################DELETE##########################################
-
-@views.route('/delete-trail', methods=['POST'])
-def delete_trail():
-    trail =Trail.query.get(trailId)
-    current_user.trails.remove(trail)
-    db.session.commit()
-    return jsonify({})
