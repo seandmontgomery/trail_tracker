@@ -17,7 +17,12 @@ listAddButton.on('click', addItem)
 
 document.getElementById('cover-photo-button').addEventListener('click', openDialog);
 function openDialog() {
-  document.getElementById('image_url').click();
+  document.getElementById('cover-photo').click();
+}
+
+document.getElementById('additional-photo-button').addEventListener('click', openDialog);
+function openDialog() {
+  document.getElementById('additional-photos').click();
 }
 
 // UPLOAD ----------------------------------------------------------------

@@ -261,6 +261,18 @@ width: 200px;
   color: white;
 }
 
+#additional-photo-button{
+  background-color: rgb(43, 43, 43);
+  color: white;
+  font-size: 1rem;
+  margin-left: -14px;
+  width: 103%;
+}
+
+#additional-photo-button:hover{
+  background-color: rgb(15, 184, 0);
+  color: white;
+}
 
 #media-uploader input[type="file"] {
   padding:0;
@@ -404,7 +416,6 @@ width: 200px;
   color: white;
 }
 
-
 #modal-body{
   color: black;
 }
@@ -450,7 +461,6 @@ width: 200px;
   height: 400px;
   width: 400px;
 }
-
 
 /* ---------------photo and notes modals-------------- */
 
