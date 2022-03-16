@@ -47,7 +47,7 @@ async function addImage() {
     */
     // Get a url for each image (once uploaded to cloudinary)
     const image_urls = []
-    console.log(image_urls);
+    
     // iterate over the image files
     for (let i = 0; i < fileList.length; i++) {
 
@@ -65,8 +65,8 @@ async function addImage() {
         let cloud_res_json = await cloud_res.json();
 
         // Save this url
-        image_urls.push({'url': cloud_res_json.url})
-        
+        image_urls.push(cloud_res_json.url)
+
       }
 
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -16,7 +16,7 @@
     <div class="row justify-content-center justify-content-between">
       {% for trail in trails %}
         <div class="card mb-3" id="trail-card" style="width: 23.3rem;">
-          <img class="card-img-top" src="{{ trail.cover_image }}" alt="Card image cap">
+          <img class="card-img-top" src="{{ trail.image_urls[0] }}" alt="Card image cap">
             <div class="card-body">
               <h3 class="card-title">{{ trail.trail_name }}</h3>
               <p id="location-text">{{ trail.location }}</p>
