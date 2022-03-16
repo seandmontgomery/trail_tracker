@@ -18,14 +18,14 @@ from .models import Trail, User, TrailMedia
 
 views = Blueprint('views', __name__)
 
-##################################HOME#########################################
+############################### HOME ######################################
 
 @views.route('/')
 @login_required
 def home():
     return render_template("upload.html", user=current_user)
 
-##################################UPLOAD TRAIL##################################
+############################### UPLOAD TRAIL ###############################
 
 @views.route('/upload-trail', methods=['GET','POST'])
 @login_required
@@ -50,7 +50,7 @@ def upload_trail():
         data = {'message': 'Created'}
         return make_response(jsonify(data), 200)
 
-##################################UPLOAD CLOUDINARY##################################
+####################### UPLOAD CLOUDINARY ##################################
 
 @views.route("/upload-cloudinary", methods=['POST'])
 def upload_file():
@@ -61,10 +61,9 @@ def upload_file():
     #if there is a file to upload, then upload to cloudinary
     if file_to_upload:
       upload_result = cloudinary.uploader.upload(file_to_upload)
-      #could potentially save this image in an image table then associate that image as a relationship to a trail
       return jsonify(upload_result)
 
-#########################VIEW FEED####################################################
+######################### VIEW FEED ####################################################
 
 @views.route('/feed', methods=['GET', 'POST'])
 @login_required
@@ -72,21 +71,21 @@ def show_feed():
     trails = Trail.query.order_by(Trail.date.desc()).all()
     return render_template("feed.html", user=current_user, trails=trails)
 
-########PHOTO MODAL#########
+######## PHOTO MODAL #########
 @views.route('/api/photo-modal/<string:trail_id>')
 def show_photo_album(trail_id):
     trail = Trail.query.get(trail_id)
     photo_array = [{'title': x.title, 'url': x.url} for x in trail.images]
     return make_response(jsonify({'photo_array':photo_array}))
 
-##########NOTES MODAL##########
+########## NOTES MODAL ##########
 @views.route('/api/notes-modal/<string:trail_id>')
 def get_modal_info(trail_id):
     trail = Trail.query.get(trail_id)
     notes_data = {'title': trail.trail_name, 'notes': trail.notes}
     return make_response(jsonify({'notes_data':notes_data}))
 
-#########################CHARTS####################################################
+######################### CHARTS ####################################################
 
 @views.route('/charts', methods=['GET', 'POST'])
 @login_required
