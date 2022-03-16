@@ -1,19 +1,4 @@
-// FEATURE FOR ADDING ADDITIONAL MEDIA
-
-const listAddButton = $('#add-media')
-let click_counter = 0
-  const addItem = () => {
-      click_counter++
-      $('#list').append(`<li class="add-media">
-      <div id="media-uploader">
-        <label class="custom-file-upload">
-        <input type="file" id="media-files-${click_counter}" name="filesToUpload[]" multiple>
-        </label>
-      </div></li>`)
-  }
-listAddButton.on('click', addItem)
-
-// BUTTON FEATURE FOR COVER PHOTO UPLOAD
+// HIDE/SHOW PHOTO UPLOAD INPUTS -----------------------------------------
 
 document.getElementById('cover-photo-button').addEventListener('click', openDialog);
 function openDialog() {
