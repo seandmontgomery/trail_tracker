@@ -32,7 +32,7 @@ async function addImage() {
     */
     // Get a url for each image (once uploaded to cloudinary)
     const image_urls = []
-    
+
     // iterate over the image files
     for (let i = 0; i < fileList.length; i++) {
 
@@ -75,6 +75,7 @@ async function addImage() {
             'elevation': $('#elevation').val(),
             'notes': $('#notes').val(),
             "image_urls": image_urls,
+            "cover_image_url": image_urls[0]
         }),
         headers: {
             'Accept': 'application/json',

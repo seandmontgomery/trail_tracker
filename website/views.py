@@ -35,9 +35,17 @@ def upload_trail():
         # Parse the request
         payload = request.json
 
+        # There will always be a cover image
+        cover_image_url = payload.pop('cover_image_url')
+
         # Create a new trail and associate with the current user
         new_trail = Trail(**payload)
         current_user.trail.append(new_trail)
+
+        # Set the cover image in a weird way:
+        for img in new_trail.images:
+            if img.url == cover_image_url:
+                new_trail.cover_image = img
 
         db.session.add(new_trail)
 

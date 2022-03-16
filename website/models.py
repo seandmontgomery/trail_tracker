@@ -6,6 +6,7 @@ References:
     2. https://docs.sqlalchemy.org/en/14/orm/extensions/associationproxy.html
 """
 import datetime
+from typing import List
 
 from flask_login import UserMixin
 from sqlalchemy.ext.associationproxy import association_proxy
@@ -108,6 +109,12 @@ class Trail(db.Model):
     cover_image = db.relationship('TrailMedia',
         primaryjoin="Trail.cover_image_id==TrailMedia.id")
 
+    @hybrid_property
+    def additional_images(self) -> List[str]:
+        """
+        Returns a list of image urls which are not the cover image
+        """
+        return [x.url for x in self.images if x.id != self.cover_image_id]
 
 ######################TRAIL MEDIA###################################
 
