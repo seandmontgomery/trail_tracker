@@ -16,15 +16,18 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI', 'postgresql://
 
 db.init_app(app)
 app.app_context().push()
-#Drop everything
+
+# Drop everything
+# NOTE: Be very careful when executing raw SQL to the db,
+#   this is not best practice, do not re-use this method.
 db.engine.execute(
     'DROP TABLE IF EXISTS PUBLIC.TRAIL_MEDIA CASCADE;'
     'DROP TABLE IF EXISTS PUBLIC.TRAIL CASCADE;'
     'DROP TABLE IF EXISTS PUBLIC.USER CASCADE;'
 )
-
 db.drop_all()
-#Recreate all tables
+
+# Recreate all tables
 db.create_all()
 
 ############################## USER #############################################
