@@ -6,7 +6,7 @@ References:
     2. https://docs.sqlalchemy.org/en/14/orm/extensions/associationproxy.html
 """
 import datetime
-from typing import List
+from typing import Optional, List
 
 from flask_login import UserMixin
 from sqlalchemy.ext.associationproxy import association_proxy
@@ -115,6 +115,19 @@ class Trail(db.Model):
         Returns a list of image urls which are not the cover image
         """
         return [x.url for x in self.images if x.id != self.cover_image_id]
+
+    @hybrid_property
+    def trail_pace(self) -> Optional[float]:
+        """
+        Returns the speed in minutes/mile for which a hike was completed
+        """
+        # Cannot divide by zero
+        if not self.miles:
+            return '--'
+
+        total_minutes = (self.hours * 60) + self.minutes
+        return round(total_minutes/self.miles)
+
 
 ######################TRAIL MEDIA###################################
 

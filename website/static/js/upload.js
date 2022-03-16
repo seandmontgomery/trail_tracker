@@ -1,14 +1,14 @@
 // HIDE/SHOW PHOTO UPLOAD INPUTS -----------------------------------------
 
-document.getElementById('cover-photo-button').addEventListener('click', openDialog);
-function openDialog() {
-  document.getElementById('cover-photo').click();
-}
-
-document.getElementById('additional-photo-button').addEventListener('click', openDialog);
-function openDialog() {
-  document.getElementById('additional-photos').click();
-}
+// document.getElementById('cover-photo-button').addEventListener('click', openDialog);
+// function openDialog() {
+//   document.getElementById('cover-photo').click();
+// }
+//
+// document.getElementById('additional-photo-button').addEventListener('click', openDialog);
+// function openDialog() {
+//   document.getElementById('additional-photos').click();
+// }
 
 // UPLOAD ----------------------------------------------------------------
 
@@ -21,7 +21,7 @@ function openDialog() {
 */
 async function addImage() {
     const cloudinary_url = "/upload-cloudinary";
-    const fileList = document.querySelectorAll("[type=file]");
+    const fileList = document.querySelectorAll("#upload-photos-input[type=file]");
 
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
         STEP 1: Upload images to Cloudinary
@@ -46,6 +46,7 @@ async function addImage() {
             method: "POST",
             body: formData
         })
+
         //we are waiting for cloudinary to return the image object
         let cloud_res_json = await cloud_res.json();
 
@@ -94,9 +95,8 @@ async function addImage() {
     window.location = '/feed';
   }
 
-const form = document.querySelector("#upload-trail-form");
-
-form.addEventListener("submit", (evt) => {
+const uploadTrail = document.querySelector("button#trail-upload");
+uploadTrail.addEventListener("click", (evt) => {
   evt.preventDefault();
   addImage()
 })

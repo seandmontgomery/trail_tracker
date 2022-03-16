@@ -8,10 +8,10 @@ document.querySelectorAll('.notes').forEach(noteBtn => {
         $.get(`/api/notes-modal/${trailID}`, (resp) => {
         let trailTitle = resp.notes_data.title
         let trailNotes = resp.notes_data.notes
-  
+
         var modalTitle = document.querySelector('.modal-title')
         var modalBody = document.querySelector('.modal-body')
-  
+
         modalTitle.textContent = trailTitle;
         modalBody.textContent = trailNotes;
       })
@@ -21,10 +21,10 @@ document.querySelectorAll('.notes').forEach(noteBtn => {
 // ------------- PHOTO ALBUM -----------------------------
 
 document.querySelectorAll('.photo-album-open').forEach(btn => {
-  
+
   btn.addEventListener('click', function() {
     let trailId = btn.getAttribute('data-trail-id-for-album');
-    
+
     $.get(`/api/photo-modal/${trailId}`, (resp) => {
       const photoArray = resp.photo_array
 
@@ -38,18 +38,18 @@ document.querySelectorAll('.photo-album-open').forEach(btn => {
             currDiv.setAttribute('class','carousel-item')
           }
            img = document.createElement('img')
-            
-          const urlOfActiveDivsImg = photoArray[i].url
+
+          const urlOfActiveDivsImg = photoArray[i]
           img.setAttribute('class',"d-block w-100")
           img.setAttribute('alt',"first slide")
           img.setAttribute("src",urlOfActiveDivsImg);
-         
+
           currDiv.appendChild(img)
-        
+
           const carouselInner = document.querySelectorAll(".carousel-inner")[0]
-            
+
           carouselInner.appendChild(currDiv)
-              
+
         }
     }
 

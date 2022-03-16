@@ -38,18 +38,24 @@ def upload_trail():
         # There will always be a cover image
         cover_image_url = payload.pop('cover_image_url')
 
+        # Remove whitespace
+        for key, value in payload.items():
+            if not value or isinstance(value, str) and not value.strip():
+                payload[key] = None
+
         # Create a new trail and associate with the current user
         new_trail = Trail(**payload)
         current_user.trail.append(new_trail)
+
+        db.session.add(new_trail)
+
+        # Commit the session
+        db.session.commit()
 
         # Set the cover image in a weird way:
         for img in new_trail.images:
             if img.url == cover_image_url:
                 new_trail.cover_image = img
-
-        db.session.add(new_trail)
-
-        # Commit the session
         db.session.commit()
 
         # Success!
@@ -83,8 +89,7 @@ def show_feed():
 @views.route('/api/photo-modal/<string:trail_id>')
 def show_photo_album(trail_id):
     trail = Trail.query.get(trail_id)
-    photo_array = [{'title': x.title, 'url': x.url} for x in trail.images]
-    return make_response(jsonify({'photo_array':photo_array}))
+    return make_response(jsonify({'photo_array': trail.additional_images}))
 
 ########## NOTES MODAL ##########
 @views.route('/api/notes-modal/<string:trail_id>')

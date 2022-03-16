@@ -66,7 +66,8 @@ my_trail = Trail(
 )
 
 my_user.trail.append(my_trail)
-
+db.session.commit()
+my_trail.cover_image = my_trail.images[0]
 
 
 ########################### GRINNELL #############################################
@@ -94,7 +95,8 @@ my_trail = Trail(
 )
 
 my_user.trail.append(my_trail)
-
+db.session.commit()
+my_trail.cover_image = my_trail.images[0]
 
 # Next trail goes here
 
