@@ -80,9 +80,9 @@ class Trail(db.Model):
     __tablename__ = 'trail'
 
     id = db.Column(db.Integer, primary_key=True)
-    trail_name = db.Column(db.String)
+    trail_name = db.Column(db.String, nullable=False)
     location = db.Column(db.String)
-    date = db.Column(db.Date)
+    date = db.Column(db.Date, nullable=False)
     difficulty = db.Column(db.String)
     terrain = db.Column(db.String)
     miles = db.Column(db.Float)
