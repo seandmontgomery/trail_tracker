@@ -35,7 +35,7 @@ db.create_all()
 my_user = User(
     first_name="Sean",
     email="seandmontgomery@gmail.com",
-    password=generate_password_hash("password1", method='sha256')
+    password=generate_password_hash("password_1", method='sha256')
 )
 
 # Add to db
@@ -54,22 +54,20 @@ my_trail = Trail(
     minutes=13,
     elevation=2087,
     notes="This popular hike, with fabulous views of the Cataract and Grinnell valleys, climbs through pretty meadows and along rock ledges to Upper Grinnell Lake and Grinnell Glacier, cradled in a dramatic cirque along the Continental Divide. A dramatic cirque of rugged peaks and jagged ridges, anchored by Mt. Grinnell (8,851-ft.) to the north and Mt. Gould (9,553-ft.) to the south, towers above the head of the Grinnell Valley. Three glaciers, the Grinnell, Salamander and Gem, along with Upper Grinnell Lake lie nestled beneath this imposing wall of rock. The popular hike to Grinnell Glacier climbs the northwestern flanks of Mt. Grinnell to a high bench beneath this stunning cirque, offering fabulous views of the glaciers and Upper Grinnell Lake. Along the way the trail travels through pretty meadows sprinkled with wildflowers, traverses narrow ledges and enjoys panoramic views of the Cataract and Grinnell valleys. Beautiful Grinnell Falls, fed by glacial melt water, spills down the valley’s headwall to Grinnell Lake, cradled on the valley floor. Good opportunities exist for spotting mountain goats and big horn sheep on the cliffs overhead as well as the meadows below the trail. Do not expect solitude on the trail. This is an extremely popular hike. During the height of the season large numbers of hikers take the daily ranger led tours visiting the glacier.",
+    image_urls = [
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309858/szjmwhddbhtyvn79pxgb.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309859/nks6cyjny5cesgr7yfjo.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309861/tysm7jyyrxeohkywloyw.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309862/nmwso5jsngqmdjwurolx.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309863/wvw1zhffy4xmsuhphpeh.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309865/jklbxolrd5xlcqzcxxrb.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309866/psna9uvobhjsolxvnigz.jpg'
+    ]
 )
 
 my_user.trail.append(my_trail)
 
-my_media = [
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309858/szjmwhddbhtyvn79pxgb.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309859/nks6cyjny5cesgr7yfjo.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309861/tysm7jyyrxeohkywloyw.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309862/nmwso5jsngqmdjwurolx.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309863/wvw1zhffy4xmsuhphpeh.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309865/jklbxolrd5xlcqzcxxrb.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309866/psna9uvobhjsolxvnigz.jpg'
 
-]
-
-my_trail.image_urls = [{'url': x} for x in my_media]
 
 ########################### GRINNELL #############################################
 
@@ -84,22 +82,18 @@ my_trail = Trail(
     minutes=3,
     elevation=2087,
     notes="This popular hike, with fabulous views of the Cataract and Grinnell valleys, climbs through pretty meadows and along rock ledges to Upper Grinnell Lake and Grinnell Glacier, cradled in a dramatic cirque along the Continental Divide. A dramatic cirque of rugged peaks and jagged ridges, anchored by Mt. Grinnell (8,851-ft.) to the north and Mt. Gould (9,553-ft.) to the south, towers above the head of the Grinnell Valley. Three glaciers, the Grinnell, Salamander and Gem, along with Upper Grinnell Lake lie nestled beneath this imposing wall of rock. The popular hike to Grinnell Glacier climbs the northwestern flanks of Mt. Grinnell to a high bench beneath this stunning cirque, offering fabulous views of the glaciers and Upper Grinnell Lake. Along the way the trail travels through pretty meadows sprinkled with wildflowers, traverses narrow ledges and enjoys panoramic views of the Cataract and Grinnell valleys. Beautiful Grinnell Falls, fed by glacial melt water, spills down the valley’s headwall to Grinnell Lake, cradled on the valley floor. Good opportunities exist for spotting mountain goats and big horn sheep on the cliffs overhead as well as the meadows below the trail. Do not expect solitude on the trail. This is an extremely popular hike. During the height of the season large numbers of hikers take the daily ranger led tours visiting the glacier.",
+    image_urls = [
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309858/szjmwhddbhtyvn79pxgb.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309859/nks6cyjny5cesgr7yfjo.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309861/tysm7jyyrxeohkywloyw.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309862/nmwso5jsngqmdjwurolx.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309863/wvw1zhffy4xmsuhphpeh.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309865/jklbxolrd5xlcqzcxxrb.jpg',
+        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309866/psna9uvobhjsolxvnigz.jpg'
+    ]
 )
 
 my_user.trail.append(my_trail)
-
-my_media = [
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309858/szjmwhddbhtyvn79pxgb.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309859/nks6cyjny5cesgr7yfjo.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309861/tysm7jyyrxeohkywloyw.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309862/nmwso5jsngqmdjwurolx.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309863/wvw1zhffy4xmsuhphpeh.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309865/jklbxolrd5xlcqzcxxrb.jpg',
-    'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309866/psna9uvobhjsolxvnigz.jpg'
-
-]
-
-my_trail.image_urls = [{'url': x} for x in my_media]
 
 
 # Next trail goes here
@@ -110,3 +104,4 @@ try:
     db.session.commit()
 except:
     db.session.rollback()
+    print('could not add!')
