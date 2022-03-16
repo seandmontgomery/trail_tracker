@@ -51,7 +51,6 @@ async function addImage() {
     // iterate over the image files
     for (let i = 0; i < fileList.length; i++) {
 
-        let media_title = 'placeholder'; // Until the actual title is parsed from the page
         const formData = new FormData();
 
         let file = fileList[i];
@@ -66,10 +65,8 @@ async function addImage() {
         let cloud_res_json = await cloud_res.json();
 
         // Save this url
-        image_urls.push({
-          'title': media_title,
-          'url': cloud_res_json.url
-        })
+        image_urls.push({'url': cloud_res_json.url})
+        
       }
 
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -

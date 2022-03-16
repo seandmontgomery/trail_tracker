@@ -15,8 +15,14 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'secret change for production
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI', 'postgresql://postgres:0821@localhost:5432/trail_tracker')
 
 db.init_app(app)
-app.app_context().push()  
+app.app_context().push()
 #Drop everything
+db.engine.execute(
+    'DROP TABLE IF EXISTS PUBLIC.TRAIL_MEDIA CASCADE;'
+    'DROP TABLE IF EXISTS PUBLIC.TRAIL CASCADE;'
+    'DROP TABLE IF EXISTS PUBLIC.USER CASCADE;'
+)
+
 db.drop_all()
 #Recreate all tables
 db.create_all()

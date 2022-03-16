@@ -25,7 +25,7 @@ class User(db.Model, UserMixin):
     trail = db.relationship('Trail')
 
     def get_trail_attribute_counts(self, attribute: str) -> dict:
-        
+
         """
         Returns the frequency (count) of trail attributes as a dictionary,
         suitable for plotting with chart.js
@@ -54,25 +54,25 @@ class User(db.Model, UserMixin):
 
         return my_dict
 
-#######################TRAIL################################### 
+#######################TRAIL###################################
 
 class Trail(db.Model):
     """
-    To access images for a specific trail - you can 
+    To access images for a specific trail - you can
     do it in the following ways:
 
-        1. Just get the URL attribute for each image, 
+        1. Just get the URL attribute for each image,
             as an array of URLS.
 
             >> trail.image_urls
             ['url_1', 'url_2']
-        
-        2. Create an array of dictionaries of 
+
+        2. Create an array of dictionaries of
             spcified attributes for each image
 
             >> [{'title': x.title, 'url': x.url} for x in trail.images]
             [
-                {'title': 'title_1', 'url': 'url_1'}, 
+                {'title': 'title_1', 'url': 'url_1'},
                 {'title': 'title_2', 'url': 'url_2'}
             ]
     """
@@ -92,21 +92,24 @@ class Trail(db.Model):
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-    images = db.relationship('TrailMedia')
+    # Create relationship for images
+    images = db.relationship('TrailMedia',
+        primaryjoin="Trail.id==TrailMedia.trail_id")
 
     # Association proxies explained in [2]
     image_urls = association_proxy('images', 'url',
-        creator=lambda kwargs: TrailMedia(**kwargs)
+        creator=lambda url: TrailMedia(url=url)
     )
 
-    @hybrid_property
-    def cover_image(self):
-        """
-        Returns cover image as a calculated attribute
-        """
-        return next(iter(self.image_urls), None)
+    # Create relationship for cover image
+    cover_image_id = db.Column(db.Integer, db.ForeignKey('trail_media.id'),
+        comment='Each trail can have up to 1 cover image'
+    )
+    cover_image = db.relationship('TrailMedia',
+        primaryjoin="Trail.cover_image_id==TrailMedia.id")
 
-######################TRAIL MEDIA################################### 
+
+######################TRAIL MEDIA###################################
 
 class TrailMedia(db.Model):
 
@@ -121,10 +124,7 @@ class TrailMedia(db.Model):
         comment='All media in this table is associated with a given trail'
     )
     url = db.Column(db.String, comment='cloudinary url (publically accessible link)')
-    title = db.Column(db.String, comment='media title')
 
     def get_photos_by_trail(trail_id):
-    
         photos = TrailMedia.query.filter(TrailMedia.trail_id == trail_id).all()
-
         return photos
