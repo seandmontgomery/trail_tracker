@@ -1,10 +1,25 @@
-// HIDE/SHOW PHOTO UPLOAD INPUTS -----------------------------------------
+// FEATURE FOR ADDING ADDITIONAL MEDIA
 
-// document.getElementById('cover-photo-button').addEventListener('click', openDialog);
-// function openDialog() {
-//   document.getElementById('cover-photo').click();
-// }
-//
+const listAddButton = $('#add-media')
+let click_counter = 0
+  const addItem = () => {
+      click_counter++
+      $('#list').append(`<li class="add-media">
+      <div id="media-uploader">
+        <label class="custom-file-upload">
+        <input type="file" id="media-files-${click_counter}" name="filesToUpload[]" multiple>
+        </label>
+      </div></li>`)
+  }
+listAddButton.on('click', addItem)
+
+// BUTTON FEATURE FOR COVER PHOTO UPLOAD
+
+document.getElementById('cover-photo-button').addEventListener('click', openDialog);
+function openDialog() {
+  document.getElementById('image_url').click();
+}
+
 // document.getElementById('additional-photo-button').addEventListener('click', openDialog);
 // function openDialog() {
 //   document.getElementById('additional-photos').click();
@@ -21,7 +36,7 @@
 */
 async function addImage() {
     const cloudinary_url = "/upload-cloudinary";
-    const fileList = document.querySelectorAll("#upload-photos-input[type=file]");
+    const fileList = document.querySelectorAll("[type=file]");
 
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
         STEP 1: Upload images to Cloudinary
@@ -32,10 +47,11 @@ async function addImage() {
     */
     // Get a url for each image (once uploaded to cloudinary)
     const image_urls = []
-
+    console.log(image_urls);
     // iterate over the image files
     for (let i = 0; i < fileList.length; i++) {
 
+        let media_title = 'placeholder'; // Until the actual title is parsed from the page
         const formData = new FormData();
 
         let file = fileList[i];
@@ -46,13 +62,14 @@ async function addImage() {
             method: "POST",
             body: formData
         })
-
         //we are waiting for cloudinary to return the image object
         let cloud_res_json = await cloud_res.json();
 
         // Save this url
-        image_urls.push(cloud_res_json.url)
-
+        image_urls.push({
+          'title': media_title,
+          'url': cloud_res_json.url
+        })
       }
 
     /*  - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -76,7 +93,6 @@ async function addImage() {
             'elevation': $('#elevation').val(),
             'notes': $('#notes').val(),
             "image_urls": image_urls,
-            "cover_image_url": image_urls[0]
         }),
         headers: {
             'Accept': 'application/json',
@@ -95,8 +111,9 @@ async function addImage() {
     window.location = '/feed';
   }
 
-const uploadTrail = document.querySelector("button#trail-upload");
-uploadTrail.addEventListener("click", (evt) => {
+const form = document.querySelector("#upload-trail-form");
+
+form.addEventListener("submit", (evt) => {
   evt.preventDefault();
   addImage()
 })

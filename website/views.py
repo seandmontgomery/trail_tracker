@@ -18,14 +18,18 @@ from .models import Trail, User, TrailMedia
 
 views = Blueprint('views', __name__)
 
-############################### HOME ######################################
+##################################HOME#########################################
 
 @views.route('/')
 @login_required
 def home():
     return render_template("upload.html", user=current_user)
 
-############################### UPLOAD TRAIL ###############################
+@views.route('/welcome')
+def welcome():
+    return render_template("welcome.html", user=current_user)
+
+##################################UPLOAD TRAIL##################################
 
 @views.route('/upload-trail', methods=['GET','POST'])
 @login_required
@@ -34,14 +38,6 @@ def upload_trail():
 
         # Parse the request
         payload = request.json
-
-        # There will always be a cover image
-        cover_image_url = payload.pop('cover_image_url')
-
-        # Remove whitespace
-        for key, value in payload.items():
-            if not value or isinstance(value, str) and not value.strip():
-                payload[key] = None
 
         # Create a new trail and associate with the current user
         new_trail = Trail(**payload)
@@ -52,19 +48,13 @@ def upload_trail():
         # Commit the session
         db.session.commit()
 
-        # Set the cover image in a weird way:
-        for img in new_trail.images:
-            if img.url == cover_image_url:
-                new_trail.cover_image = img
-        db.session.commit()
-
         # Success!
         flash('Trail added!', category='success')
 
         data = {'message': 'Created'}
         return make_response(jsonify(data), 200)
 
-####################### UPLOAD CLOUDINARY ##################################
+################################## UPLOAD CLOUDINARY ##################################
 
 @views.route("/upload-cloudinary", methods=['POST'])
 def upload_file():
@@ -74,7 +64,8 @@ def upload_file():
     file_to_upload = request.files['file']
     #if there is a file to upload, then upload to cloudinary
     if file_to_upload:
-      upload_result = cloudinary.uploader.upload(file_to_upload)
+      upload_result = cloudinary.uploader.upload(file_to_upload, resource_type = "auto")
+      #could potentially save this image in an image table then associate that image as a relationship to a trail
       return jsonify(upload_result)
 
 ######################### VIEW FEED ####################################################
@@ -85,20 +76,21 @@ def show_feed():
     trails = Trail.query.order_by(Trail.date.desc()).all()
     return render_template("feed.html", user=current_user, trails=trails)
 
-######## PHOTO MODAL #########
+########PHOTO MODAL#########
 @views.route('/api/photo-modal/<string:trail_id>')
 def show_photo_album(trail_id):
     trail = Trail.query.get(trail_id)
-    return make_response(jsonify({'photo_array': trail.additional_images}))
+    photo_array = [{'title': x.title, 'url': x.url} for x in trail.images]
+    return make_response(jsonify({'photo_array':photo_array}))
 
-########## NOTES MODAL ##########
+##########NOTES MODAL##########
 @views.route('/api/notes-modal/<string:trail_id>')
 def get_modal_info(trail_id):
     trail = Trail.query.get(trail_id)
     notes_data = {'title': trail.trail_name, 'notes': trail.notes}
     return make_response(jsonify({'notes_data':notes_data}))
 
-######################### CHARTS ####################################################
+#########################CHARTS####################################################
 
 @views.route('/charts', methods=['GET', 'POST'])
 @login_required
@@ -115,3 +107,12 @@ def get_trail_chart(attribute: str):
         'values': list(my_dict.values())
     }
     return jsonify(data)
+
+##############################DELETE##########################################
+
+@views.route('/delete-trail', methods=['POST'])
+def delete_trail():
+    trail =Trail.query.get(trailId)
+    current_user.trails.remove(trail)
+    db.session.commit()
+    return jsonify({})
