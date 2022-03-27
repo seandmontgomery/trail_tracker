@@ -359,6 +359,10 @@ width: 200px;
   color: white;
 }
 
+#location-text {
+  font-size: 17px;
+}
+
 #trail-card{
   background-color: rgb(53, 53, 53);
   color: white;

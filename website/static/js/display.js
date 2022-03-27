@@ -1,4 +1,4 @@
-// --------- NOTES MODAL-----------------------------
+// ################# NOTES MODAL #################################
 
 document.querySelectorAll('.notes').forEach(noteBtn => {
   noteBtn.addEventListener('click', function (event) {
@@ -18,7 +18,7 @@ document.querySelectorAll('.notes').forEach(noteBtn => {
   });
 })
 
-// ------------- PHOTO ALBUM -----------------------------
+// ################## PHOTO MODAL ##############################
 
 document.querySelectorAll('.photo-album-open').forEach(btn => {
   
