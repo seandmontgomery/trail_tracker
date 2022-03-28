@@ -25,7 +25,7 @@ Trail Tracker is a web application for hikers. It allows users to store trail in
 
 ## <a name="#Features"></a>Features
 
-[Login](#Login) | [Upload](#Upload) | [Timeline](#Timeline) | [Location](#Location) | [Photos](#Photos) | [Map](#Map) | [Search](#Search) | [Statistics](#Statistics) | [Logout](#Logout) | [Database](#Database) |
+[Login](#Login) | [Upload](#Upload) [Location Input](#Gmaps) [Photo Upload](#Cloud) [Timeline](#Timeline) [Photo Album and Notes](#Photos) [Location](#Location) [Search](#Search) [Statistics](#Statistics) [Database](#Database)
 
 ## <a name="#Login"></a>Login and Registration
 
@@ -39,13 +39,13 @@ Upon successful registration, the user is taken to this comprehensive form desig
 
 ![Upload](website/static/images/upload.GIF)
 
-## <a name="#Location Input"></a>Location Input
+## <a name="#Gmaps"></a>Location Input
 
 To collect the trail’s location data - I use the GoogleMaps API. Once the user starts typing a location name, GooglePlaces API with autocomplete handles the rest!
 
 ![Location](website/static/images/location_input.GIF)
 
-## <a name="#Photo Upload"></a>Photo Upload
+## <a name="#Cloud"></a>Photo Upload
 
 By integrating Cloudinary’s media management API, I am able to offer the user the option to upload any number or type of media files. First, the user selects a photo they would like to be displayed as the cover photo for the trail. Then, they can add as many additional files as they would like, to populate their trail photo album. All of these images will be stored in the Cloudinary media library. The Cloudinary API returns a JSON response that includes each image’s URL which I extract and send to my database.
 
@@ -57,7 +57,7 @@ After the form is successfully submitted, I bring the user to their trail timeli
 
 ![Timeline](website/static/images/timeline.GIF)
 
-## <a name="#Photo Album"></a>Photo Album and Notes
+## <a name="#Photos"></a>Photo Album and Notes
 
 To allow the user to view their media and notes without being redirected, I built bootstrap modals to display only the data associated with that specific trail id. For example, only opening and displaying the Cloudinary photo URLs for that specific trail. To accomplish this, I built Javascript event listeners to invoke functions that make fetch requests to my flask routes. The response data is then used by the remaining methods in the event listener to manipulate the DOM.
 
