@@ -25,7 +25,7 @@ Trail Tracker is a web application for hikers. It allows users to store trail in
 
 ## <a name="#Features"></a>Features
 
-[Login](#Login) | [Upload](#Upload) | [Google Maps](#GoogleMaps) | [Cloudinary](#Cloudinary) | [Timeline](#Timeline) | [Modals](#Modals) | [Location](#Location) | [Search](#Search) | [Statistics](#Statistics) | [Database](#Database) |
+[Login](#Login) | [Upload](#Upload) | [Google Maps](#Google) | [Cloudinary](#Cloudinary) | [Timeline](#Timeline) | [Modals](#Modals) | [Location](#Location) | [Search](#Search) | [Statistics](#Statistics) | [Database](#Database) |
 
 ## <a name="#Login"></a>Login and Registration
 
@@ -39,7 +39,7 @@ Upon successful registration, the user is taken to this comprehensive form desig
 
 ![Upload](website/static/images/upload.GIF)
 
-## <a name="#GoogleMaps"></a>Google Maps
+## <a name="#Google"></a>Google Maps
 
 To collect the trail’s location data - I use the GoogleMaps API. Once the user starts typing a location name, GooglePlaces API with autocomplete handles the rest!
 
