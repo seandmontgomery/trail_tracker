@@ -13,8 +13,8 @@ Trail Tracker is a web application for hikers. It allows users to store trail in
 - [Tech Stack](#Tech)
 - [Features](#Features)
 - [Install](#Install)
-- [Meet](#Meet)
-- [Future](#Future)
+- [Meet the Developer](#Meet)
+- [Looking Ahead](#Future)
 
 ## <a name="#Tech"></a>Tech Stack
 
@@ -89,7 +89,7 @@ I used SQLAlchemy as an ORM and Postgres as the database server.
 
 ![Database](website/static/images/trail-tracker-db.png "Trail Tracker")
 
-## <a name="#Future"></a>Looking Ahead
+## <a name="#Future"></a>Future
 
 I appreciate your interest in my project. Building this application taught me a great deal about database modeling, handling uploads asynchronously, multiple API integrations, and much more. Thank you for taking the time to learn a bit about Trail Tracker. I look forward to connecting with you!
 
@@ -137,7 +137,7 @@ createdb trail_tracker
 python3 main.py
 ```
 
-## <a name="#Meet"></a>Meet the Developer
+## <a name="#Meet"></a>Meet
 
 Hello! I'm Sean. My background in entertainment and education has lead me down a new creative path into tech. I am a skilled full stack web developer with a passion for multimedia presentation. I am proficient in the following technologies: Python, Javascript, AJAX, JSON, HTML, CSS, SQL, Flask, jQuery, Bootstrap, Jinja, SQLAlchemy, PostgreSQL, Command Line, Git, GitHub, and Agile. As a multimedia creator I am skilled in the following applications: Camtasia, Adobe Premiere Pro, iMovie, Garage Band, Descript, Snagit, and Canva. I have also had a successful 15 year career as a professional broadway actor in NYC. In my free time I enjoy mountain biking, hiking, snowboarding, running, cooking and international travel.
 
