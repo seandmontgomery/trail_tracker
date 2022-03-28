@@ -14,7 +14,7 @@ Trail Tracker is a web application for hikers. It allows users to store trail in
 - [Features](#Features)
 - [Install](#Install)
 - [Meet the Developer](#Developer)
-- [Looking Ahead](#LookingAhead)
+- [Looking Ahead](#Future)
 
 ## <a name="#Tech"></a>Tech Stack
 
@@ -89,7 +89,7 @@ I used SQLAlchemy as an ORM and Postgres as the database server.
 
 ![Database](website/static/images/trail-tracker-db.png "Trail Tracker")
 
-## <a name="#LookingAhead"></a>Looking Ahead
+## <a name="#Future"></a>Future
 
 I appreciate your interest in my project. Building this application taught me a great deal about database modeling, handling uploads asynchronously, multiple API integrations, and much more. Thank you for taking the time to learn a bit about Trail Tracker. I look forward to connecting with you!
 
