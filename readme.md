@@ -91,7 +91,7 @@ I used SQLAlchemy as an ORM and Postgres as the database server.
 
 ## <a name="#Future"></a>Future
 
-I appreciate your interest in my project. Building this application taught me a great deal about database modeling, handling uploads asynchronously, multiple API integrations, and much more. Thank you for taking the time to learn a bit about Trail Tracker. I look forward to connecting with you!
+I appreciate your interest in my project. Building this application taught me a great deal about database modeling, handling uploads asynchronously, multiple API integrations, and much more. I have a lot of features in development that I am excited to continue building out. Thank you for taking the time to learn a bit about Trail Tracker. I look forward to connecting with you!
 
 ## <a name="#Install"></a>Install
 
