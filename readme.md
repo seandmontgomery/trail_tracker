@@ -141,6 +141,11 @@ python3 main.py
 
 ## <a name="#Developer"></a>Developer
 
-Hello! I'm Sean. My background in entertainment and education has lead me down a new creative path into tech. I am a skilled full stack web developer with a passion for multimedia presentation. I am proficient in the following technologies: Python, Javascript, AJAX, JSON, HTML, CSS, SQL, Flask, jQuery, Bootstrap, Jinja, SQLAlchemy, PostgreSQL, Command Line, Git, GitHub, and Agile. As a multimedia creator I am skilled in the following applications: Camtasia, Adobe Premiere Pro, iMovie, Garage Band, Descript, Snagit, and Canva. I have also had a successful 15 year career as a professional broadway actor in NYC. In my free time I enjoy mountain biking, hiking, snowboarding, running, cooking and international travel.
+My background in entertainment and education has lead me down a new creative path into tech. I am a skilled full stack web developer with a passion for multimedia presentation. I am proficient in the following technologies: Python, Javascript, AJAX, JSON, HTML, CSS, SQL, Flask, jQuery, Bootstrap, Jinja, SQLAlchemy, PostgreSQL, Command Line, Git, GitHub, and Agile. As a multimedia creator I am skilled in the following applications: Camtasia, Adobe Premiere Pro, iMovie, Garage Band, Descript, Snagit, and Canva. I have also had a successful 15 year career as a professional broadway actor in NYC. In my free time I enjoy mountain biking, hiking, snowboarding, running, cooking and international travel.
+
+Mentors:
+Yaakov Bressler (Simon Markets)
+Jordan Grubb (NPR)
+Cori Lint (Ovia Health)
 
 Connect with [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) on LinkedIn!
