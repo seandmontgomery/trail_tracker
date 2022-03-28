@@ -25,7 +25,7 @@ Trail Tracker is a web application for hikers. It allows users to store trail in
 
 ## <a name="#Features"></a>Features
 
-[Login](#Login) | [Upload](#Upload) [Location Input](#Gmaps) [Photo Upload](#Cloud) [Timeline](#Timeline) [Photo Album and Notes](#Photos) [Location](#Location) [Search](#Search) [Statistics](#Statistics) [Database](#Database)
+[Login](#Login) | [Upload](#Upload) | [Location Input](#Gmaps) | [Photo Upload](#Cloud) | [Timeline](#Timeline) | [Photo Album and Notes](#Photos) | [Location](#Location) | [Search](#Search) | [Statistics](#Statistics) | [Database](#Database) |
 
 ## <a name="#Login"></a>Login and Registration
 
