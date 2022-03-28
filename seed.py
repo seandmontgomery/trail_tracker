@@ -57,11 +57,6 @@ my_trail = Trail(
     image_urls = [
         'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309858/szjmwhddbhtyvn79pxgb.jpg',
         'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309859/nks6cyjny5cesgr7yfjo.jpg',
-        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309861/tysm7jyyrxeohkywloyw.jpg',
-        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309862/nmwso5jsngqmdjwurolx.jpg',
-        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309863/wvw1zhffy4xmsuhphpeh.jpg',
-        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309865/jklbxolrd5xlcqzcxxrb.jpg',
-        'https://res.cloudinary.com/seandmontgomery/image/upload/v1647309866/psna9uvobhjsolxvnigz.jpg'
     ]
 )
 

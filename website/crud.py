@@ -1,8 +1,6 @@
 from typing import Optional
 from models import db, User
 
-#This function isn't really used - keeping it bc it's pretty
-
 def create_user(first_name: str, email: str, password: str) -> Optional[User]:
     """
     Creates a user, or raises an error if already exists.

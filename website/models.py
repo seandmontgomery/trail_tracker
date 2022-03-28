@@ -95,9 +95,6 @@ class Trail(db.Model):
 
     @hybrid_property
     def cover_image(self):
-        """
-        Returns cover image as a calculated attribute
-        """
         return next(iter(self.image_urls), None)
 
 ######################TRAIL MEDIA################################### 
