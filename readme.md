@@ -2,6 +2,10 @@
 
 by [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) | [seandmontgomery@gmail.com](mailto:seandmontgomery@gmail.com?subject=[GitHub]%20Trail_Tracker)
 
+Watch the Trail Tracker [DEMO Video]() 
+
+Trail Tracker has been deployed on [Heroku!](https://trail-tracker-app.herokuapp.com/)
+
 ## <a name="#About"></a>What is Trail Tracker?
 
 Trail Tracker is a web application for hikers. It allows users to store trail information from all of their favorite hikes as well as photos, videos and other media. Users can also view statistics and metrics on the app’s dashboard. My passion for software engineering, hiking, and photography lead me to build this application.
