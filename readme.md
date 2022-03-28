@@ -3,9 +3,9 @@
 by [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) | [seandmontgomery@gmail.com](mailto:seandmontgomery@gmail.com?subject=[GitHub]%20Trail_Tracker)
 
 ## <a name="#About"></a>What is Trail Tracker?
-Trail Tracker - is a comprehensive full stack web application for hiking enthusiasts. This application allows users to store information and media for all of their favorite hikes while also compiling data and displaying their statistics.
+Trail Tracker is a web application for hikers. It allows users to store trail information from all of their favorite hikes as well as photos, videos and other media. Users can also view statistics and metrics on the app’s dashboard. My passion for software engineering, hiking, and photography lead me to build this application.
 
-![Home](website/static/images/sign_up.GIF)
+![Home](website/static/images/welcome.GIF)
 
 Table of Contents
 ------
@@ -25,56 +25,59 @@ Table of Contents
 [Login](#Login) | [Upload](#Upload) | [Timeline](#Timeline) | [Location](#Location) | [Photos](#Photos) | [Map](#Map) | [Search](#Search) | [Statistics](#Statistics) | [Logout](#Logout) | [Database](#Database) |
 
 ## <a name="#Login"></a>Login and Registration
-Users can register and create an account which will give them access to their personal trail logs. I have hashed the user's credentials with sha256 to add security for the user. I built Trail Tracker with Flask - creating a service that uses a Postgres database interfaced with the SQLAlchemy ORM.
+A user gets started with Trail Tracker by creating an account. All that’s needed is an email address, first name, and a password. For security, I’ve stored all passwords using asymmetrical Sha-256 encryption.
 
-<!-- ![Login]() -->
+![Login](website/static/images/sign_up.GIF)
 
 ## <a name="#Upload"></a>Upload
-Upload form
+Upon successful registration, the user is taken to this comprehensive form designed to log all of the data from their hikes. The user starts by filling out the trail name, date and location. I provide the user an opportunity to track key metrics including: difficulty level, terrain, mileage, hours, minutes, and elevation gain. They also have the option to add any notes they may want to keep track of.
 
-<!-- ![Upload]() -->
+![Upload](website/static/images/upload.GIF)
+
+## <a name="#Location Input"></a>Location Input
+To collect the trail’s location data - I use the GoogleMaps API. Once the user starts typing a location name, GooglePlaces API with autocomplete handles the rest!
+
+![Location](website/static/images/location.GIF)
+
+## <a name="#Photo Upload"></a>Photo Upload
+By integrating Cloudinary’s media management API, I am able to offer the user the option to upload any number or type of media files. First, the user selects a photo they would like to be displayed as the cover photo for the trail. Then, they can add as many additional files as they would like, to populate their trail photo album. All of these images will be stored in the Cloudinary media library. The Cloudinary API returns a JSON response that includes each image’s URL which I extract and send to my database.
+
+![Photos](website/static/images/photo_upload.GIF)
 
 ## <a name="#Timeline"></a>Timeline
-Styled using Bootstrap and CSS. This information is being dynamically displayed using Jinja templating.
+After the form is successfully submitted, I bring the user to their trail timeline. A collection of cards which display all of the logged information. To develop a user-friendly interface, I styled Trail Tracker with Bootstrap and custom CSS, and used Jinja templating to dynamically display the trail data from the specific user in session.
 
-<!-- ![Timeline]() -->
+![Timeline](website/static/images/timeline.GIF)
 
-## <a name="#Location"></a>Location
-Clicking on the "location" button opens Google Maps to show exactly where the trail is located.
-To upload...  and the location using Google’s Map & Places API with their Place Autocomplete service.
+## <a name="#Photo Album"></a>Photo Album and Notes
+To allow the user to view their media and notes without being redirected, I built bootstrap modals to display only the data associated with that specific trail id. For example, only opening and displaying the Cloudinary photo URLs for that specific trail. To accomplish this, I built Javascript event listeners to invoke functions that make fetch requests to my flask routes. The response data is then used by the remaining methods in the event listener to manipulate the DOM.
 
-<!-- ![Location]() -->
+![Photo Album](website/static/images/photo_display.GIF)
 
-## <a name="#Photos"></a>Photos
-Photo gallery shows photos associated specifically with that trail ID. For the image files itself I implemented Cloudinary’s media management API, which returns the url for the image uploaded to my database.
+![Notes](website/static/images/notes.GIF)
 
-<!-- ![Photos]() -->
+## <a name="#Location"></a>Location Button
+Clicking the location button will open up GoogleMaps and take the user to exactly where the trail is located.
 
-## <a name="#Map"></a>Map
-PDF of Trail Map.
-
-<!-- ![Map]() -->
+![Timeline](website/static/images/location.GIF)
 
 ## <a name="#Search"></a>Search
-To filter through the cards, I developed a search feature by adding a JavaScript event listener that evaluates keystrokes to hide the cards that do not contain text matching the query string.
+The cards are initially displayed in reverse chronological order with the most recent upload displayed first. To help the user quickly access specific trails, I developed a search feature by adding a JavaScript event listener that evaluates keystrokes and dynamically hides the cards that do not contain any text matching the query string. Once the user starts typing, all non-essential information disappears asynchronously and dynamically.
 
-<!-- ![Search]() -->
+![Search](website/static/images/search.GIF)
 
 ## <a name="#Statistics"></a>Statistics
-Charts using Charts.js
+Using Chart.js as a data visualization tool, I build statistical representations of trail types and difficulty. The first chart displays the amount of hikes the user has completed in a given terrain over all time. The second shows the total number of hikes they’ve completed at a particular difficulty level.
 
-<!-- ![Statistics]() -->
-
-## <a name="#Logout"></a>Logout
-
-<!-- ![Logout]() -->
+![Statistics](website/static/images/charts.GIF)
 
 ## <a name="#Database"></a>Database
+I used SQLAlchemy as an ORM and Postgres as the database server.
 
-<!-- ![Database]() -->
+![Database](website/static/images/tt_DB.GIF)
 
 ## <a name="#Future"></a>Looking Ahead
-Thank you for taking the time to learn a bit about Trail Tracker, I really look forward to connecting with you!
+I appreciate your interest in my project. Building this application taught me a great deal about database modeling, handling uploads asynchronously, multiple API integrations, and much more. Thank you for taking the time to learn a bit about Trail Tracker. I look forward to connecting with you!
 
 ## <a name="#Install"></a>Install
 

@@ -14,3 +14,9 @@ searchBar.addEventListener('keyup', (evt) => {
     searchResults.includes(text[i]) ? text[i].style.display = "none" : text[i].style.display = "block"
   }
 });
+
+
+
+
+
+
