@@ -13,8 +13,8 @@ Trail Tracker is a web application for hikers. It allows users to store trail in
 - [Tech Stack](#Tech)
 - [Features](#Features)
 - [Install](#Install)
-- [Meet the Developer](#Meet)
-- [Looking Ahead](#Future)
+- [Meet](#Meet)
+- [Future](#Future)
 
 ## <a name="#Tech"></a>Tech Stack
 
