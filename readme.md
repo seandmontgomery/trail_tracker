@@ -2,9 +2,7 @@
 
 by [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) | [seandmontgomery@gmail.com](mailto:seandmontgomery@gmail.com?subject=[GitHub]%20Trail_Tracker)
 
-Trail Tracker [Video]() 
-
-Deployed on [Heroku!](https://trail-tracker-app.herokuapp.com/)
+Trail Tracker [Video]() | Deployed on [Heroku!](https://trail-tracker-app.herokuapp.com/)
 
 ## <a name="#About"></a>What is Trail Tracker?
 
