@@ -1,6 +1,6 @@
 ![Trail Tracker](website/static/images/read-me-logo.png "Trail Tracker")
 
-by [Sean Montgomery](https://www.linkedin.com/in/seandmontgomery/) | [seandmontgomery@gmail.com](mailto:seandmontgomery@gmail.com?subject=[GitHub]%20Trail_Tracker)
+ [Trail Tracker Video](https://www.youtube.com/watch?v=vcyAerUxhLM) | [Linkedin](https://www.linkedin.com/in/seandmontgomery/) | [seandmontgomery@gmail.com](mailto:seandmontgomery@gmail.com?subject=[GitHub]%20Trail_Tracker)
 
 [Trail Tracker Video](https://www.youtube.com/watch?v=vcyAerUxhLM) 
 
